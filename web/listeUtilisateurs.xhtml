@@ -12,21 +12,21 @@
             <h1>Inscriptions</h1>
             <hr/>
             <h:form>
-                <p:dataTable value="#{listeInscriptions.liste}" var="l">
+                <p:dataTable value="#{inscription.utilisateur}" var="u">
                     <p:column headerText="Nom">
-                        <h:outputText value="#{l.formation}"/>
+                        <h:outputText value="#{u.nom}"/>
                     </p:column>
                     <p:column headerText="Prénom">
-                        <h:outputText value="#{l.nbJours}"/>
+                        <h:outputText value="#{u.prenom}"/>
                     </p:column>
                     <p:column headerText="mail">
-                        <h:outputText value="#{l.nbInscrits}"/>
+                        <h:outputText value="#{u.mail}"/>
                     </p:column>
                     <p:column headerText="mot de passe">
-                        <h:outputText value="#{l.nbInscrits}"/>
+                        <h:outputText value="#{u.mdp}"/>
                     </p:column>
                     <p:column headerText="statut">
-                        <h:outputText value="#{l.nbInscrits}"/>
+                        <h:outputText value="#{u.statut}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>
