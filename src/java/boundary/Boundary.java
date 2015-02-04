@@ -8,16 +8,28 @@ package boundary;
 import entity.Cours;
 import entity.Utilisateur;
 import java.util.Collection;
+import javax.ejb.Stateless;
+import javax.enterprise.event.Event;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
  *
  * @author Loris
  */
+@Stateless
 public class Boundary {
     
+    @PersistenceContext
     protected EntityManager em;
+    
+    @Inject
+    Event<Utilisateur> listeners;
+
+    public Boundary() {
+    }
 
     public Boundary(EntityManager em) {
         this.em = em;
