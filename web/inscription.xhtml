@@ -15,37 +15,22 @@
         <h1>Inscription</h1>
         <h:outputLabel value="Veuillez renseigner les champs suivants"/>
         <hr/>
-        <form name="mon-formulaire1" action="page-envoi.html" method="get">
-            <p>
-                <input type="radio" name="civi" value="Mme" /> Madame
-                <input type="radio" name="civi" value="Mlle" /> Mademoiselle
-                <input type="radio" name="civi" value="Mr" /> Monsieur
-            </p>
-            <p>
-                Votre prénom :<br />
-                <input type="text" name="prenom" value="" />
-            </p>
-            <p>
-                Votre nom :<br />
-                <input type="text" name="nom" value="" />
-            </p>
-            <p>
-                Votre mot de passe :<br />
-                <input type="password" name="passe" value="" />
-            </p>
-            <p>
-                Confirmation de votre mot de passe :<br />
-                <input type="password" name="passe" value="" />
-            </p>
-            <p>
-                Votre message :<br />
-                <textarea name="le-message" rows="6" cols="40">Vous pouvez saisir ici un message.</textarea>
-            </p>
-            <p>
-                <input type="submit" value="Envoyer" action="" /> 
-               <p:button value ="Annuler" outcome ="connexion.xhtml"/>
-            </p>
-        </form>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="Nom"/>
+                <h:inputText value="#{inscription.utilisateur.nom}"/>
+                 <h:outputLabel value="Prenom"/>
+                <h:inputText value="#{inscription.utilisateur.prenom}"/>
+                 <h:outputLabel value="Mail"/>
+                <h:inputText value="#{inscription.utilisateur.mail}"/>
+                 <h:outputLabel value="Mot de passe"/>
+                <h:inputText value="#{inscription.utilisateur.mdp}"/>
+                
+                
+           </h:panelGrid>
+            <h:commandButton value="Ajouter" action="#{inscription.doAddUser()}"/>       
+               
+        </h:form>
         <hr/>
     </h:body>
     </f:view>

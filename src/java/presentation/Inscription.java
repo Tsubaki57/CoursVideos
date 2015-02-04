@@ -47,7 +47,7 @@ public class Inscription {
     
     public String doAddUser(){
         utilisateur = boundary.updateUtil(utilisateur);
-        return "index.xhtml?faces-redirect=true";
+        return "listeUtilisateur.xhtml?faces-redirect=true";
     }
     
 }
