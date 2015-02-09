@@ -27,20 +27,26 @@ public class UtilisateurBdy {
     @Inject
     Event<Utilisateur> listeners;
 
-    public Utilisateur createUtil(String nom, String prenom, String email, String mdp, String status) {
+    public Utilisateur create(String nom, String prenom, String email, String mdp, String status) {
         Utilisateur u = new Utilisateur(nom, prenom, email, mdp, status);
         em.persist(u);
         return u;
     }
 
-    public Utilisateur updateUtil(Utilisateur u) {
+    public Utilisateur update(Utilisateur u) {
         em.persist(u);
         return u;
     }
 
-    public List<Utilisateur> findAllUtil() {
+    public List<Utilisateur> findAll() {
         Query q = em.createQuery("SELECT u FROM Utilisateur u ");
         return (List<Utilisateur>) q.getResultList();
+    }
+    
+    // TODO a refaire
+    public Utilisateur find(long id) {
+        Query q = em.createQuery("SELECT u FROM Utilisateur u ");
+        return (Utilisateur) q.getResultList().get(0);
     }
 
 }

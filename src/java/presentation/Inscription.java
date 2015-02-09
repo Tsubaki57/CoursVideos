@@ -8,7 +8,7 @@ package presentation;
 import boundary.UtilisateurBdy;
 import entity.Utilisateur;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -33,8 +33,8 @@ public class Inscription {
         return utilisateurs;
     }
 
-    public void setUtilisateurs(UtilisateurBdy u) {
-        this.utilisateurs = u;
+    public void setUtilisateurs(UtilisateurBdy utilisateurs) {
+        this.utilisateurs = utilisateurs;
     }
 
     public Utilisateur getUtilisateur() {
@@ -46,7 +46,7 @@ public class Inscription {
     }
 
     public String doAddUser() {
-        utilisateur = utilisateurs.updateUtil(utilisateur);
+        utilisateur = utilisateurs.update(utilisateur);
         return "listeUtilisateurs.xhtml?faces-redirect=true";
     }
 
