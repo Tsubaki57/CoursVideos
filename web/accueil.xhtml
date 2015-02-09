@@ -10,15 +10,15 @@
             <link rel="stylesheet" href="pageAccueil.css"></link>
         </h:head>
         <h:body>    
-           
+            
             <header>
-                <h1>BlaBlablA</h1>
+                <h1>Bienvenue sur Blablabla</h1>
             </header>
                         
             <nav id="onglets">
                 <ul id="onglet">
-                    <li><a href="#1">Accueil</a></li>
-                    <li><a href="#2">Mes cours</a></li>
+                    <li><a href="accueil.xhtml">Accueil</a></li>
+                    <li><a href="mesCours.xhtml">Mes cours</a></li>
                 </ul>
             </nav>
             <br/> 
@@ -30,18 +30,46 @@
           
             
             <section class="texteAccueil">
+                <hr/>
                 <h2>Bonjour à  tous, et bienvenue sur BlaBlaBla </h2>
 
                 <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
                 Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-                Vous pourrez consulter toutes les vidéos présentent.</p>               
+                Vous pourrez consulter toutes les vidéos présentent.</p>       
+                <hr/>
             </section>
             
-            <section class="cours">
-                <p>Cours de J2EE</p>
-                <p>Cours de Cuisine</p>
-                <p>Cours de maquillage</p>
-                <p>Cours de pilotage</p>
+            <section >  
+            <ul id="cours">
+                 <li>
+                      <a href="">Cours de Pilotage</a>
+                      <ul>
+                          <div class="descriptif">
+                           <h3>Pilotage</h3>
+                           <p>Dans ce cours vous trouverez des vidéos concernant </p>
+                          </div>
+                      </ul>
+                      <div class="descriptif"  >
+                           <h3>Pilotage</h3>
+                           <p>Dans ce cours vous trouverez des vidéos concernant </p>
+                      </div>
+                 </li>
+                 <li>
+                      <a href="">Maquillage</a>
+                      <div class="descriptif">
+                           <h3>News</h3>
+                           <p>Pleins de vidéos sur le maquillage, teint, yeux, lèvres</p>
+                      </div>
+                 </li>
+                <li>
+                      <a href="">Cuisine</a>
+                      <div class="descriptif">
+                           <h3>News</h3>
+                           <p>Pleins de vidéos sur la cuisine</p>
+                      </div>
+                 </li>
+            </ul>
+
             </section>
                        
             <footer><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>

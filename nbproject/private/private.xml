@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Inscription.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/CoursBdy.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/inscription.xhtml</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Utilisateur.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/UtilisateurBdy.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/UtilisateurRcs.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listeUtilisateurs.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/accueil.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/inscription.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/listeUtilisateurs.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/boundary/UtilisateurBdy.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/Inscription.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/ListeUtilisateurs.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/pageAccueil.css</file>
         </group>
     </open-files>
 </project-private>

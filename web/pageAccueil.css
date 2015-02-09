@@ -7,6 +7,12 @@ body {
     text-align: justify;
 }
 
+header{
+    text-align: center;
+    font-family: Trebuchet MS
+    
+}
+
 .texteAccueil{
     font-family: Arial, "Times New Roman", Times, serif;
     color: black;
@@ -20,11 +26,6 @@ h2{
     font-size: large;
     font-family: Trebuchet MS;
     color: darkblue   
-}
-
-h1{
-    font-family: Arial;
-    text-align: center
 }
   
 .connect {
@@ -51,7 +52,7 @@ footer {
 #onglet{
     display: table;
     width: 500px;
-    margin: 100px auto;
+    margin: 50px auto;
     padding: 0;
     background: dodgerblue;
     background: -webkit-linear-gradient(deepskyblue, dodgerblue);
@@ -69,7 +70,6 @@ footer {
 #onglet li{
     display: table-cell;
 }
-
 #onglet li a{
     display: block;
     text-align: center;
@@ -85,14 +85,12 @@ footer {
                 0 -5px 0 hsl(210, 100%, 60%) inset; 
     position: relative;    
 }
-
 #onglet li:first-child a{
     border-radius: 3px 0 0 3px;
 }
 #onglet li:last-child a{
     border-radius: 0 3px 3px 0;
 }
-
 #onglet li a:hover, #onglet li a:focus{
     background: rgba(255,255,255,.2);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 
@@ -106,7 +104,6 @@ footer {
     background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.1)); 
     box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
 }
-
 #onglet li a::before{
     content: '';
     position: absolute;
@@ -122,4 +119,33 @@ footer {
     background: white;
     box-shadow: 0 0 2px white, 
                 0 -1px 0 rgba(0, 0, 0, .4);
+}
+
+
+#cours, #cours ul{
+  padding:0;
+  margin:0;
+  list-style:none;
+  width: 180px;
+}
+
+#cours li {
+  position: relative;
+  background:#EFEFEF; /* juste pour cacher le texte de la page en-dessous */
+}
+
+#cours a {
+  display:block;
+  text-decoration: none;
+  color: #000;
+}
+
+#cours .descriptif {
+  position: absolute;
+  left:-999em;
+}
+
+#cours li:hover .descriptif {
+  top: 0;
+  left: 180px;
 }
