@@ -1,49 +1,72 @@
 body {
-  padding-left: 11em;
-  font-family: Arial, "Times New Roman", Times, serif;
-  color: black;
-  background-color: blanchedalmond }
-
-h1 {
-  font-family: Arial;
-  text-align: center}
-    
-ul.menu{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 5em;
-  left: 1em;
-  width: 9em
+    padding-left: 11em;
+    padding-right : 11em;
+    font-family: Arial, "Times New Roman", Times, serif;
+    color: black;
+    background-color: azure;
+    text-align: justify;
 }
 
-ul.menu li{
-  background: floralwhite;
-  margin: 0.5em 0;
-  padding: 0.3em;
-  border-right: 1em solid crimson }
+.texteAccueil{
+    font-family: Arial, "Times New Roman", Times, serif;
+    color: black;
+    background-color: azure
+}
 
-a:link {
-  color: crimson }
-a:visited {
-  color: purple }
+a{
+    color:darkblue;
+}
 
+h2{
+    font-size: large;
+    font-family: Trebuchet MS;
+    color: darkblue   
+}
 
-a.connect {
+h1{
+    font-family: Arial;
+    text-align: center
+}
+  
+.connect {
     position : absolute;
     top : 1em;
     right : 9em;
+    display: inline;
 }
 
-a.inscription {
-    position : absolute;
-    top : 1em;
-    right : 2em;
+footer {
+    margin-top: 1em;
+    padding-top: 1em;
+    font-style: italic
+ }
+ 
+ a:hover{
+     color: slateblue
+ }
+ 
+ a:visited{
+     color: grey
+ }
+ 
+ #onglets
+{
+    font : bold 11px Batang, Trebuchet MS;
+    list-style-type : none;
+    padding-bottom : 24px; /* Ã  modifier suivant la taille de la police ET de la hauteur de l'onglet dans #onglets li */
+    border-bottom : 2px solid gray;
+    margin-left : 0;
 }
+ 
+#onglets li
+{
+    float : left;
+    height : 21px; /* Ã  modifier suivant la taille de la police pour centrer le texte dans l'onglet */
+    background-color: azure;
+    margin : 5px 5px 0 5px !important;  /* Pour les navigateurs autre que IE */
+    margin : 1px 2px 0 2px;  /* Pour IE  */
+    border : 1px solid #9EA0A1;
+}
+  
 
-address {
-  margin-top: 1em;
-  padding-top: 1em;
-  border-top: thin dotted }
 

@@ -10,32 +10,37 @@
             <link rel="stylesheet" href="pageAccueil.css"></link>
         </h:head>
         <h:body>    
-            <ul class="menu">
-                <li><a href="#">Pilotage</a></li>
-                <li><a href="#">Maquillage</a></li>
-                <li><a href="#">Couture</a></li>
-                <li><a href="#">Informatique</a></li>
-            </ul>
-     
-            <h1>BlaBlaBla</h1>
-            <a class="connect" href="connexion.xhtml">Connexion?</a> 
-            <a class="inscription" href="inscription.xhtml">Inscription?</a>
-            <hr/>
-            <br/>
-                       
-            <h2>Bonjour à tous, et bienvenue sur BlaBlaBla </h2>
-
-            <p>Vous trouverez à travers notre site, divers cours sur différent domain et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
-            Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-            
-            Vous pourrez consulter toutes les vidéos présentent.</p>
-
            
+            <header>
+                <h1>BlaBlablA</h1>
+            </header>
+                        
+            <nav id="menu">
+                <ul id="onglets">
+                  <li class="active"><a href="Accueil.html"> Accueil </a></li>
+                  <li><a href="Forums.html"> Mes cours </a></li>
+                  <li><a href="Inscription.html"> S'inscrire </a></li>
+                  <li><a href="Connexion.html"> Se connecter </a></li>
+                </ul>
+            </nav>
+            <br/> 
+            
+            <section class="connect">
+                <a href="connexion.xhtml">Connexion?</a> 
+                <a href="inscription.xhtml">Inscription?</a>               
+            </section>
+          
+            
+            <section class="texteAccueil">
+                <h2>Bonjour Ã  tous, et bienvenue sur BlaBlaBla </h2>
 
-<!-- Signer et dater la page, c'est une question de politesse! -->
-<address>Fait le 29 janvier 2015<br/>
-  par Loris D. et Lucie W.</address>
-            <br/>
+                <p>Vous trouverez Ã  travers notre site, divers cours sur diffÃ©rent domain et vous pourrez ainsi consulter les diffÃ©rentes vidÃ©os vous Ã©tant proposÃ©.
+                Vous trouverez de nombreux thÃ¨mes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                Vous pourrez consulter toutes les vidÃ©os prÃ©sentent.</p>               
+            </section>
+            
+                       
+            <footer><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>
             
         </h:body>
     </f:view>
