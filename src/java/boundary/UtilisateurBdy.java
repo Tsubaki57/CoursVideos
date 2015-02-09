@@ -20,7 +20,7 @@ import javax.persistence.Query;
  * @author Loris
  */
 @Stateless
-public class InscriptionBdy {
+public class UtilisateurBdy {
     
     @PersistenceContext
     EntityManager em;
@@ -28,10 +28,10 @@ public class InscriptionBdy {
     @Inject
     Event<Utilisateur> listeners;
 
-    public InscriptionBdy() {
+    public UtilisateurBdy() {
     }
 
-    public InscriptionBdy(EntityManager em) {
+    public UtilisateurBdy(EntityManager em) {
         this.em = em;
     }
     
@@ -50,22 +50,5 @@ public class InscriptionBdy {
         Query q = em.createQuery("SELECT u FROM Utilisateur u ");
         return (Collection<Utilisateur>)q.getResultList();
     }
-    
-    public Cours createCours(String titre, String image, double prix){
-        Cours c = new Cours( titre, image, prix);
-        em.persist(c);
-        return c;
-    }
-    
-    public Cours updateCours(Cours c){
-        em.persist(c);
-        return c;
-    }
-    
-    public Collection<Utilisateur> findAllCours(){
-        Query q = em.createQuery("SELECT c FROM Cours c ");
-        return (Collection<Utilisateur>)q.getResultList();
-    }
-    
-    // TODO creat, update, findall episodes
+
 }

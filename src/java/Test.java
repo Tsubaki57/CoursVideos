@@ -1,5 +1,5 @@
 
-import boundary.InscriptionBdy;
+import boundary.UtilisateurBdy;
 import entity.Utilisateur;
 import java.util.Collection;
 import javax.persistence.EntityManager;
@@ -26,7 +26,7 @@ public class Test {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA1PU");
         EntityManager em = emf.createEntityManager();
         
-        InscriptionBdy boundary = new InscriptionBdy(em);
+        UtilisateurBdy boundary = new UtilisateurBdy(em);
         
         EntityTransaction tx = em.getTransaction();
         tx.begin();
