@@ -20,18 +20,18 @@ import javax.persistence.Query;
  * @author Loris
  */
 @Stateless
-public class Boundary {
+public class InscriptionBdy {
     
     @PersistenceContext
-    protected EntityManager em;
+    EntityManager em;
     
     @Inject
     Event<Utilisateur> listeners;
 
-    public Boundary() {
+    public InscriptionBdy() {
     }
 
-    public Boundary(EntityManager em) {
+    public InscriptionBdy(EntityManager em) {
         this.em = em;
     }
     

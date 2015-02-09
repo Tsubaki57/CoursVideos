@@ -5,7 +5,7 @@
  */
 package presentation;
 
-import boundary.Boundary;
+import boundary.InscriptionBdy;
 import entity.Utilisateur;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.RequestScoped;
@@ -21,7 +21,7 @@ import javax.inject.Named;
 public class Inscription {
     
     @Inject
-    Boundary boundary;
+    InscriptionBdy boundary;
     private Utilisateur utilisateur;
     
     @PostConstruct
@@ -29,11 +29,11 @@ public class Inscription {
         this.utilisateur = new Utilisateur();
     }
 
-    public Boundary getBoundary() {
+    public InscriptionBdy getBoundary() {
         return boundary;
     }
 
-    public void setBoundary(Boundary boundary) {
+    public void setBoundary(InscriptionBdy boundary) {
         this.boundary = boundary;
     }
 
@@ -47,7 +47,7 @@ public class Inscription {
     
     public String doAddUser(){
         utilisateur = boundary.updateUtil(utilisateur);
-        return "listeUtilisateur.xhtml?faces-redirect=true";
+        return "listeUtilisateurs.xhtml?faces-redirect=true";
     }
     
 }
