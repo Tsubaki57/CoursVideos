@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:head>
+        <title>Créer un cours</title>
+        <style type="text/css"  media="all">
+            @import url(pageAccueil.css);
+        </style>
+    </h:head>
+    <h:body >
+        <h1>Créer un cours</h1>
+        <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+        <hr/>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Titre"/>
+                <h:inputText value="#{creercours.cours.titre}"/>
+                <h:outputLabel value="Image"/>
+                <h:inputFile label="Image de votre cours"
+                             value="#{creercours.cours.image}" 
+                             required="true" 
+                             requiredMessage="File not selected !!">
+                    <!-- FileUploadValidator for file validation -->
+                    <f:validator validatorId="FileUploadValidator" />
+                </h:inputFile>
+                <h:outputLabel value="Prix (en €)"/>
+                <h:inputText value="#{creercours.cours.prix}"/>
+            </h:panelGrid>
+            <h:commandButton value="Ajouter" action="#{creercours.doAddCours()}"/>       
+
+        </h:form>
+        <hr/>
+    </h:body>
+
+</html>

@@ -7,7 +7,7 @@ package boundary;
 
 import entity.Cours;
 import entity.Utilisateur;
-import java.util.Collection;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
@@ -28,20 +28,20 @@ public class CoursBdy {
     @Inject
     Event<Cours> listeners;
     
-    public Cours createCours(String titre, String image, double prix){
+    public Cours create(String titre, String image, double prix){
         Cours c = new Cours( titre, image, prix);
         em.persist(c);
         return c;
     }
     
-    public Cours updateCours(Cours c){
+    public Cours update(Cours c){
         em.persist(c);
         return c;
     }
     
-    public Collection<Utilisateur> findAllCours(){
+    public List<Cours> findAll(){
         Query q = em.createQuery("SELECT c FROM Cours c ");
-        return (Collection<Utilisateur>)q.getResultList();
+        return (List<Cours>)q.getResultList();
     }
     
 }
