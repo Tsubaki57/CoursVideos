@@ -42,7 +42,7 @@ public class UtilisateurBdy {
         Query q = em.createQuery("SELECT u FROM Utilisateur u ");
         return (List<Utilisateur>) q.getResultList();
     }
-    
+
     // TODO a refaire
     public Utilisateur find(long id) {
         Query q = em.createQuery("SELECT u FROM Utilisateur u ");
