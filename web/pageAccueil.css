@@ -63,10 +63,28 @@ footer {
     float : left;
     height : 21px; /* Ã  modifier suivant la taille de la police pour centrer le texte dans l'onglet */
     background-color: azure;
-    margin : 5px 5px 0 5px !important;  /* Pour les navigateurs autre que IE */
+    margin : 0px 5px 0 5px !important;  /* Pour les navigateurs autre que IE */
     margin : 1px 2px 0 2px;  /* Pour IE  */
-    border : 1px solid #9EA0A1;
+    border : 1px solid grey;
 }
   
+#onglets li.active
+{
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+
+#onglets a
+{
+    display : block;
+    color : #666;
+    text-decoration : none;
+    padding : 4px;
+}
+
+#onglets a:hover
+{
+    background : #fff;
+}
 
 
