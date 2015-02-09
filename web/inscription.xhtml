@@ -2,36 +2,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <f:view contentType="text/html">
-    <h:head>
-        <title>Inscription</title>
-        <style type="text/css"  media="all">
-            @import url(pageAccueil.css);
-        </style>
-    </h:head>
-    <h:body >
-        <h1>Inscription</h1>
-        <h:outputLabel value="Veuillez renseigner les champs suivants"/>
-        <hr/>
-        <h:form>
-            <h:panelGrid>
-                <h:outputLabel value="Nom"/>
-                <h:inputText value="#{inscription.utilisateur.nom}"/>
-                 <h:outputLabel value="Prenom"/>
-                <h:inputText value="#{inscription.utilisateur.prenom}"/>
-                 <h:outputLabel value="Mail"/>
-                <h:inputText value="#{inscription.utilisateur.mail}"/>
-                 <h:outputLabel value="Mot de passe"/>
-                <h:inputText value="#{inscription.utilisateur.mdp}"/>
-                
-                
-           </h:panelGrid>
-            <h:commandButton value="Ajouter" action="#{inscription.doAddUser()}"/>       
-               
-        </h:form>
-        <hr/>
-    </h:body>
+        <h:head>
+            <title>Inscription</title>
+            <style type="text/css"  media="all">
+                @import url(pageAccueil.css);
+            </style>
+        </h:head>
+        <h:body >
+            <h1>Inscription</h1>
+            <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+            <hr/>
+            <h:form>
+                <h:panelGrid>
+                    <h:outputLabel value="Nom"/>
+                    <h:inputText value="#{inscription.utilisateur.nom}"/>
+                    <h:outputLabel value="Prenom"/>
+                    <h:inputText value="#{inscription.utilisateur.prenom}"/>
+                    <h:outputLabel value="Mail"/>
+                    <h:inputText value="#{inscription.utilisateur.mail}"/>
+                    <h:outputLabel value="Mot de passe"/>
+                    <h:inputText value="#{inscription.utilisateur.mdp}"/>
+
+
+                </h:panelGrid>
+                <h:commandButton value="Ajouter" action="#{inscription.doAddUser()}"/>       
+
+            </h:form>
+            <hr/>
+        </h:body>
     </f:view>
 </html>

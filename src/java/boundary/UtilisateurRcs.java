@@ -24,17 +24,17 @@ import javax.ws.rs.core.UriInfo;
 @Stateless
 @Path("inscriptionBdy")
 public class UtilisateurRcs {
-    
+
     @Inject
     UtilisateurBdy inscriptions;
-    
+
     @POST
-    public Response enregistrement(Utilisateur request, @Context UriInfo info){
+    public Response enregistrement(Utilisateur request, @Context UriInfo info) {
         Utilisateur u = inscriptions.updateUtil(request);
-        long id= u.getId();
-        URI uri = info.getAbsolutePathBuilder().path("/"+id).build();
+        long id = u.getId();
+        URI uri = info.getAbsolutePathBuilder().path("/" + id).build();
         JsonObject confirmation = Json.createObjectBuilder().
-                add("confirmation-id",u.getId()).build();
+                add("confirmation-id", u.getId()).build();
         return Response.created(uri).entity(confirmation).build();
     }
 }

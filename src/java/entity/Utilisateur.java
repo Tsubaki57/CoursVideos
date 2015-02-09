@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import utils.Sha;
 
 /**
@@ -19,6 +20,7 @@ import utils.Sha;
  * @author Loris
  */
 @Entity
+@NamedQuery(name = "findAllUtilisateurs", query = "SELECT u FROM Utilisateur u")
 public class Utilisateur implements Serializable {
 
     @Id

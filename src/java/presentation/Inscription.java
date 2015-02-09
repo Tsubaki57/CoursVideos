@@ -19,22 +19,22 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class Inscription {
-    
+
     @Inject
-    UtilisateurBdy boundary;
+    UtilisateurBdy utilisateurs;
     private Utilisateur utilisateur;
-    
+
     @PostConstruct
-    public void onInit(){
+    public void onInit() {
         this.utilisateur = new Utilisateur();
     }
 
-    public UtilisateurBdy getBoundary() {
-        return boundary;
+    public UtilisateurBdy getUtilisateurs() {
+        return utilisateurs;
     }
 
-    public void setBoundary(UtilisateurBdy boundary) {
-        this.boundary = boundary;
+    public void setUtilisateurs(UtilisateurBdy u) {
+        this.utilisateurs = u;
     }
 
     public Utilisateur getUtilisateur() {
@@ -44,10 +44,10 @@ public class Inscription {
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
     }
-    
-    public String doAddUser(){
-        utilisateur = boundary.updateUtil(utilisateur);
+
+    public String doAddUser() {
+        utilisateur = utilisateurs.updateUtil(utilisateur);
         return "listeUtilisateurs.xhtml?faces-redirect=true";
     }
-    
+
 }
