@@ -12,7 +12,7 @@
             <h1>Inscriptions</h1>
             <hr/>
             <h:form>
-                <p:dataTable value="#{Inscription.utilisateur}" var="u">
+                <p:dataTable value="#{listeUtilisateurs.liste}" var="u">
                     <p:column headerText="Nom">
                         <h:outputText value="#{u.nom}"/>
                     </p:column>
