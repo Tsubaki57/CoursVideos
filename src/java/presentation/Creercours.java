@@ -41,7 +41,7 @@ public class Creercours {
     
     public String doAddCours() {
         cours = coursb.update(cours);
-        return "listeCours.xhtml?faces-redirect=true";
+        return "listecours.xhtml?faces-redirect=true";
     }
     
 }
