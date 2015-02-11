@@ -2,36 +2,44 @@ body {
    // padding-left: 60px;
    // padding-right : 100px;
     font-family: Arial, "Times New Roman", Times, serif;  
+    background-color: azure;
     background-image: url(http://img.wallpaperlist.com/uploads/wallpaper/files/blu/blur-blue-bokeh-wallpaper-533aeab2db647.jpg);
-    background-attachment: fixed;
     color: black;
     text-align: justify;
+    position : relative;
 }
 
+h1{
+    font-family:Andalus;
+}
 #entete{
     text-align: center;
     font-family: Andalus;
     color:white;
 }
 
-#main {
+.main {
     padding-left: 60px;
     padding-right: 60px;
 }
 
-#cours{
-margin-left: 250px;
-}
-
-#pres{
+.cours{
+    margin-left: 350px;
     background-color: white;
     opacity:0.9;
-    padding:20px 50px;
+    padding:10px 20px;
     box-shadow:2px 2px 2px darkblue, -1px -1px 2px darkblue;
     border:1px solid #9FC6FF;
-    /*arrondir les coins en haut à gauche et en bas à droite*/
-    -moz-border-radius:10px 0;
-    -webkit-border-radius:10px 0;
+    border-radius:10px;
+}
+
+
+.pres{
+    background-color: white;
+    opacity:0.9;
+    padding:10px 20px;
+    box-shadow:2px 2px 2px darkblue, -1px -1px 2px darkblue;
+    border:1px solid darkblue;
     border-radius:10px;
     float:left;
     width:240px;
@@ -49,7 +57,7 @@ margin-left: 250px;
  }
  
  #connect a:visited{
-     color: grey
+     color: white;
  }
 
  

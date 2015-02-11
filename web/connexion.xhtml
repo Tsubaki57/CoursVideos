@@ -10,29 +10,59 @@ and open the template in the editor.
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-  
+
     <f:view contentType="text/html">
         <h:head>
             <title>Page de connexion</title>
-            <link rel="stylesheet" href="pageAccueil.css"></link>
+            <link rel="stylesheet" href="pageAccueil.css" type="text/css"></link>
         </h:head>
-    <h:body>
-        <h1> Page de connexion </h1>
-        <h:form id="connexionForm">
-            <h:panelGrid columns="3">
-                <h:outputText value="utilisateur"/>
-                <h:inputText value="#{loginBean.username}" style="width:180px;"/>
-                <h:outputText value=""/>
-                <h:outputText value="Mot de passe"/>
-                <h:inputSecret value="#{loginBean.password}" style="width:180px"/>
-                <h:outputText value=""/>
-                <h:outputText value=""/>
-                <h:commandButton action="#{loginBean.checkLogin}" value="connexion" id="msgLogin"/>
-            </h:panelGrid>  
-        </h:form>
-        <h1>Vous n'êtes pas inscrit? </h1>
-        <p:button outcome ="inscription.xhtml" value="inscris toi"/>
-    </h:body>
+        <h:body>
+
+            <header id="entete">
+                <h1>VIDEO' STUDIA</h1>
+            </header>
+
+            <nav id="onglets">
+                <ul id="onglet">
+                    <li><a href="accueil.xhtml">Accueil</a></li>
+                    <li><a href="mesCours.xhtml">Mes cours</a></li>
+                </ul>
+            </nav>
+            <br/> 
+
+            <div id="connect">
+                <a href="connexion.xhtml">Connexion?</a> 
+                <a href="inscription.xhtml">Inscription?</a>               
+            </div>
+
+            <div class='main'>
+                <div class="pres">
+                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>    
+
+                <div class="cours">
+                    <h1> Page de connexion </h1>
+                    <h:form id="connexionForm">
+                        <h:panelGrid columns="3">
+                            <h:outputText value="utilisateur"/>
+                            <h:inputText value="#{loginBean.username}" style="width:180px;"/>
+                            <h:outputText value=""/>
+                            <h:outputText value="Mot de passe"/>
+                            <h:inputSecret value="#{loginBean.password}" style="width:180px"/>
+                            <h:outputText value=""/>
+                            <h:outputText value=""/>
+                            <h:commandButton action="#{loginBean.checkLogin}" value="connexion" id="msgLogin"/>
+                        </h:panelGrid>  
+                    </h:form>
+                    <h1>Vous n'êtes pas inscrit? </h1>
+                    <p:button outcome ="inscription.xhtml" value="inscris toi"/>
+                </div>
+            </div>
+
+
+        </h:body>
     </f:view>
-    
+
 </html>
