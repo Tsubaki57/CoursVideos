@@ -14,22 +14,46 @@ and open the template in the editor.
         <link rel="stylesheet" href="pageAccueil.css"></link>
     </h:head>
     <h:body >
-        <h1>Créer un cours</h1>
-        <h:outputLabel value="Veuillez renseigner les champs suivants"/>
-        <hr/>
-        <h:form>
-            <h:panelGrid columns="2">
-                <h:outputLabel value="Titre"/>
-                <h:inputText value="#{creercours.cours.titre}"/>
-                <h:outputLabel value="Prix (en €)"/>
-                <h:inputText value="#{creercours.cours.prix}"/>
-                <h:outputLabel value="Description"/>
-                <h:inputTextarea value="#{creercours.cours.description}" />
-            </h:panelGrid>
-            <h:commandButton value="Ajouter" action="#{creercours.doAddCours()}"/>       
+        <header id="entete">
+            <h1>VIDEO' STUDIA</h1>
+        </header>
 
-        </h:form>
-        <hr/>
+        <nav id="onglets">
+            <ul id="onglet">
+                <li><a href="accueil.xhtml">Accueil</a></li>
+                <li><a href="mesCours.xhtml">Mes cours</a></li>
+            </ul>
+        </nav>
+        <br/> 
+
+        <div id="connect">
+            <a href="connexion.xhtml">Connexion?</a> 
+            <a href="inscription.xhtml">Inscription?</a>               
+        </div>
+
+        <div class='main'>
+            <div class="pres">
+                <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                    Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                    Vous pourrez consulter toutes les vidéos présentent.</p>       
+            </div>  
+            <div class="cours">
+                <h1>Créer un cours</h1>
+                <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+                <hr/>
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Titre"/>
+                        <h:inputText value="#{creercours.cours.titre}"/>
+                        <h:outputLabel value="Prix (en €)"/>
+                        <h:inputText value="#{creercours.cours.prix}"/>
+                        <h:outputLabel value="Description"/>
+                        <h:inputTextarea value="#{creercours.cours.description}" />
+                    </h:panelGrid>
+                    <h:commandButton value="Ajouter" action="#{creercours.doAddCours()}"/>       
+                </h:form>
+            </div>
+        </div>
     </h:body>
 
 </html>

@@ -1,35 +1,59 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view contentType="text/html">
         <h:head>
-            <title>Inscription</title>
-            <style type="text/css"  media="all">
-                @import url(pageAccueil.css);
-            </style>
+            <title>BLABLABLA</title>
+            <link rel="stylesheet" href="pageAccueil.css" type="text/css"></link>
         </h:head>
-        <h:body >
-            <h1>Inscription</h1>
-            <h:outputLabel value="Veuillez renseigner les champs suivants"/>
-            <hr/>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Nom"/>
-                    <h:inputText value="#{inscription.utilisateur.nom}"/>
-                    <h:outputLabel value="Prenom"/>
-                    <h:inputText value="#{inscription.utilisateur.prenom}"/>
-                    <h:outputLabel value="Mail"/>
-                    <h:inputText value="#{inscription.utilisateur.mail}"/>
-                    <h:outputLabel value="Mot de passe"/>
-                    <h:inputSecret value="#{inscription.utilisateur.mdp}"/>
+        <h:body>    
 
+            <header id="entete">
+                <h1>VIDEO' STUDIA</h1>
+            </header>
 
-                </h:panelGrid>
-                <h:commandButton value="Ajouter" action="#{inscription.doAddUser()}"/>       
+            <nav id="onglets">
+                <ul id="onglet">
+                    <li><a href="accueil.xhtml">Accueil</a></li>
+                    <li><a href="mesCours.xhtml">Mes cours</a></li>
+                </ul>
+            </nav>
+            <br/> 
 
-            </h:form>
-            <hr/>
+            <div id="connect">
+                <a href="connexion.xhtml">Connexion?</a> 
+                <a href="inscription.xhtml">Inscription?</a>               
+            </div>
+
+            <div class='main'>
+                <div class="pres">
+                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>  
+                <div class="cours">
+                    <h1>Inscription</h1>
+                    <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+                    <hr/>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Nom"/>
+                            <h:inputText value="#{inscription.utilisateur.nom}"/>
+                            <h:outputLabel value="Prenom"/>
+                            <h:inputText value="#{inscription.utilisateur.prenom}"/>
+                            <h:outputLabel value="Mail"/>
+                            <h:inputText value="#{inscription.utilisateur.mail}"/>
+                            <h:outputLabel value="Mot de passe"/>
+                            <h:inputSecret value="#{inscription.utilisateur.mdp}"/>
+                        </h:panelGrid>       
+                        <h:commandButton value="Ajouter" action="#{inscription.doAddUser()}"/>       
+                    </h:form>
+                    <hr/>
+                </div>
+            </div>
         </h:body>
-    
+    </f:view>
 </html>
