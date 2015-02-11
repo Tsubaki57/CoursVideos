@@ -1,76 +1,77 @@
 body {
-    padding-left: 11em;
-    padding-right : 11em;
+   // padding-left: 60px;
+   // padding-right : 100px;
     font-family: Arial, "Times New Roman", Times, serif;  
     background-image: url(http://img.wallpaperlist.com/uploads/wallpaper/files/blu/blur-blue-bokeh-wallpaper-533aeab2db647.jpg);
     background-attachment: fixed;
     color: black;
     text-align: justify;
-    position : absolute;
 }
 
-header{
+#entete{
     text-align: center;
-    font-family: Trebuchet MS
+    font-family: Andalus;
+    color:white;
 }
 
-.texteAccueil{
-    font-family: Arial, "Times New Roman", Times, serif;
-    color: black;
+#main {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#cours{
+margin-left: 250px;
+}
+
+#pres{
     background-color: white;
     opacity:0.9;
-    padding:30px;
+    padding:20px 50px;
     box-shadow:2px 2px 2px darkblue, -1px -1px 2px darkblue;
     border:1px solid #9FC6FF;
     /*arrondir les coins en haut à gauche et en bas à droite*/
     -moz-border-radius:10px 0;
     -webkit-border-radius:10px 0;
     border-radius:10px;
+    float:left;
+    width:240px;
 }
 
-a{
-    color:darkblue;
-}
 
-h2{
-    font-size: large;
-    font-family: Trebuchet MS;
-    color: darkblue   
-}
-  
-.connect {
+#connect {
     position : absolute;
     top : 1em;
     right : 9em;
     display: inline;
 }
-
-footer {
-    margin-top: 1em;
-    padding-top: 1em;
-    font-style: italic
- }
- 
- a:hover{
+ #connect a:hover{
      color: slateblue
  }
  
- a:visited{
+ #connect a:visited{
      color: grey
  }
+
+ 
+footer {
+    margin-top: 1em;
+    padding-top: 1em;
+    font-style: italic;
+    clear:both;
+    text-align:center;
+    clear:both;
+ }
+ 
+
+
  
 #onglet{
     display: table;
-    width: 500px;
-    margin: 50px auto;
+    width: 100%; 
+    //margin: 50px;
     padding: 0;
     background: dodgerblue;
-    background: -webkit-linear-gradient(deepskyblue, dodgerblue);
-    background:    -moz-linear-gradient(deepskyblue, dodgerblue);
-    background:     -ms-linear-gradient(deepskyblue, dodgerblue);
-    background:      -o-linear-gradient(deepskyblue, dodgerblue);
-    background:         linear-gradient(deepskyblue, dodgerblue);
-    
+    background: linear-gradient(deepskyblue, dodgerblue);
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .3),
                 0 3px 5px rgba(0, 0, 0, .2),
@@ -83,7 +84,7 @@ footer {
 #onglet li a{
     display: block;
     text-align: center;
-    color: rgba(0, 0, 0, .7); 
+    color:darkblue;
     text-decoration: none;
     padding: 8px 8px 17px 8px;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
@@ -129,9 +130,4 @@ footer {
     background: white;
     box-shadow: 0 0 2px white, 
                 0 -1px 0 rgba(0, 0, 0, .4);
-}
-
-
-#cours{
-    background-color: white;
 }
