@@ -24,8 +24,11 @@ and open the template in the editor.
                     <p:column headerText="Titre">
                         <h:outputText value="#{c.titre}"/>
                     </p:column>
-                    <p:column headerText="Image">
-                        <!--<img src="#{c.image}" alt="Photo indisponible" title="Image du cours" />-->
+                    <p:column headerText="Description">
+                        <h:outputText value="#{c.description}"/>
+                    </p:column>
+                    <p:column headerText="Prix">
+                        <h:outputText value="#{c.prixCours()}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>

@@ -99,5 +99,13 @@ public class Cours implements Serializable {
     public void setUtilisateurs(List<Utilisateur> utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
+    
+    public String prixCours(){
+        if(prix == 0){
+            return "Gratuit";
+        }else{
+            return prix+"€";
+        }
+    }
 
 }
