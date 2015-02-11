@@ -26,6 +26,7 @@ public class Cours implements Serializable {
     private int id;
     private String titre;
     private String image;
+    private String description;
     private double prix;
     @OneToMany(mappedBy = "cours")
     private List<Episode> episodes;
@@ -35,9 +36,9 @@ public class Cours implements Serializable {
     public Cours() {
     }
 
-    public Cours(String titre, String image, double prix) {
+    public Cours(String titre, String description, double prix) {
         this.titre = titre;
-        this.image = image;
+        this.description = description;
         this.prix = prix;
         this.episodes = new ArrayList<Episode>();
         this.utilisateurs = new ArrayList<Utilisateur>();
@@ -65,6 +66,14 @@ public class Cours implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getPrix() {

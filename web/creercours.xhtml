@@ -23,16 +23,10 @@ and open the template in the editor.
             <h:panelGrid columns="2">
                 <h:outputLabel value="Titre"/>
                 <h:inputText value="#{creercours.cours.titre}"/>
-                <!--<h:outputLabel value="Image"/>
-                <h:inputFile label="Image de votre cours"
-                             value="#{creercours.cours.image}" 
-                             required="true" 
-                             requiredMessage="File not selected !!">
-                    <!-- FileUploadValidator for file validation --
-                    <f:validator validatorId="FileUploadValidator" />
-                </h:inputFile>-->
                 <h:outputLabel value="Prix (en €)"/>
                 <h:inputText value="#{creercours.cours.prix}"/>
+                <h:outputLabel value="Description"/>
+                <h:inputTextarea value="#{creercours.cours.description}" />
             </h:panelGrid>
             <h:commandButton value="Ajouter" action="#{creercours.doAddCours()}"/>       
 

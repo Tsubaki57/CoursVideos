@@ -6,7 +6,6 @@
 package boundary;
 
 import entity.Cours;
-import entity.Utilisateur;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
@@ -28,8 +27,8 @@ public class CoursBdy {
     @Inject
     Event<Cours> listeners;
     
-    public Cours create(String titre, String image, double prix){
-        Cours c = new Cours( titre, image, prix);
+    public Cours create(String titre, String description, double prix){
+        Cours c = new Cours( titre, description, prix);
         em.persist(c);
         return c;
     }
