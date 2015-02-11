@@ -2,7 +2,8 @@ body {
     padding-left: 11em;
     padding-right : 11em;
     font-family: Arial, "Times New Roman", Times, serif;  
-    background-color: azure;
+    background-image: url(http://www.clipart-fr.com/data/wallpaper/Serie_012/fond_ecran_wallpaper_serie_01416.jpg);
+    background-attachment: fixed;
     color: black;
     text-align: justify;
 }
@@ -16,6 +17,16 @@ header{
 .texteAccueil{
     font-family: Arial, "Times New Roman", Times, serif;
     color: black;
+    background-color: white;
+    opacity:0.8;
+    padding:5px;
+    box-shadow:2px 2px 2px gray, -1px -1px 2px white;
+   
+    border:1px solid #9FC6FF;
+    /*arrondir les coins en haut à gauche et en bas à droite*/
+    -moz-border-radius:10px 0;
+    -webkit-border-radius:10px 0;
+    border-radius:10px;
 }
 
 a{
@@ -122,30 +133,6 @@ footer {
 }
 
 
-#cours, #cours ul{
-  padding:0;
-  margin:0;
-  list-style:none;
-  width: 180px;
-}
-
-#cours li {
-  position: relative;
-  background:#EFEFEF; /* juste pour cacher le texte de la page en-dessous */
-}
-
-#cours a {
-  display:block;
-  text-decoration: none;
-  color: #000;
-}
-
-#cours .descriptif {
-  position: absolute;
-  left:-999em;
-}
-
-#cours li:hover .descriptif {
-  top: 0;
-  left: 180px;
+#cours{
+    background-color: white;
 }
