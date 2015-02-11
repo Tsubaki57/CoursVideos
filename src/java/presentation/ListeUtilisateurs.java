@@ -7,7 +7,8 @@ package presentation;
 
 import boundary.UtilisateurBdy;
 import entity.Utilisateur;
-import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,16 +19,11 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class Inscription {
-
+public class ListeUtilisateurs {
+    
     @Inject
-    UtilisateurBdy utilisateurs;
-    private Utilisateur utilisateur;
-
-    @PostConstruct
-    public void onInit() {
-        this.utilisateur = new Utilisateur();
-    }
+    private UtilisateurBdy utilisateurs;
+    private List<Utilisateur> liste = new ArrayList<>();
 
     public UtilisateurBdy getUtilisateurs() {
         return utilisateurs;
@@ -37,17 +33,14 @@ public class Inscription {
         this.utilisateurs = utilisateurs;
     }
 
-    public Utilisateur getUtilisateur() {
-        return utilisateur;
+    public List<Utilisateur> getListe() {
+        liste = utilisateurs.findAll();
+        return liste;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+    public void setListe(List<Utilisateur> liste) {
+        this.liste = liste;
     }
-
-    public String doAddUser() {
-        utilisateur = utilisateurs.update(utilisateur);
-        return "listeUtilisateurs.xhtml?faces-redirect=true";
-    }
-
+    
+    
 }

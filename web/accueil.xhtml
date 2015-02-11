@@ -10,32 +10,68 @@
             <link rel="stylesheet" href="pageAccueil.css"></link>
         </h:head>
         <h:body>    
-            <ul class="menu">
-                <li><a href="#">Pilotage</a></li>
-                <li><a href="#">Maquillage</a></li>
-                <li><a href="#">Couture</a></li>
-                <li><a href="#">Informatique</a></li>
-            </ul>
-     
-            <h1>BlaBlaBla</h1>
-            <a class="connect" href="connexion.xhtml">Connexion?</a> 
-            <a class="inscription" href="inscription.xhtml">Inscription?</a>
-            <hr/>
-            <br/>
-                       
-            <h2>Bonjour à tous, et bienvenue sur BlaBlaBla </h2>
-
-            <p>Vous trouverez à travers notre site, divers cours sur différent domain et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
-            Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
             
-            Vous pourrez consulter toutes les vidéos présentent.</p>
+            <header>
+                <h1>Bienvenue sur Blablabla</h1>
+            </header>
+                        
+            <nav id="onglets">
+                <ul id="onglet">
+                    <li><a href="accueil.xhtml">Accueil</a></li>
+                    <li><a href="mesCours.xhtml">Mes cours</a></li>
+                </ul>
+            </nav>
+            <br/> 
+            
+            <section class="connect">
+                <a href="connexion.xhtml">Connexion?</a> 
+                <a href="inscription.xhtml">Inscription?</a>               
+            </section>
+          
+            
+            <section class="texteAccueil">
+                <hr/>
+                <h2>Bonjour à  tous, et bienvenue sur BlaBlaBla </h2>
 
-           
+                <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                Vous pourrez consulter toutes les vidéos présentent.</p>       
+                <hr/>
+                      
+             
+            <ul >
+                 <li>
+                      <a href="">Cours de Pilotage</a>
+                      <ul>
+                          <div class="descriptif">
+                           <h3>Pilotage</h3>
+                           <p>Dans ce cours vous trouverez des vidéos concernant </p>
+                          </div>
+                      </ul>
+                      <div class="descriptif"  >
+                           <h3>Pilotage</h3>
+                           <p>Dans ce cours vous trouverez des vidéos concernant </p>
+                      </div>
+                 </li>
+                 <li>
+                      <a href="">Maquillage</a>
+                      <div class="descriptif">
+                           <h3>News</h3>
+                           <p>Pleins de vidéos sur le maquillage, teint, yeux, lèvres</p>
+                      </div>
+                 </li>
+                <li>
+                      <a href="">Cuisine</a>
+                      <div class="descriptif">
+                           <h3>News</h3>
+                           <p>Pleins de vidéos sur la cuisine</p>
+                      </div>
+                 </li>
+            </ul>
 
-<!-- Signer et dater la page, c'est une question de politesse! -->
-<address>Fait le 29 janvier 2015<br/>
-  par Loris D. et Lucie W.</address>
-            <br/>
+            </section>
+                       
+            <footer><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>
             
         </h:body>
     </f:view>
