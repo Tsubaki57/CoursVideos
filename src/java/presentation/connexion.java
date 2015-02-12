@@ -10,6 +10,8 @@ import entity.Utilisateur;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import utils.Sha;
@@ -20,19 +22,21 @@ import utils.Sha;
  */
 @Named
 @SessionScoped
-public class connexion implements Serializable{
-    
+public class connexion implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Inject
     private UtilisateurBdy utilisateurs;
     private Utilisateur utilisateur;
     private String mail;
     private String pw;
-    
+    private String label_co;
+
     @PostConstruct
     public void onInit() {
-        System.out.println("Init @postconstruct");
-        this.utilisateur = new Utilisateur();
+        //this.utilisateur = new Utilisateur();
+        //On fait rien.
+        this.label_co = "Se connecter";
     }
 
     public UtilisateurBdy getUtilisateurs() {
@@ -56,7 +60,6 @@ public class connexion implements Serializable{
     }
 
     public void setMail(String mail) {
-        System.out.println("Setmail");
         this.mail = mail.toLowerCase();
     }
 
@@ -67,16 +70,41 @@ public class connexion implements Serializable{
     public void setPw(String pw) {
         this.pw = Sha.hash256(pw);
     }
-    
-    public String checkLogin(){
-        System.out.println("Connexion: "+mail+" "+pw);
+
+    public String getLabel_co() {
+        return label_co;
+    }
+
+    public void setLabel_co(String label_co) {
+        this.label_co = label_co;
+    }
+
+    public String checkLogin() {
         String url = "connexion.xhtml?faces-redirect=true";
         Utilisateur u = utilisateurs.find(this.mail);
-        if(u!=null){
-            if(u.getMdp().equals(this.pw)){
+        if (u != null) {
+            if (u.getMdp().equals(this.pw)) {
                 url = "accueil.xhtml?faces-redirect=true";
+                setUtilisateur(u);
+                setLabel_co("Déconnecter "+u.getPrenom()+" "+u.getNom());
+            }else{
+                FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Mot de passe invalide"));
             }
+        }else{
+            FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Cette adresse n'est pas inscrite"));
         }
         return url;
     }
+
+    public String de_connexion() {
+        if (getLabel_co().equals("Se connecter")) {
+            // On redirige simplement
+        } else {
+            FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+            setUtilisateur(null);
+            setLabel_co("Se connecter");
+        }
+        return "connexion.xhtml?faces-redirect=true";
+    }
+
 }

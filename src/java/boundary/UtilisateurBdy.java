@@ -55,8 +55,8 @@ public class UtilisateurBdy {
                 .setParameter("email", mail);
         List<Utilisateur> lu = (List<Utilisateur>) q.getResultList();
         int size = lu.size();
-        if (size != 1) return null;
-        return lu.get(lu.size());
+        if (size < 1) return null;
+        return lu.get(size-1);
     }
 
 }
