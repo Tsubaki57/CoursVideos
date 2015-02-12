@@ -40,7 +40,6 @@ public class ListeCours {
     public void setListe(List<Cours> liste) {
         this.liste = liste;
     }
-    
-    
+   
     
 }

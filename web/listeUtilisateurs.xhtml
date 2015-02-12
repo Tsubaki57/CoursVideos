@@ -7,34 +7,61 @@
     <f:view contentType="text/html">
         <h:head>
             <title>Liste des inscriptions</title>
+             <link rel="stylesheet" href="pageAccueil.css" type="text/css"></link>
         </h:head>
         <h:body>
-            <h1>Inscriptions</h1>
-            <hr/>
-            <h:form>
-                <p:dataTable value="#{listeUtilisateurs.liste}" var="u">
-                    <p:column headerText="ID">
-                        <h:outputText value="#{u.id}"/>
-                    </p:column>
-                    <p:column headerText="Nom">
-                        <h:outputText value="#{u.nom}"/>
-                    </p:column>
-                    <p:column headerText="Prénom">
-                        <h:outputText value="#{u.prenom}"/>
-                    </p:column>
-                    <p:column headerText="mail">
-                        <h:outputText value="#{u.mail}"/>
-                    </p:column>
-                    <p:column headerText="mot de passe">
-                        <h:outputText value="#{u.mdp}"/>
-                    </p:column>
-                    <p:column headerText="statut">
-                        <h:outputText value="#{u.statut}"/>
-                    </p:column>
-                </p:dataTable>
-            </h:form>
-            <br/>
-            <p:button outcome="inscription.xhtml" value="Ajouter"/>
+            <header id="entete">
+                <h1>VIDEO' STUDIA</h1>
+            </header>
+
+            <nav id="onglets">
+                <ul id="onglet">
+                    <li><a href="accueil.xhtml">Accueil</a></li>
+                    <li><a href="mesCours.xhtml">Mes cours</a></li>
+                </ul>
+            </nav>
+            <br/> 
+
+            <div id="connect">
+                <a href="connexion.xhtml">Connexion?</a> 
+                <a href="inscription.xhtml">Inscription?</a>               
+            </div>
+
+            <div class='main'>
+                <div class="pres">
+                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>  
+                <div class="cours">
+                    <h1>Inscriptions</h1>
+                    <hr/>
+                    <h:form>
+                        <p:dataTable value="#{listeUtilisateurs.liste}" var="u">
+                            <p:column headerText="ID">
+                                <h:outputText value="#{u.id}"/>
+                            </p:column>
+                            <p:column headerText="Nom">
+                                <h:outputText value="#{u.nom}"/>
+                            </p:column>
+                            <p:column headerText="Prénom">
+                                <h:outputText value="#{u.prenom}"/>
+                            </p:column>
+                            <p:column headerText="mail">
+                                <h:outputText value="#{u.mail}"/>
+                            </p:column>
+                            <p:column headerText="mot de passe">
+                                <h:outputText value="#{u.mdp}"/>
+                            </p:column>
+                            <p:column headerText="statut">
+                                <h:outputText value="#{u.statut}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                    <br/>
+                    <p:button outcome="inscription.xhtml" value="Ajouter"/>
+                </div>
+            </div>
         </h:body>
     </f:view>
 </html>

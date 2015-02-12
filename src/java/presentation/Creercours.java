@@ -7,6 +7,7 @@ package presentation;
 
 import boundary.CoursBdy;
 import entity.Cours;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,6 +23,11 @@ public class Creercours {
     @Inject
     private CoursBdy coursb;
     private Cours cours;
+    
+    @PostConstruct
+    public void onInit() {
+        this.cours = new Cours();
+    }
 
     public CoursBdy getCoursb() {
         return coursb;
@@ -41,7 +47,7 @@ public class Creercours {
     
     public String doAddCours() {
         cours = coursb.update(cours);
-        return "listeCours.xhtml?faces-redirect=true";
+        return "listecours.xhtml?faces-redirect=true";
     }
     
 }
