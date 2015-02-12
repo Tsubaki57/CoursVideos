@@ -47,13 +47,13 @@ and open the template in the editor.
                     <h:form id="connexionForm">
                         <h:panelGrid columns="3">
                             <h:outputText value="utilisateur"/>
-                            <h:inputText value="#{connexion.mail}" style="width:180px;"/>
+                            <h:inputText value="#{connexion.utilisateur.mail}" style="width:180px;"/>
                             <h:outputText value=""/>
                             <h:outputText value="Mot de passe"/>
-                            <h:inputSecret value="#{connexion.pw}" style="width:180px"/>
+                            <h:inputSecret value="#{connexion.utilisateur.mdp}" style="width:180px"/>
                             <h:outputText value=""/>
                             <h:outputText value=""/>
-                            <h:commandButton action="#{connexion.checkLogin()}" value="connexion" id="msgLogin"/>
+                            <h:commandButton action="#{connexion.checkLogin}" value="Connexion" />
                         </h:panelGrid>  
                     </h:form>
                     <h1>Vous n'êtes pas inscrit? </h1>

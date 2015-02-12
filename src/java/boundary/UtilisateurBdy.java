@@ -46,12 +46,17 @@ public class UtilisateurBdy {
     // TODO a refaire
     public Utilisateur find(long id) {
         Query q = em.createQuery("SELECT u FROM Utilisateur u");
-        return (Utilisateur) q.getResultList().get(0);
+        return (Utilisateur) q.getResultList().get(1);
     }
     
     public Utilisateur find(String mail) {
-        Query q = em.createQuery("SELECT u FROM Utilisateur u WHERE u.mail=:mail");
-        return (Utilisateur) q.getResultList().get(0);
+        mail = mail.toLowerCase();
+        Query q = em.createQuery("SELECT u FROM Utilisateur u WHERE u.mail LIKE :email")
+                .setParameter("email", mail);
+        List<Utilisateur> lu = (List<Utilisateur>) q.getResultList();
+        int size = lu.size();
+        if (size != 1) return null;
+        return lu.get(lu.size());
     }
 
 }

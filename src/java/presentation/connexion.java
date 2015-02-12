@@ -57,7 +57,7 @@ public class connexion implements Serializable{
 
     public void setMail(String mail) {
         System.out.println("Setmail");
-        this.mail = mail;
+        this.mail = mail.toLowerCase();
     }
 
     public String getPw() {
