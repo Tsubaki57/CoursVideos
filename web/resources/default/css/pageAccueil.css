@@ -2,8 +2,8 @@ body {
    // padding-left: 60px;
    // padding-right : 100px;
     font-family: Arial, "Times New Roman", Times, serif;  
-    background-color: azure;
-    background-image: url(http://img.wallpaperlist.com/uploads/wallpaper/files/blu/blur-blue-bokeh-wallpaper-533aeab2db647.jpg);
+    background-color: red;
+    background-image: url(image_fond.jpg);
     color: black;
     text-align: justify;
     position : relative;
@@ -46,23 +46,23 @@ h1{
 }
 
 
-#connect {
+.connect {
     position : absolute;
     top : 1em;
     right : 9em;
     display: inline;
 }
- #connect a:hover{
+ .connect a:hover{
      color: slateblue
  }
  
- #connect a:visited{
-     color: white;
+ .connect a:visited{
+     color: black;
  }
 
  
-footer {
-    margin-top: 1em;
+.footer {
+    margin-bottom: 30px;
     padding-top: 1em;
     font-style: italic;
     clear:both;
@@ -73,7 +73,7 @@ footer {
 
 
  
-#onglet{
+.onglet{
     display: table;
     width: 100%; 
     //margin: 50px;
@@ -86,10 +86,10 @@ footer {
                 0 5px 10px rgba(0, 0, 0, .2),
                 0 20px 20px rgba(0, 0, 0, .15);
 }
-#onglet li{
+.onglet li{
     display: table-cell;
 }
-#onglet li a{
+.onglet li a{
     display: block;
     text-align: center;
     color:darkblue;
@@ -104,13 +104,13 @@ footer {
                 0 -5px 0 hsl(210, 100%, 60%) inset; 
     position: relative;    
 }
-#onglet li:first-child a{
+.onglet li:first-child a{
     border-radius: 3px 0 0 3px;
 }
-#onglet li:last-child a{
+.onglet li:last-child a{
     border-radius: 0 3px 3px 0;
 }
-#onglet li a:hover, #onglet li a:focus{
+.onglet li a:hover, #onglet li a:focus{
     background: rgba(255,255,255,.2);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .7) inset, 
                 0 -1px 0 hsl(210, 100%, 42%) inset, 
@@ -119,11 +119,11 @@ footer {
                 0 -4px 0 hsl(210, 100%, 60%) inset, 
                 0 -5px 0 hsl(210, 100%, 70%) inset; 
 } 
-#onglet li a:active{
+.onglet li a:active{
     background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.1)); 
     box-shadow: 0 0 2px rgba(0,0,0,.3) inset;
 }
-#onglet li a::before{
+.onglet li a::before{
     content: '';
     position: absolute;
     left: 50%;
@@ -134,7 +134,7 @@ footer {
     border-radius: 50%;
     background: rgba(0, 0, 0, .5);
 }
-#onglet li a:hover::before,#onglet li a:focus::before{
+.onglet li a:hover::before,.onglet li a:focus::before{
     background: white;
     box-shadow: 0 0 2px white, 
                 0 -1px 0 rgba(0, 0, 0, .4);
