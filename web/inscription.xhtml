@@ -7,9 +7,10 @@
     <f:view contentType="text/html">
         <h:head>
             <title>BLABLABLA</title>
-            <link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>
+            <!--<link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>-->
+            <h:outputStylesheet library="default" name="css/pageAccueil.css" />
         </h:head>
-        <h:body class="body">   
+        <h:body>   
 
             <header id="entete">
                 <h1>STUDIA ONLINE</h1>
@@ -24,9 +25,9 @@
             </nav>
             <br/> 
 
-            <div class="connect">
-                <a href="connexion.xhtml">Connexion?</a> 
-                <a href="inscription.xhtml">Inscription?</a>               
+            <div class="connection">
+                <a href="connexion.xhtml?faces-redirect=true"><h:outputText value="#{connexion.label_co}" style="width: 200px;"/></a> 
+                <a href="inscription.xhtml">Inscription?</a>              
             </div>
 
             <div class='main'>

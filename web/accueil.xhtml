@@ -6,13 +6,13 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <f:view contentType="text/html">
         <h:head>
-            <title>BLABLABLA</title>
-            <link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>
-          
+            <title>Studia Online</title>
+           <link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>
         </h:head>
-        <h:body>            
+        <body >
+            
             <header id="entete">
-                <h1>STUDIA ONLINE</h1>
+                <h1>STUDIA ONLINE</h1>           
             </header>
 
             <nav class="onglets">
@@ -25,10 +25,9 @@
             <br/> 
 
 
-            <div id="connect">
+            <div class="connection">
                 <a href="connexion.xhtml?faces-redirect=true"><h:outputText value="#{connexion.label_co}" style="width: 200px;"/></a> 
-                <a href="inscription.xhtml">Inscription?</a>
-                
+                <a href="inscription.xhtml">Inscription?</a>              
             </div>
 
             <div class ='main'>
@@ -45,6 +44,6 @@
             </div>                      
             <footer class="footer"><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>    
 
-        </h:body>
+        </body>
     </f:view>
 </html>

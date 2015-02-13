@@ -2,7 +2,7 @@ body {
    // padding-left: 60px;
    // padding-right : 100px;
     font-family: Arial, "Times New Roman", Times, serif;  
-    background-color: red;
+    background-color: azure;  
     background-image: url(image_fond.jpg);
     color: black;
     text-align: justify;
@@ -15,7 +15,8 @@ h1{
 #entete{
     text-align: center;
     font-family: Andalus;
-    color:white;
+    color:black;
+    //font-size:50px
 }
 
 .main {
@@ -46,7 +47,7 @@ h1{
 }
 
 
-.connect {
+.connection {
     position : absolute;
     top : 1em;
     right : 9em;
