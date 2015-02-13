@@ -2,8 +2,9 @@ body {
    // padding-left: 60px;
    // padding-right : 100px;
     font-family: Arial, "Times New Roman", Times, serif;  
+    //background-image: url(image_fond.jpg);
+    background-image: url("#{resource['image/image_fond.jpg']}");
     background-color: azure;  
-    background-image: url(image_fond.jpg);
     color: black;
     text-align: justify;
     position : relative;

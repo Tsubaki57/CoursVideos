@@ -6,28 +6,29 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <f:view contentType="text/html">
         <h:head>
-            <title>BLABLABLA</title>
+            <title>Studia Online</title>
             <!--<link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>-->
-            <h:outputStylesheet library="default" name="css/pageAccueil.css" />
+            <h:outputStylesheet library="css" name="pageAccueil.css"/>
         </h:head>
-        <h:body>   
+        <h:body >
 
             <header id="entete">
-                <h1>STUDIA ONLINE</h1>
+                <h1>STUDIA ONLINE</h1>           
             </header>
 
             <nav class="onglets">
                 <ul class="onglet">
-                    <li><a href="accueil.xhtml">Accueil</a></li>
-                    <li><a href="mesCours.xhtml">Mes cours</a></li>
-                    <li><a href="admin.xhtml">Administration</a></li>
+                    <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
+                    <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="connexion.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
 
+
             <div class="connection">
-                <a href="connexion.xhtml?faces-redirect=true"><h:outputText value="#{connexion.label_co}" style="width: 200px;"/></a> 
-                <a href="inscription.xhtml">Inscription?</a>              
+               <h:link value="#{connexion.label_co}" outcome="connexion.xhtml?faces-redirect=true"/>
+               <h:link value="Inscription?" outcome="inscription.xhtml"/>          
             </div>
 
             <div class='main'>
