@@ -20,7 +20,7 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                    <li><h:link value="Administration" outcome="connexion.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -52,7 +52,7 @@
                             <h:outputLabel value="Mot de passe"/>
                             <h:inputSecret value="#{inscription.utilisateur.mdp}"/>
                         </h:panelGrid>       
-                        <h:commandButton value="Ajouter" action="#{inscription.doAddUser()}"/>       
+                        <p:commandButton styleClass="btn" value="Ajouter" action="#{inscription.doAddUser()}"/>       
                     </h:form>
                     <hr/>
                 </div>

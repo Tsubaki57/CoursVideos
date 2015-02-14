@@ -20,7 +20,7 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                    <li><h:link value="Administration" outcome="connexion.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -42,18 +42,18 @@
                     <h1> Page de connexion </h1>
                     <h:form id="connexionForm">
                         <h:panelGrid columns="3">
-                            <h:outputText value="utilisateur"/>
+                            <h:outputText value="Utilisateur :"/>
                             <h:inputText value="#{connexion.mail}" style="width:180px;"/>
                             <h:outputText value=""/>
-                            <h:outputText value="Mot de passe"/>
+                            <h:outputText value="Mot de passe :"/>
                             <h:inputSecret value="#{connexion.pw}" style="width:180px"/>
                             <h:outputText value=""/>
-                            <h:outputText value=""/>
-                            <h:commandButton action="#{connexion.checkLogin}" value="Connexion" id="msgLogin" />
+                            <br/>
+                            <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" id="msgLogin" />
                         </h:panelGrid>  
                     </h:form>
                     <h1>Vous n'êtes pas inscrit? </h1>
-                    <p:button outcome ="inscription.xhtml" value="inscris toi"/>
+                    <p:button styleClass="btn" outcome ="inscription.xhtml" value="Inscris toi"/>
                 </div>
             </div>
 

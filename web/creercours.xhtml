@@ -20,40 +20,40 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                    <li><h:link value="Administration" outcome="connexion.xhtml"/></li>
+                     <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
 
 
             <div class="connection">
-               <h:link value="#{connexion.label_co}" outcome="connexion.xhtml?faces-redirect=true"/>
-               <h:link value="Inscription?" outcome="inscription.xhtml"/>          
+                <h:link value="#{connexion.label_co}" outcome="connexion.xhtml?faces-redirect=true"/>
+                <h:link value="Inscription?" outcome="inscription.xhtml"/>          
             </div>
 
-        <div class='main'>
-            <div class="pres">
-                <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
-                    Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-                    Vous pourrez consulter toutes les vidéos présentent.</p>       
-            </div>  
-            <div class="cours">
-                <h1>Créer un cours</h1>
-                <h:outputLabel value="Veuillez renseigner les champs suivants"/>
-                <hr/>
-                <h:form>
-                    <h:panelGrid columns="2">
-                        <h:outputLabel value="Titre"/>
-                        <h:inputText value="#{creercours.cours.titre}"/>
-                        <h:outputLabel value="Prix (en €)"/>
-                        <h:inputText value="#{creercours.cours.prix}"/>
-                        <h:outputLabel value="Description"/>
-                        <h:inputTextarea value="#{creercours.cours.description}" />
-                    </h:panelGrid>
-                    <h:commandButton value="Ajouter" action="#{creercours.doAddCours()}"/>       
-                </h:form>
+            <div class='main'>
+                <div class="pres">
+                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>  
+                <div class="cours">
+                    <h1>Créer un cours</h1>
+                    <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+                    <hr/>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Titre"/>
+                            <h:inputText value="#{creercours.cours.titre}"/>
+                            <h:outputLabel value="Prix (en €)"/>
+                            <h:inputText value="#{creercours.cours.prix}"/>
+                            <h:outputLabel value="Description"/>
+                            <h:inputTextarea value="#{creercours.cours.description}" />
+                        </h:panelGrid>
+                        <h:commandButton styleClass="btn" value="Ajouter" action="#{creercours.doAddCours()}"/>       
+                    </h:form>
+                </div>
             </div>
-        </div>
-    </h:body>
-
+        </h:body>
+    </f:view>
 </html>

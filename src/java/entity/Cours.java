@@ -32,6 +32,8 @@ public class Cours implements Serializable {
     private List<Episode> episodes;
     @ManyToMany(mappedBy = "cours")
     private List<Utilisateur> utilisateurs;
+    
+   
 
     public Cours() {
     }
@@ -107,5 +109,7 @@ public class Cours implements Serializable {
             return prix+"€";
         }
     }
+    
+  
 
 }
