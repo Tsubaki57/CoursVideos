@@ -22,7 +22,7 @@ import utils.Sha;
  */
 @Named
 @SessionScoped
-public class connexion implements Serializable {
+public class Connexion implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Inject
