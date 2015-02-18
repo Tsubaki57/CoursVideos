@@ -40,21 +40,24 @@
                 </div>    
 
                 <div class="cours">
-                    <h2>Cours disponible sur le site</h2>
+                    <h2><h:outputText value="Episodes disponibles pour le cours #{c.id}"/></h2>
 
                     <h:form>
-                        <p:dataTable value="#{listeCours.liste}" var="c" rowStyleClass="lignetab" paginator="true" rows="10">
+                        <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true" rows="10">
                             <p:column headerText="ID">                              
-                                 <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.id}"/>
+                                 <h:link outcome="#{listeEpisode.showDetailsEpisode(e.id)}" value="#{e.id}"/>
                             </p:column>
                             <p:column headerText="Titre" >
-                                <h:outputText value="#{c.titre}" />
+                                <h:outputText value="#{e.titre}" />
                             </p:column>
-                            <p:column headerText="Description">
-                                <h:outputText value="#{c.description}"/>
+                            <p:column headerText="Durée">
+                                <h:outputText value="#{e.duree}"/>
                             </p:column>
-                            <p:column headerText="Prix">
-                                <h:outputText value="#{c.prixCours()}"/>
+                            <p:column headerText="Lien">
+                                <h:outputText value="#{e.lien}"/>
+                            </p:column>
+                             <p:column headerText="Lien">
+                                <h:outputText value="#{e.lien}"/>
                             </p:column>
                         </p:dataTable>
                     </h:form>

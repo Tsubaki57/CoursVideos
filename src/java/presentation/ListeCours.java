@@ -41,5 +41,10 @@ public class ListeCours {
         this.liste = liste;
     }
    
-    
+    /** 
+     * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans 
+     * la DataTable pour voir les détails 
+     */  
+    public String showDetailsCours(int id) {  
+        return "listeEpisode?idcours=" + id;    }
 }

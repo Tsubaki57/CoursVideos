@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
+    <f:view contentType="text/html">
+        <h:head>
+            <title>Studia Online</title>
+            <!--<link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>-->
+            <h:outputStylesheet library="css" name="pageAccueil.css"/>
+        </h:head>
+        <h:body >
+
+            <header id="entete">
+                <h1>STUDIA ONLINE</h1>           
+            </header>
+
+            <nav class="onglets">
+                <ul class="onglet">
+                    <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
+                    <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
+                </ul>
+            </nav>
+            <br/> 
+
+
+            <div class="connection">
+                <h:link value="#{connexion.label_co}    " outcome="connexion.xhtml?faces-redirect=true"/>
+                <h:link value="Inscription?" outcome="inscription.xhtml"/>          
+            </div>
