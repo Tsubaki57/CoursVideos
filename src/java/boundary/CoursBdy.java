@@ -6,6 +6,8 @@
 package boundary;
 
 import entity.Cours;
+import entity.Utilisateur;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;

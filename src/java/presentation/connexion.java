@@ -5,9 +5,13 @@
  */
 package presentation;
 
+import boundary.CoursBdy;
 import boundary.UtilisateurBdy;
+import entity.Cours;
 import entity.Utilisateur;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
@@ -27,10 +31,12 @@ public class Connexion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Inject
     private UtilisateurBdy utilisateurs;
+    private CoursBdy cours;
     private Utilisateur utilisateur;
     private String mail;
     private String pw;
     private String label_co;
+    private List<Cours> mylist;
 
     @PostConstruct
     public void onInit() {
@@ -46,6 +52,15 @@ public class Connexion implements Serializable {
     public void setUtilisateurs(UtilisateurBdy utilisateurs) {
         this.utilisateurs = utilisateurs;
     }
+
+    public CoursBdy getCours() {
+        return cours;
+    }
+
+    public void setCours(CoursBdy cours) {
+        this.cours = cours;
+    }
+    
 
     public Utilisateur getUtilisateur() {
         return utilisateur;
@@ -79,6 +94,16 @@ public class Connexion implements Serializable {
         this.label_co = label_co;
     }
 
+    public List<Cours> getMylist() {
+        if(utilisateur == null) return new ArrayList<Cours>();
+        this.mylist = utilisateur.getCours();
+        return mylist;
+    }
+
+    public void setMylist(List<Cours> mylist) {
+        this.mylist = mylist;
+    }
+    
     public String checkLogin() {
         String url = "connexion.xhtml?faces-redirect=true";
         Utilisateur u = utilisateurs.find(this.mail);
@@ -106,5 +131,4 @@ public class Connexion implements Serializable {
         }
         return "connexion.xhtml?faces-redirect=true";
     }
-
 }

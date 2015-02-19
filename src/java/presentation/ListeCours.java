@@ -19,7 +19,7 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class ListeCours {
-    
+
     @Inject
     private CoursBdy cours;
     private List<Cours> liste;
@@ -40,11 +40,15 @@ public class ListeCours {
     public void setListe(List<Cours> liste) {
         this.liste = liste;
     }
-   
-    /** 
-     * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans 
-     * la DataTable pour voir les détails 
-     */  
-    public String showDetailsCours(int id) {  
-        return "listeEpisode?idcours=" + id;    }
+
+    /**
+     * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans
+     * la DataTable pour voir les détails
+     *
+     * @param id Id du cours à linker
+     * @return URL du cours
+     */
+    public String showDetailsCours(int id) {
+        return "listeepisode?idcours=" + id;
+    }
 }
