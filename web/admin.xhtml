@@ -20,7 +20,7 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                     <li><h:link value="Administration" outcome="admin.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -32,6 +32,26 @@
                     <h:link value="Inscription?" outcome="inscription.xhtml"/>        
                 </h:form>
             </div>
+
+            <div class='main'>
+                <div class="pres">
+                    <p>Vous trouverez à  travers notre site, divers cours sur différents domaines et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>    
+
+                <div class="cours">
+                    <h1> Panneau d'administration </h1>
+                    <ul>
+                        <li><h:link value='Gérer les utilisateurs' outcome='listeutilisateurs.xhtml'/></li>
+                        <li><h:link value='Gérer les cours' outcome='listecours.xhtml'/></li>
+                        <li><h:link value='Gérer les épisodes' outcome='listeepisode.xhtml'/></li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.</footer>
+
         </h:body>
     </f:view>
 </html>
