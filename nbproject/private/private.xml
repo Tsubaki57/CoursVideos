@@ -7,12 +7,10 @@
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/accueil.xhtml</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/inscription.xhtml</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/resources/css/pageAccueil.css</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/connexion.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/listeUtilisateurs.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/mesCours.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/creercours.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/admin.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/connexion.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/entity/Cours.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/ListeCours.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/entity/Episode.java</file>
         </group>
     </open-files>
 </project-private>
