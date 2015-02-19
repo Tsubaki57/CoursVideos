@@ -28,6 +28,8 @@
 
 
             <div class="connection">
-                <h:link value="#{connexion.label_co}    " outcome="connexion.xhtml?faces-redirect=true"/>
-                <h:link value="Inscription?" outcome="inscription.xhtml"/>          
+                <h:form id="Decoform">
+                    <h:commandLink value="#{connexion.label_co} " action="#{connexion.de_connexion()}"/>
+                    <h:link value="Inscription?" outcome="inscription.xhtml"/>        
+                </h:form>
             </div>

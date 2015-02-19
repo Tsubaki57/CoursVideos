@@ -86,7 +86,7 @@ public class Connexion implements Serializable {
             if (u.getMdp().equals(this.pw)) {
                 url = "accueil.xhtml?faces-redirect=true";
                 setUtilisateur(u);
-                setLabel_co("Déconnecter "+u.getPrenom()+" "+u.getNom());
+                setLabel_co("Déconnecter "+u.getPrenom()+" "+u.getNom()+" ");
             }else{
                 FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Mot de passe invalide"));
             }

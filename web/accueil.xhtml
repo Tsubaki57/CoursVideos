@@ -28,8 +28,10 @@
 
 
             <div class="connection">
-                <h:link value="#{connexion.label_co}    " outcome="connexion.xhtml?faces-redirect=true"/>
-                <h:link value="Inscription?" outcome="inscription.xhtml"/>          
+                <h:form id="Decoform">
+                    <h:commandLink value="#{connexion.label_co} " action="#{connexion.de_connexion()}"/>
+                    <h:link value="Inscription?" outcome="inscription.xhtml"/>        
+                </h:form>
             </div>
 
             <div class ='main'>
@@ -45,7 +47,7 @@
                     <h:form>
                         <p:dataTable value="#{listeCours.liste}" var="c" rowStyleClass="lignetab" paginator="true" rows="10">
                             <p:column headerText="ID">                              
-                                 <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.id}"/>
+                                <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.id}"/>
                             </p:column>
                             <p:column headerText="Titre" >
                                 <h:outputText value="#{c.titre}" />
