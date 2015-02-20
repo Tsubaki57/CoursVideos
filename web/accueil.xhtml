@@ -71,13 +71,13 @@
 
                                         <h:outputText  value="#{c.description}" style=" text-align:justify" />  
 
-                                        <div id="icon">
+                                        <h:panelGrid columns="2" style="clear:left">
                                             <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
-                                                <p:graphicImage height="40px" value="/resources/image/icon-info.png"/>                                            
+                                                <p:graphicImage width="40px" height="40px" value="/resources/image/icon-info.png" />                                            
                                             </h:link>                                           
-                                                <p:graphicImage height="40px" value="/resources/image/icon-achat.png"/>                                                                                    
-                                        </div>
-                                        
+                                            <p:graphicImage  width="40px" height="40px" value="/resources/image/icon-achat.png"/>                                                                                    
+
+                                        </h:panelGrid>
                                     </h:panelGrid>  
                                 </p:panel>  
                             </p:column>  
