@@ -65,18 +65,18 @@
                     <h:form>  
                         <p:dataGrid var="c" value="#{listeCours.liste}" columns="2" rows="10"  paginator="true" paginatorPosition="bottom">
                             <p:column>  
-                                <p:panel   header="#{c.titre}" >  
-                                    <h:panelGrid columns="1" style="width:100%">  
+                                <p:panel header="#{c.titre}" style="width:100%;height:100%; ">  
+                                    <h:panelGrid columns="1" >  
                                         <!--<p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>   -->
 
-                                        <h:outputText  value="#{c.description}" style=" text-align:justify" />  
+                                        <h:outputText  value="#{c.description}" styleClass="textCours" />  
+                                        <h:outputText  value="#{c.prix} euros" styleClass="prixCours" />
 
-                                        <h:panelGrid columns="2" style="clear:left">
+                                        <h:panelGrid columns="2">
                                             <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
-                                                <p:graphicImage width="40px" height="40px" value="/resources/image/icon-info.png" />                                            
+                                                <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
                                             </h:link>                                           
-                                            <p:graphicImage  width="40px" height="40px" value="/resources/image/icon-achat.png"/>                                                                                    
-
+                                            <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>                                                                                    
                                         </h:panelGrid>
                                     </h:panelGrid>  
                                 </p:panel>  
