@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      >
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <f:view contentType="text/html">
         <h:head>
             <title>Studia Online</title>
@@ -75,8 +74,10 @@
                                         <h:panelGrid columns="2">
                                             <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
                                                 <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
-                                            </h:link>                                           
-                                            <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>                                                                                    
+                                            </h:link>                                     
+                                            <h:link outcome="achat.xhtml">
+                                                <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
+                                            </h:link>
                                         </h:panelGrid>
                                     </h:panelGrid>  
                                 </p:panel>  

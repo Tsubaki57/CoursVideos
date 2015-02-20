@@ -20,7 +20,7 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                     <li><h:link value="Administration" outcome="admin.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -33,35 +33,40 @@
                 </h:form>
             </div>
 
-        <div class='main'>
-            <div class="pres">
-                <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
-                    Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-                    Vous pourrez consulter toutes les vidéos présentent.</p>       
-            </div>  
-            <div class="cours">
-                <h1>Cours</h1>
-                <hr/>
-                <h:form>
-                    <p:dataTable value="#{listeCours.liste}" var="c">
-                        <p:column headerText="ID">
-                            <h:outputText value="#{c.id}"/>
-                        </p:column>
-                        <p:column headerText="Titre">
-                            <h:outputText value="#{c.titre}"/>
-                        </p:column>
-                        <p:column headerText="Description">
-                            <h:outputText value="#{c.description}"/>
-                        </p:column>
-                        <p:column headerText="Prix">
-                            <h:outputText value="#{c.prixCours()}"/>
-                        </p:column>
-                    </p:dataTable>
-                </h:form>
-                <br/>
-                <p:button outcome="creercours.xhtml" value="Ajouter"/>
-            </div>
-        </div>    
+            <div class='main'>
+                <div class="pres">
+                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>  
+                <div class="cours">
+                    <h1>Cours</h1>
+                    <hr/>
+                    <h:form>
+                        <p:dataTable value="#{listeCours.liste}" var="c">
+                            <p:column headerText="ID">
+                                <h:outputText value="#{c.id}"/>
+                            </p:column>
+                            <p:column headerText="Titre">
+                                <h:outputText value="#{c.titre}"/>
+                            </p:column>
+                            <p:column headerText="Description">
+                                <h:outputText value="#{c.description}"/>
+                            </p:column>
+                            <p:column headerText="Prix">
+                                <h:outputText value="#{c.prixCours()}"/>
+                            </p:column>
+                            <p:column style="width:150px">  
+                                <p:commandButton image="ui-icon ui-icon-trash" /> 
+                                <p:commandButton image="ui-icon ui-icon-pencil"/>
+                            </p:column>
+                            
+                        </p:dataTable>
+                    </h:form>
+                    <br/>
+                    <p:button styleClass="btn" outcome="creercours.xhtml" value="Ajouter un cours"/>
+                </div>
+            </div>    
         </h:body>
     </f:view>
 </html>
