@@ -69,15 +69,13 @@
                                     <h:panelGrid columns="1" style="width:100%">  
                                         <!--<p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>   -->
 
-                                        <h:outputText value="#{c.description}" style="text-align:justify" />  
+                                        <h:outputText  value="#{c.description}" style=" text-align:justify" />  
 
                                         <div id="icon">
                                             <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
-                                                <p:graphicImage height="50px" value="/resources/image/icon-info.png"/>                                            
-                                            </h:link>
-                                            
-                                                <p:graphicImage height="50px" value="/resources/image/icon-achat.png"/>                                         
-                                            
+                                                <p:graphicImage height="40px" value="/resources/image/icon-info.png"/>                                            
+                                            </h:link>                                           
+                                                <p:graphicImage height="40px" value="/resources/image/icon-achat.png"/>                                                                                    
                                         </div>
                                         
                                     </h:panelGrid>  
