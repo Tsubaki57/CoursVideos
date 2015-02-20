@@ -3,16 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/listecours.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/accueil.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/inscription.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/resources/css/pageAccueil.css</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/connexion.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/listeUtilisateurs.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/mesCours.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/creercours.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/admin.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Connexion.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Creercours.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/accueil.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/inscription.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listecours.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/mesCours.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/admin.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/resources/css/pageAccueil.css</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/connexion.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/index.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/creercours.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/episode.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/CoursBdy.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Utilisateur.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/UtilisateurBdy.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/index.html</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/ListeCours.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listeutilisateurs.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listeepisode.xhtml</file>
         </group>
     </open-files>
 </project-private>
