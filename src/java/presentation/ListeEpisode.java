@@ -5,9 +5,7 @@
  */
 package presentation;
 
-import boundary.CoursBdy;
 import boundary.EpisodeBdy;
-import entity.Cours;
 import entity.Episode;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;

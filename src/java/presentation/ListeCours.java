@@ -51,7 +51,5 @@ public class ListeCours {
     public String showDetailsCours(int id) {
         return "listeepisode?idcours=" + id;
     }
-    
-     
-    
+
 }
