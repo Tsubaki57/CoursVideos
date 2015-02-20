@@ -41,8 +41,28 @@
                         Vous pourrez consulter toutes les vidéos présentent.</p>       
                 </div>
                 
-                
+                <div class="cours">
+                <h1> Formulaire d'achat </h1>
+                <h:form>
+                        <h:panelGrid columns="3">
+                            <h:outputText value="Numéro de Carte de Crédit :"/>
+                            <h:inputText value="" required="true" style="width:180px;"/>
+                            <h:outputText value=""/>
+                            <h:outputText value="Code au dos de votre carte"/>
+                            <h:inputSecret value="" required="true" style="width:180px"/>                           
+                            <h:outputText value=""/>
+                            <h:outputText value="Code de validation:"/>
+                            <h:inputText value="" required="true" style="width:180px;"/>
+                            
+                            <br/>
+                            <p:commandButton styleClass="btn" value="Acheter" />
+
+
+                        </h:panelGrid>  
+                    </h:form>
+                </div>
             </div>
+             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.</footer>
         </h:body>
     </f:view>
 </html>
