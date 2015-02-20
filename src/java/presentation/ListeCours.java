@@ -40,6 +40,11 @@ public class ListeCours {
     public void setListe(List<Cours> liste) {
         this.liste = liste;
     }
+    
+    public String delete(Cours c){
+        cours.delete(c);
+        return "listecours.xhtml?faces-redirect=true";
+    }
 
     /**
      * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans

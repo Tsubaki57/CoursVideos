@@ -45,4 +45,8 @@ public class CoursBdy {
         return (List<Cours>)q.getResultList();
     }
     
+    public void delete(Cours c){
+        em.remove(c);
+    }
+    
 }

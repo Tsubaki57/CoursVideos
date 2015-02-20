@@ -57,8 +57,8 @@
                                 <h:outputText value="#{c.prixCours()}"/>
                             </p:column>
                             <p:column style="width:150px">  
-                                <p:commandButton image="ui-icon ui-icon-trash" /> 
-                                <p:commandButton image="ui-icon ui-icon-pencil"/>
+                                <p:commandButton image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/> 
+                                <p:commandButton image="ui-icon ui-icon-pencil" />
                             </p:column>
                             
                         </p:dataTable>
