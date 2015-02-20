@@ -44,23 +44,49 @@
                 <div class="cours">
                     <h2>Cours disponible sur le site</h2>
 
-                    <h:form>
-                        <p:dataTable value="#{listeCours.liste}" var="c" rowStyleClass="lignetab" paginator="true" rows="10">
-                            <p:column headerText="ID">                              
-                                <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.id}"/>
-                            </p:column>
-                            <p:column headerText="Titre" >
-                                <h:outputText value="#{c.titre}" />
-                            </p:column>
-                            <p:column headerText="Description">
-                                <h:outputText value="#{c.description}"/>
-                            </p:column>
-                            <p:column headerText="Prix">
-                                <h:outputText value="#{c.prixCours()}"/>
-                            </p:column>
-                        </p:dataTable>
-                    </h:form>
-                    
+                    <!--  <h:form>
+                          <p:dataTable  value="#{listeCours.liste}" var="c" rowStyleClass="lignetab" paginator="true" rows="10"
+                                        selection="#{listeCours.liste}">                           
+                              <p:column headerText="Titre" >
+                                  <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.titre}"/>                             
+                              </p:column>
+                              <p:column headerText="Description" >
+                                  <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.description}"/> 
+                              </p:column>
+                              <p:column headerText="Prix">
+                                  <h:outputText value="#{c.prixCours()}"/>
+                              </p:column>
+                              <p:column style="width:32px">  
+                                  <p:commandButton image="ui-icon ui-icon-search"  action="#{listeCours.showDetailsCours(c.id)}"/>  
+                              </p:column>  
+                          </p:dataTable>               
+                      </h:form>-->
+
+                    <h:form>  
+                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="2" rows="10"  paginator="true" paginatorPosition="bottom">
+                            <p:column>  
+                                <p:panel   header="#{c.titre}" >  
+                                    <h:panelGrid columns="1" style="width:100%">  
+                                        <!--<p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>   -->
+
+                                        <h:outputText  value="#{c.description}" style=" text-align:justify" />  
+
+                                        <h:panelGrid columns="2" style="clear:left">
+                                            <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
+                                                <p:graphicImage width="40px" height="40px" value="/resources/image/icon-info.png" />                                            
+                                            </h:link>                                           
+                                            <p:graphicImage  width="40px" height="40px" value="/resources/image/icon-achat.png"/>                                                                                    
+
+                                        </h:panelGrid>
+                                    </h:panelGrid>  
+                                </p:panel>  
+                            </p:column>  
+                        </p:dataGrid>  
+
+
+
+                    </h:form>  
+
                 </div>
             </div>                      
             <footer class="footer"><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>    
