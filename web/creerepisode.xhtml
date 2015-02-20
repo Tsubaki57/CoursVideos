@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
     <f:view contentType="text/html">
         <h:head>
             <title>Studia Online</title>
@@ -33,37 +34,32 @@
                 </h:form>
             </div>
 
-            <div class='main'>
+            <div class ='main'>
                 <div class="pres">
-                    <p>Vous trouverez à  travers notre site, divers cours sur différents domaines et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                    <p>Vous trouverez à travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
                         Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
                         Vous pourrez consulter toutes les vidéos présentent.</p>       
-                </div>    
-
+                </div>
+                
+                
                 <div class="cours">
-                    <h1> Page de connexion </h1>
-                    <h:form id="connexionForm">
-                        <h:panelGrid columns="3">
-                            <h:outputText value="Utilisateur :"/>
-                            <h:inputText value="#{connexion.mail}" required="true" style="width:180px;"/>
-                            <h:outputText value=""/>
-                            <h:outputText value="Mot de passe :"/>
-                            <h:inputSecret value="#{connexion.pw}" required="true" style="width:180px"/>
-                            <h:outputText value=""/>
-                            
-                            <br/>
-                            <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" id="msgLogin" />
-
-
-                        </h:panelGrid>  
+                    <h1>Créer un épisode</h1>
+                    <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+                    <hr/>
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Titre"/>
+                            <h:inputText value="#{creerepisode.episode.titre}"/>
+                            <h:outputLabel value="Durée (en minute)"/>
+                            <h:inputText value="#{creerepisode.episode.duree}"/>
+                            <h:outputLabel value="Lien"/>
+                            <h:inputTextarea value="#{creerepisode.episode.lien}" />
+                        </h:panelGrid>
+                        <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode()}"/>       
                     </h:form>
-                    <h1>Vous n'êtes pas inscrit? </h1>
-                    <p:button styleClass="btn" outcome ="inscription.xhtml" value="Inscris toi"/>
                 </div>
             </div>
-            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.</footer>
-
         </h:body>
     </f:view>
-
 </html>
+

@@ -42,12 +42,12 @@
                 </div>    
 
                 <div class="cours">
-                    <h2><h:outputText value="Episodes disponibles pour le cours #{c.id}"/></h2>
+                    <h2><h:outputText value="Episodes disponibles pour le cours : #{c.titre}"/></h2>
 
                     <h:form>
-                        <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true" rows="10">
-                            <p:column headerText="ID">                              
-                                 <h:link outcome="#{listeEpisode.showDetailsEpisode(e.id)}" value="#{e.id}"/>
+                        <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="10">
+                            <p:column headerText="Titre" >
+                                <h:outputText value="#{e.titre}" />
                             </p:column>
                             <p:column headerText="Titre" >
                                 <h:outputText value="#{e.titre}" />
@@ -58,13 +58,11 @@
                             <p:column headerText="Lien">
                                 <h:outputText value="#{e.lien}"/>
                             </p:column>
-                             <p:column headerText="Lien">
-                                <h:outputText value="#{e.lien}"/>
-                            </p:column>
+                            
                         </p:dataTable>
                     </h:form>
                     <br/>
-                    <p:button styleClass="btn" outcome="creercours.xhtml" value="Ajouter un cours"/>
+                    <p:button styleClass="btn" outcome="creerepisode.xhtml" value="Ajouter un épisode"/>
                     <hr/>
                 </div>
             </div>                      

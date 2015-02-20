@@ -1,11 +1,9 @@
 body {
-   // padding-left: 60px;
-   // padding-right : 100px;
     font-family: Arial;  
     //background-image: url(image_fond.jpg);
     background-image: url("#{resource['image/image_fond.jpg']}");
     background-color: #468ccf;  
-    background-repeat: no-repeat;
+    background-repeat:  no-repeat;
     background-position: center;
     color: black;
     text-align: justify;
@@ -60,6 +58,10 @@ body {
      color: black;
  }
 
+ #icon{
+     display:inline
+ }
+ 
  
 .footer {
     margin-bottom: 30px;
