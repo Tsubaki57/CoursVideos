@@ -109,6 +109,12 @@ public class Cours implements Serializable {
             return prix+"€";
         }
     }
+
+    @Override
+    public String toString() {
+        return titre;
+    }
+    
     
    
 }

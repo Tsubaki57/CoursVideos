@@ -54,8 +54,12 @@
                             <h:inputText value="#{creerepisode.episode.duree}"/>
                             <h:outputLabel value="Lien"/>
                             <h:inputTextarea value="#{creerepisode.episode.lien}" />
+                            <h:outputLabel value="Cours"/>
+                            <h:selectOneMenu value="#{creerepisode.episode.cours}">
+                                <f:selectItems value="#{listeCours.liste}"/>
+                            </h:selectOneMenu>
                         </h:panelGrid>
-                        <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode()}"/>       
+                        <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode}"/>       
                     </h:form>
                 </div>
             </div>

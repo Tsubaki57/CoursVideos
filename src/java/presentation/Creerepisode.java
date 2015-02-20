@@ -33,7 +33,7 @@ public class Creerepisode {
         return episodeb;
     }
 
-    public void setCoursb(EpisodeBdy episodeb) {
+    public void setEpisodeb(EpisodeBdy episodeb) {
         this.episodeb = episodeb;
     }
 
