@@ -30,6 +30,7 @@ public class Creerepisode {
     @Inject
     private CoursBdy coursb;
     private List<Cours> liste;
+    private int idep;
 
     @PostConstruct
     public void onInit() {
@@ -77,9 +78,23 @@ public class Creerepisode {
         this.coursb = coursb;
     }
 
+    public int getIdep() {
+        return idep;
+    }
+
+    public void setIdep(int idep) {
+        this.idep = idep;
+    }
+    
+    
+
     public String doAddEpisode() {
+        try{
         episode.setCours(cours);
         episode = episodeb.update(episode);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return "listeepisode.xhtml?faces-redirect=true";
     }
 }
