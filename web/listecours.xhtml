@@ -52,9 +52,9 @@
                                     <br/>
                                     <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
                                     <h:panelGrid columns="3">
-                                        <p:commandButton image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
-                                        <p:commandButton image="ui-icon ui-icon-pencil"/>                                 
-                                        <p:button styleClass="btn" value="Ajouter un épisode" outcome="creerepisode.xhtml?id=#{c.id}"/>
+                                        <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
+                                        <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 
+                                        <p:button styleClass="espace" value="Ajouter un épisode" outcome="creerepisode.xhtml?id=#{c.id}"/>
                                     </h:panelGrid>                                   
                                 </h:panelGrid>
                             </p:fieldset>

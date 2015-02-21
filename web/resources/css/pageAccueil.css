@@ -190,7 +190,8 @@ body {
 
 .presCours{
     margin-bottom:20px;
-    cellpadding:5
+    cellpadding:5;
+   
 }
 
 .imageCours{
@@ -199,4 +200,8 @@ body {
 
 .prixCours{
     font-weight: bold;
+}
+
+.espace{
+    margin-left: 20px
 }

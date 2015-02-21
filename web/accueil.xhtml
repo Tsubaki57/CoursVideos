@@ -69,9 +69,9 @@
 
 
                     <h:form>                       
-                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
+                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1" >
                             <p:fieldset legend="#{c.titre}" styleClass="presCours">
-                                <h:panelGrid>
+                                <h:panelGrid >
                                     <p:graphicImage styleClass="imageCours" value="#{file}" />
                                     <h:outputLabel value="Description : " styleClass="prixCours"/>
                                     <h:outputText value="#{c.description}"/>
@@ -80,8 +80,9 @@
                                     <h:panelGrid columns="2">
                                         <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
                                             <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
-                                        </h:link>                                     
-                                        <h:link outcome="achat.xhtml">
+                                        </h:link>   
+                                        
+                                        <h:link outcome="achat.xhtml" styleClass="espace">
                                             <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
                                         </h:link>
                                     </h:panelGrid>
