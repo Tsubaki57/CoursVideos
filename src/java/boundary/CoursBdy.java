@@ -46,7 +46,7 @@ public class CoursBdy {
     }
     
     public void delete(Cours c){
-        em.remove(c);
+        em.remove(em.merge(c));
     }
     
 }

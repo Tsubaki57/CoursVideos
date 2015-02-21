@@ -6,9 +6,15 @@
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Creerepisode.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Creercours.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/accueil.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/CoursBdy.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/ListeEpisode.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listecours.xhtml</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/creerepisode.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/ListeCours.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/UtilisateurBdy.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Cours.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Episode.java</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listeepisode.xhtml</file>
         </group>
     </open-files>
 </project-private>
