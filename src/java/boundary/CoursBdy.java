@@ -6,8 +6,6 @@
 package boundary;
 
 import entity.Cours;
-import entity.Utilisateur;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
@@ -43,6 +41,12 @@ public class CoursBdy {
     public List<Cours> findAll(){
         Query q = em.createQuery("SELECT c FROM Cours c ");
         return (List<Cours>)q.getResultList();
+    }
+    
+    public Cours find(int id){
+        Query q = em.createQuery("SELECT c FROM Cours c WHERE c.id = :idc")
+                .setParameter("idc", id);
+        return (Cours) q.getResultList().get(1);
     }
     
     public void delete(Cours c){

@@ -20,7 +20,6 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -35,36 +34,42 @@
 
             <div class='main'>
                 <div class="pres">
-                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi 
+                        consulter les différentes vidéos vous étant proposé.
                         Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
                         Vous pourrez consulter toutes les vidéos présentent.</p>       
                 </div>  
                 <div class="cours">
                     <h1>Cours</h1>
                     <hr/>
-                    <h:form>                       
-                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
-                            <p:fieldset legend="#{c.titre}" styleClass="presCours">
-                                <h:panelGrid>
-                                   <!-- <p:graphicImage styleClass="imageCours" value="#{file}" />-->
-                                    <h:outputLabel value="Description : " styleClass="prixCours"/>
-                                    <h:outputText value="#{c.description}"/>
-                                    <br/>
-                                    <h:outputText value="Prix : #{c.prixCours()}" styleClass="prixCours"/>
-                                    <h:panelGrid columns="3">
-                                        <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
-                                        <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 
-                                        <p:button styleClass="espace" value="Ajouter un épisode" outcome="creerepisode.xhtml?id=#{c.id}"/>
-                                    </h:panelGrid>                                   
-                                </h:panelGrid>
-                            </p:fieldset>
-                        </p:dataGrid>
 
+                    <h:form>
+                    <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
+                        <p:fieldset legend="#{c.titre}" styleClass="presCours">
+                            <h:panelGrid>
+                               <!-- <p:graphicImage styleClass="imageCours" value="#{file}" />-->
+                                <h:outputLabel value="Description : " styleClass="prixCours"/>
+                                <h:outputText value="#{c.description}"/>
+                                <br/>
+                                <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
+                                <h:panelGrid columns="3">
+                                    <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
+                                    <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 
+                                    <p:button styleClass="espace" value="Ajouter un épisode" outcome="creerepisode.xhtml?id=#{c.id}"/>
+                                </h:panelGrid>                                   
+                            </h:panelGrid>
+                        </p:fieldset>
+                    </p:dataGrid>
                     </h:form>
+
                     <br/>
                     <p:button styleClass="btn" outcome="creercours.xhtml" value="Ajouter un cours"/>                  
                 </div>
             </div>    
+            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
+                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+                <h:link value="" outcome="#{connexion.adminControl()}" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+            </footer>
         </h:body>
     </f:view>
 </html>

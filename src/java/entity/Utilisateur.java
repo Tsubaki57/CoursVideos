@@ -114,4 +114,7 @@ public class Utilisateur implements Serializable {
         this.episodes = episodes;
     }
 
+    public boolean isAdmin(){
+        return this.statut.equals("admin");
+    }
 }

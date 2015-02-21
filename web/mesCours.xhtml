@@ -20,7 +20,6 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -60,7 +59,8 @@
                     </h:form>
                 </div>
             </div>    
-            <footer class="footer"><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>
+            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
+                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/></footer>
         </h:body>
     </f:view>
 </html>
