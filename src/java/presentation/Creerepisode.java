@@ -29,7 +29,6 @@ public class Creerepisode {
     private Cours cours;
     @Inject
     private CoursBdy coursb;
-    private List<Cours> liste;
     private int idep;
 
     @PostConstruct
@@ -61,15 +60,6 @@ public class Creerepisode {
         this.cours = cours;
     }
 
-    public List<Cours> getListe() {
-        liste = coursb.findAll();
-        return liste;
-    }
-
-    public void setListe(List<Cours> liste) {
-        this.liste = liste;
-    }
-
     public CoursBdy getCoursb() {
         return coursb;
     }
@@ -90,7 +80,7 @@ public class Creerepisode {
 
     public String doAddEpisode() {
         try{
-        episode.setCours(cours);
+        episode.setCours(coursb.find(idep));
         episode = episodeb.update(episode);
         }catch(Exception e){
             e.printStackTrace();
