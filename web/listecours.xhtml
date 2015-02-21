@@ -50,7 +50,7 @@
                                     <h:outputLabel value="Description : " styleClass="prixCours"/>
                                     <h:outputText value="#{c.description}"/>
                                     <br/>
-                                    <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
+                                    <h:outputText value="Prix : #{c.prixCours()}" styleClass="prixCours"/>
                                     <h:panelGrid columns="3">
                                         <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
                                         <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 

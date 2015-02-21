@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
     <f:view contentType="text/html">
         <h:head>
             <title>Studia Online</title>
@@ -43,20 +44,17 @@
                     <h1>Créer un cours</h1>
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
-                    <h:form enctype="multipart/form-data">
+                    <h:form  enctype="multipart/form-data">
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Titre"/>
                             <h:inputText value="#{creercours.cours.titre}"/>
                             <h:outputLabel value="Prix (en €)"/>
                             <h:inputText value="#{creercours.cours.prix}"/>
                             <h:outputLabel value="Description"/>
-                            <h:inputTextarea value="#{creercours.cours.description}" />
-                            <h:outputLabel value="Image :"/>
-
-                            <p:messages showDetail="true"/> 
-                            <p:fileUpload value="#{fileUploadView.file}" />
-                            <p:commandButton value="Submit" action="#{FileUploadView.upload()}" />
-
+                            <h:inputTextarea value="#{creercours.cours.description}"/>
+                            <h:outputLabel value="Image"/>
+                            <h:inputText value="#{creercours.cours.image}"/>
+                           
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creercours.doAddCours()}"/>       
                     </h:form>
