@@ -59,17 +59,10 @@ body {
 }
 
 .icon{
-        width:40px;
-        height:40px
+    width:40px;
+    height:40px
 }
 
-.textCours{
-    text-align: justify;
-    }
-
-.prixCours{
-    text-align:justify; font-weight: bold
-}
 
 .footer {
     margin-bottom: 30px;
@@ -192,4 +185,14 @@ body {
 .lignetab:hover{
     background-color: #bee2f9 ; 
 
+}
+
+
+.presCours{
+    margin-bottom:20px;
+    cellpadding:5
+}
+
+.imageCours{
+    float:left;
 }
