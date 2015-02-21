@@ -196,3 +196,7 @@ body {
 .imageCours{
     float:left;
 }
+
+.prixCours{
+    font-weight: bold;
+}

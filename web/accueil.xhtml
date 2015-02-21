@@ -44,55 +44,39 @@
                 <div class="cours">
                     <h2>Cours disponible</h2>
 
-                    <!--  <h:form>
-                          <p:dataTable  value="#{listeCours.liste}" var="c" rowStyleClass="lignetab" paginator="true" rows="10"
-                                        selection="#{listeCours.liste}">                           
-                              <p:column headerText="Titre" >
-                                  <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.titre}"/>                             
-                              </p:column>
-                              <p:column headerText="Description" >
-                                  <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.description}"/> 
-                              </p:column>
-                              <p:column headerText="Prix">
-                                  <h:outputText value="#{c.prixCours()}"/>
-                              </p:column>
-                              <p:column style="width:32px">  
-                                  <p:commandButton image="ui-icon ui-icon-search"  action="#{listeCours.showDetailsCours(c.id)}"/>  
+                    <!--  <h:form>  
+                          <p:dataGrid var="c" value="#{listeCours.liste}" columns="2" rows="10"  paginator="true" paginatorPosition="bottom">
+                              <p:column>  
+                                  <p:panel header="#{c.titre}" style="width:100%;height:100%; ">  
+                                      <h:panelGrid columns="1" >  
+                                          <p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>  
+  
+                                          <h:outputText  value="#{c.description}" styleClass="textCours" />  
+                                          <h:outputText  value="#{c.prix} euros" styleClass="prixCours" />
+  
+                                          <h:panelGrid columns="2">
+                                              <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
+                                                  <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
+                                              </h:link>                                     
+                                              <h:link outcome="achat.xhtml">
+                                                  <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
+                                              </h:link>
+                                          </h:panelGrid>
+                                      </h:panelGrid>  
+                                  </p:panel>  
                               </p:column>  
-                          </p:dataTable>               
-                      </h:form>
-
-                    <h:form>  
-                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="2" rows="10"  paginator="true" paginatorPosition="bottom">
-                            <p:column>  
-                                <p:panel header="#{c.titre}" style="width:100%;height:100%; ">  
-                                    <h:panelGrid columns="1" >  
-                                        <p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>  
-
-                                        <h:outputText  value="#{c.description}" styleClass="textCours" />  
-                                        <h:outputText  value="#{c.prix} euros" styleClass="prixCours" />
-
-                                        <h:panelGrid columns="2">
-                                            <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
-                                                <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
-                                            </h:link>                                     
-                                            <h:link outcome="achat.xhtml">
-                                                <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
-                                            </h:link>
-                                        </h:panelGrid>
-                                    </h:panelGrid>  
-                                </p:panel>  
-                            </p:column>  
-                        </p:dataGrid> --> 
+                          </p:dataGrid> --> 
 
 
                     <h:form>                       
                         <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
                             <p:fieldset legend="#{c.titre}" styleClass="presCours">
                                 <h:panelGrid>
-                                    <p:graphicImage styleClass="imageCours" value="#{c.image}" />
+                                    <p:graphicImage styleClass="imageCours" value="#{file}" />
+                                    <h:outputLabel value="Description : " styleClass="prixCours"/>
                                     <h:outputText value="#{c.description}"/>
-                                    <h:outputText value="#{c.prix}"/>
+                                    <br/>
+                                    <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
                                     <h:panelGrid columns="2">
                                         <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
                                             <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            

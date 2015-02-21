@@ -51,12 +51,12 @@
                             <h:inputText value="#{creercours.cours.prix}"/>
                             <h:outputLabel value="Description"/>
                             <h:inputTextarea value="#{creercours.cours.description}" />
-                            <h:outputLabel value="image"/>
-                            
-                                 <p:messages showDetail="true"/> 
-                                <p:fileUpload value="#{fileUploadView.file}" />
-                                <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" />
-                            
+                            <h:outputLabel value="Image :"/>
+
+                            <p:messages showDetail="true"/> 
+                            <p:fileUpload value="#{fileUploadView.file}" />
+                            <p:commandButton value="Submit" action="#{FileUploadView.upload()}" />
+
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creercours.doAddCours()}"/>       
                     </h:form>
