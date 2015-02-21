@@ -44,8 +44,8 @@ public class CoursBdy {
     }
     
     public Cours find(int id){
-        Query q = em.createQuery("SELECT c FROM Cours c WHERE c.id LIKE :id")
-                .setParameter("id", id);
+        Query q = em.createQuery("SELECT c FROM Cours c WHERE c.id = :idc")
+                .setParameter("idc", id);
         return (Cours) q.getResultList().get(1);
     }
     

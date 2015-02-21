@@ -46,8 +46,9 @@
                     <h1>Créer un épisode</h1>
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
-                    <h:form>
+                    <h:form id="creerep">
                         <h:panelGrid columns="2">
+                            
                             <h:outputLabel value="Titre"/>
                             <h:inputText value="#{creerepisode.episode.titre}"/>
                             <h:outputLabel value="Durée (en minute)"/>
@@ -56,11 +57,10 @@
                             <h:inputTextarea value="#{creerepisode.episode.lien}" />
                             <h:outputLabel value="Cours"/>
                             
-                            <h:inputHidden id="id" value="#{creerepisode.idep}"/>
-                            
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode}"/>       
                     </h:form>
+
                 </div>
             </div>
         </h:body>

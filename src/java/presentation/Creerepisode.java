@@ -7,11 +7,11 @@ package presentation;
 
 import boundary.CoursBdy;
 import boundary.EpisodeBdy;
-import entity.Cours;
 import entity.Episode;
-import java.util.List;
+import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -26,10 +26,9 @@ public class Creerepisode {
     @Inject
     private EpisodeBdy episodeb;
     private Episode episode;
-    private Cours cours;
     @Inject
     private CoursBdy coursb;
-    private int idep;
+    private int idec;
 
     @PostConstruct
     public void onInit() {
@@ -52,14 +51,6 @@ public class Creerepisode {
         this.episode = episode;
     }
 
-    public Cours getCours() {
-        return cours;
-    }
-
-    public void setCours(Cours cours) {
-        this.cours = cours;
-    }
-
     public CoursBdy getCoursb() {
         return coursb;
     }
@@ -68,21 +59,21 @@ public class Creerepisode {
         this.coursb = coursb;
     }
 
-    public int getIdep() {
-        return idep;
+    public int getIdec() {
+        return idec;
     }
 
-    public void setIdep(int idep) {
-        this.idep = idep;
+    public void setIdec(int i) {
+        this.idec = i;
     }
-    
-    
 
     public String doAddEpisode() {
-        try{
-        episode.setCours(coursb.find(idep));
-        episode = episodeb.update(episode);
-        }catch(Exception e){
+        try {
+            Map params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
+            int idcours = (int) params.get("id");
+            episode.setCours(coursb.find(idcours));
+            episode = episodeb.update(episode);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "listeepisode.xhtml?faces-redirect=true";
