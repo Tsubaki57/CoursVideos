@@ -20,7 +20,7 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                     <li><h:link value="Administration" outcome="admin.xhtml"/></li>
+                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -43,7 +43,7 @@
                     <h1>Créer un cours</h1>
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
-                    <h:form>
+                    <h:form enctype="multipart/form-data">
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Titre"/>
                             <h:inputText value="#{creercours.cours.titre}"/>
@@ -51,6 +51,12 @@
                             <h:inputText value="#{creercours.cours.prix}"/>
                             <h:outputLabel value="Description"/>
                             <h:inputTextarea value="#{creercours.cours.description}" />
+                            <h:outputLabel value="Image :"/>
+
+                            <p:messages showDetail="true"/> 
+                            <p:fileUpload value="#{fileUploadView.file}" />
+                            <p:commandButton value="Submit" action="#{FileUploadView.upload()}" />
+
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creercours.doAddCours()}"/>       
                     </h:form>
