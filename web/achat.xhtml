@@ -21,7 +21,6 @@
                 <ul class="onglet">
                     <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
-                    <li><h:link value="Administration" outcome="admin.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
@@ -40,10 +39,10 @@
                         Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
                         Vous pourrez consulter toutes les vidéos présentent.</p>       
                 </div>
-                
+
                 <div class="cours">
-                <h1> Formulaire d'achat </h1>
-                <h:form>
+                    <h1> Formulaire d'achat </h1>
+                    <h:form>
                         <h:panelGrid columns="3">
                             <h:outputText value="Numéro de Carte de Crédit :"/>
                             <h:inputText value="" required="true" style="width:180px;"/>
@@ -53,7 +52,7 @@
                             <h:outputText value=""/>
                             <h:outputText value="Code de validation:"/>
                             <h:inputText value="" required="true" style="width:180px;"/>
-                            
+
                             <br/>
                             <p:commandButton styleClass="btn" value="Acheter" />
 
@@ -62,7 +61,8 @@
                     </h:form>
                 </div>
             </div>
-             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.</footer>
+            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
+                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/></footer>
         </h:body>
     </f:view>
 </html>

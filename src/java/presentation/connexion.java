@@ -9,6 +9,7 @@ import boundary.CoursBdy;
 import boundary.UtilisateurBdy;
 import entity.Cours;
 import entity.Utilisateur;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +38,14 @@ public class Connexion implements Serializable {
     private String pw;
     private String label_co;
     private List<Cours> mylist;
+    private boolean admin;
 
     @PostConstruct
     public void onInit() {
         //this.utilisateur = new Utilisateur();
         //On fait rien.
         this.label_co = "Se connecter";
+        this.admin = false;
     }
 
     public UtilisateurBdy getUtilisateurs() {
@@ -60,13 +63,21 @@ public class Connexion implements Serializable {
     public void setCours(CoursBdy cours) {
         this.cours = cours;
     }
-    
 
     public Utilisateur getUtilisateur() {
         return utilisateur;
     }
 
     public void setUtilisateur(Utilisateur utilisateur) {
+        if (utilisateur != null) {
+            if (utilisateur.isAdmin()) {
+                admin = true;
+            } else {
+                admin = false;
+            }
+        } else {
+            admin = false;
+        }
         this.utilisateur = utilisateur;
     }
 
@@ -95,7 +106,9 @@ public class Connexion implements Serializable {
     }
 
     public List<Cours> getMylist() {
-        if(utilisateur == null) return new ArrayList<Cours>();
+        if (utilisateur == null) {
+            return new ArrayList<Cours>();
+        }
         this.mylist = utilisateur.getCours();
         return mylist;
     }
@@ -103,7 +116,15 @@ public class Connexion implements Serializable {
     public void setMylist(List<Cours> mylist) {
         this.mylist = mylist;
     }
-    
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
     public String checkLogin() {
         String url = "connexion.xhtml?faces-redirect=true";
         Utilisateur u = utilisateurs.find(this.mail);
@@ -111,11 +132,11 @@ public class Connexion implements Serializable {
             if (u.getMdp().equals(this.pw)) {
                 url = "accueil.xhtml?faces-redirect=true";
                 setUtilisateur(u);
-                setLabel_co("Déconnecter "+u.getPrenom()+" "+u.getNom()+" ");
-            }else{
+                setLabel_co("Déconnecter " + u.getPrenom() + " " + u.getNom() + " ");
+            } else {
                 FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Mot de passe invalide"));
             }
-        }else{
+        } else {
             FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Cette adresse n'est pas inscrite"));
         }
         return url;
@@ -130,5 +151,13 @@ public class Connexion implements Serializable {
             setLabel_co("Se connecter");
         }
         return "connexion.xhtml?faces-redirect=true";
+    }
+    
+    public void adminControl(){
+        try{
+        if(!admin) FacesContext.getCurrentInstance().getExternalContext().redirect("accueil.xhtml");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
