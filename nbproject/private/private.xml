@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/listeEpisode.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/accueil.xhtml</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/episode.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/achat.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/resources/css/pageAccueil.css</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/creerepisode.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/creercours.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/Connexion.java</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/admin.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/cours.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/utils/UserBean.java</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/mesCours.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/ListeEpisode.java</file>
         </group>
     </open-files>
 </project-private>
