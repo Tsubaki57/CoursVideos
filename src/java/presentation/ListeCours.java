@@ -55,7 +55,11 @@ public class ListeCours {
      * @return URL du cours
      */
     public String showDetailsCours(int id) {
-        return "listeepisode?idcours=" + id + "&faces-redirect=true";
+        return "listeepisode?id=" + id + "&faces-redirect=true";
+    }
+    
+    public String showDetailsCoursUser(int id){
+        return "cours.xhtml?id=" + id + "&faces-redirect=true";
     }
     
     public String createEpisode(int id){

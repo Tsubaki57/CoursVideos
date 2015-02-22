@@ -26,10 +26,12 @@ public class ListeEpisode {
     private EpisodeBdy episode;
     private List<Episode> liste;
     private int idec;
+    private String courstitle;
 
     @PostConstruct
     public void onInit() {
         this.idec = 0;
+        this.courstitle = "Tous les cours";
     }
 
     public EpisodeBdy getEpisode() {
@@ -48,6 +50,7 @@ public class ListeEpisode {
                 if (e.getCours() != null) {
                     if (e.getCours().getId() == this.idec) {
                         listeok.add(e);
+                        this.courstitle = e.getCours().getTitre();
                     }
                 }
             }
@@ -70,6 +73,16 @@ public class ListeEpisode {
         this.idec = idec;
     }
 
+    public String getCourstitle() {
+        return courstitle;
+    }
+
+    public void setCourstitle(String courstitle) {
+        this.courstitle = courstitle;
+    }
+    
+    
+
     /**
      * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans
      * la DataTable pour voir les détails
@@ -78,7 +91,7 @@ public class ListeEpisode {
      * @return URL du cours
      */
     public String showDetailsEpisode(int id) {
-        return "listeepisode?idepisode=" + id;
+        return "episode?idepisode=" + id +"&faces-redirect=true";
     }
 
 }

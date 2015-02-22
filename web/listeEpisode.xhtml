@@ -67,8 +67,10 @@
                     
                 </div>
             </div>                      
-            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
-                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/></footer>    
+            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>            
+                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+                <h:link value="" outcome="#{connexion.adminControl()}" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+            </footer>    
         </h:body>
     </f:view>
 </html>
