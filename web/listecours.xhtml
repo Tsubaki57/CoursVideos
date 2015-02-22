@@ -27,8 +27,9 @@
 
             <div class="connection">
                 <h:form id="Decoform">
-                    <h:commandLink value="#{connexion.label_co} " action="#{connexion.de_connexion()}"/>
-                     <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.utilisateur.isnull() ? 'block' : 'hidden'};"/>       
+                    <h:commandLink value="#{connexion.label_co}" action="#{connexion.de_connexion()}"/>
+                    &nbsp;
+                    <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.isNull() ? 'block' : 'hidden'};" />        
                 </h:form>
             </div>
 
