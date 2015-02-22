@@ -28,8 +28,9 @@
 
             <div class="connection">
                 <h:form id="Decoform">
-                    <h:commandLink value="#{connexion.label_co} " action="#{connexion.de_connexion()}"/>
-                     <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.utilisateur.isnull() ? 'block' : 'hidden'};"/>        
+                    <h:commandLink value="#{connexion.label_co}" action="#{connexion.de_connexion()}"/>
+                    &nbsp;
+                    <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.isNull() ? 'block' : 'hidden'};" />        
                 </h:form>
             </div>
 
@@ -57,7 +58,7 @@
                             <h:inputText value="#{creerepisode.episode.titre}"/>
                             <h:outputLabel value="Durée (en minute)"/>
                             <h:inputText value="#{creerepisode.episode.duree}"/>
-                            <h:outputLabel value="Lien"/>
+                            <h:outputLabel value="Numéro Youtube de la vidéo"/>
                             <h:inputText value="#{creerepisode.episode.lien}" />
 
                         </h:panelGrid>
