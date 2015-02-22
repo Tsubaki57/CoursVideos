@@ -5,21 +5,21 @@
         <group>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Connexion.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/EpisodeBdy.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Creercours.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/accueil.xhtml</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/ListeEpisode.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/inscription.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/ListeEpisode.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listecours.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/admin.xhtml</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Episode.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Creerepisode.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/connexion.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/Creerepisode.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/creercours.xhtml</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/episode.xhtml</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/CoursBdy.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/boundary/UtilisateurBdy.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/presentation/ListeCours.java</file>
-            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Cours.java</file>
             <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/web/listeEpisode.xhtml</file>
+            <file>file:/C:/Users/Loris/Documents/NetBeansProjects/CoursVideos/src/java/entity/Cours.java</file>
         </group>
     </open-files>
 </project-private>
