@@ -91,7 +91,7 @@ public class ListeEpisode {
      * @return URL du cours
      */
     public String showDetailsEpisode(int id) {
-        return "episode?idepisode=" + id +"&faces-redirect=true";
+        return "episode?id=" + id +"&faces-redirect=true";
     }
 
 }
