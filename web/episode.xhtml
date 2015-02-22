@@ -43,16 +43,24 @@
                     </p>       
                 </div>  
                 <div class="cours">
-
                     <f:metadata>
                         <f:viewParam name="id" value="#{afficheEpisode.idep}"/>
                     </f:metadata>
+                    <h:form>
+                        <p:dataGrid value="#{afficheEpisode.episode}" columns="1" >
+                            <p:fieldset legend="#{afficheEpisode.cours}">
+                                <h:panelGrid>
+                                    <h1><h:outputText value="Episode #{afficheEpisode.episode.titre}" styleClass="gras"/></h1>
+                                    <br/>
+                                    <h:outputText value="Durée : #{afficheEpisode.episode.duree} minutes"/>              
+                                    <br/>
+                                    <iframe width="600" height="480" src="https://www.youtube.com/embed/#{afficheEpisode.episode.lien}" frameborder="0" allowfullscreen="true" ></iframe>                                  
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </p:dataGrid>
 
-                    <h1><h:outputText value="#{afficheEpisode.cours}"/></h1>
-                    <h2><h:outputText value="Episode #{afficheEpisode.episode.titre}"/></h2>
-                    <h3><h:outputText value="Durée : #{afficheEpisode.episode.duree} minutes"/></h3>
+                    </h:form>
 
-                    <iframe width="600" height="480" src="https://www.youtube.com/embed/#{afficheEpisode.episode.lien}" frameborder="0" allowfullscreen="true"></iframe>
 
                 </div>
             </div>

@@ -48,7 +48,8 @@
                             <h:inputText id="mail" value="#{connexion.mail}" required="true" style="width:180px;"/>                                       
                             <br/>
                             <h:outputLabel> Mot de passe : <span class="requis">*</span></h:outputLabel>
-                            <h:inputSecret id="password" value="#{connexion.pw}" required="true" style="width:180px"/>
+                            <h:inputSecret id="password" label="Password" value="#{connexion.pw}" required="true" style="width:180px"/>
+                            
                             <br/>
                             <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" />
                         </h:panelGrid>  
