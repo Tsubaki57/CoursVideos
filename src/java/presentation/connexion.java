@@ -133,12 +133,12 @@ public class Connexion implements Serializable {
                 url = "accueil.xhtml?faces-redirect=true";
                 setUtilisateur(u);
                 setLabel_co("Déconnecter " + u.getPrenom() + " " + u.getNom() + " ");
-                
+
             } else {
                 FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Mot de passe invalide"));
             }
         } else {
-           
+
             FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Cette adresse n'est pas inscrite"));
         }
         return url;
@@ -154,12 +154,16 @@ public class Connexion implements Serializable {
         }
         return "connexion.xhtml?faces-redirect=true";
     }
-    
-    public void adminControl(){
-        try{
-        if(!admin) FacesContext.getCurrentInstance().getExternalContext().redirect("accueil.xhtml");
-        }catch (IOException e){
+
+    public void adminControl() {
+        try {
+            if (!admin) {
+                FacesContext.getCurrentInstance().getExternalContext().redirect("accueil.xhtml");
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+   
 }
