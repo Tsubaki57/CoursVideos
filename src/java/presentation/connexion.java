@@ -165,5 +165,12 @@ public class Connexion implements Serializable {
         }
     }
 
+    public boolean coursPaye(Cours c){
+        if(c.getPrix() == 0) return true;
+        if(utilisateur != null){
+            if(utilisateur.getCours().contains(c)) return true;
+        }
+        return false;
+    }
    
 }
