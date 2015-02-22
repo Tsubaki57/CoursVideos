@@ -69,12 +69,12 @@ public class Creerepisode {
 
     public String doAddEpisode() {
         try {
-            Map params = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-            int idcours = (int) params.get("id");
-            episode.setCours(coursb.find(idcours));
+            episode.setCours(coursb.find(idec));
             episode = episodeb.update(episode);
+            
         } catch (Exception e) {
             e.printStackTrace();
+            
         }
         return "listeepisode.xhtml?faces-redirect=true";
     }

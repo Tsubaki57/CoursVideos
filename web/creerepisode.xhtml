@@ -48,13 +48,16 @@
                     <h:form id="creerep">
                         <h:panelGrid columns="2">
                             
-                            <h:outputLabel value="Titre"/>
+                            <h:outputLabel value="Cours n°"/>
+                            <h:inputText value="#{creerepisode.idec}" readonly="true" label="#{navigation.id}"/>                           
+                            
+                            <h:outputLabel value="Titre de l'épisode"/>
                             <h:inputText value="#{creerepisode.episode.titre}"/>
                             <h:outputLabel value="Durée (en minute)"/>
                             <h:inputText value="#{creerepisode.episode.duree}"/>
                             <h:outputLabel value="Lien"/>
-                            <h:inputTextarea value="#{creerepisode.episode.lien}" />
-                            <h:outputLabel value="Cours"/>
+                            <h:inputText value="#{creerepisode.episode.lien}" />
+                            <!--<h:inputHidden binding="#{navigation.id}" value="#{creerepisode.idec}" />-->
                             
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode}"/>       
