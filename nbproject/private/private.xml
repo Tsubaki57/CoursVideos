@@ -5,11 +5,11 @@
         <group>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/accueil.xhtml</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/connexion.xhtml</file>
-            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/connexion.java</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/achat.xhtml</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/Inscription.java</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/creercours.xhtml</file>
             <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/web/mesCours.xhtml</file>
+            <file>file:/C:/Users/lucie/Documents/GitHub/CoursVideos/src/java/presentation/Connexion.java</file>
         </group>
     </open-files>
 </project-private>

@@ -10,7 +10,7 @@
             <!--<link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>-->
             <h:outputStylesheet library="css" name="pageAccueil.css"/>
         </h:head>
-        <h:body >
+        <h:body>
 
             <header id="entete">
                 <h1>STUDIA ONLINE</h1>           
@@ -42,21 +42,16 @@
                 <div class="cours">
                     <h1> Page de connexion </h1>
                     <h:form id="connexionForm">
-                        <h:panelGrid columns="4">
+                        <h:panelGrid columns="3">
                             <h:outputLabel> Utilisateur/Email : <span class="requis">*</span> </h:outputLabel>                          
-                            <h:inputText id="mail" value="#{connexion.mail}" required="true" style="width:180px;">
-                                <f:validateLength minimum="4" maximum="15"/>                            
-                            </h:inputText>                              
-                            <h:message for="mail"/>
+                            <h:inputText id="mail" value="#{connexion.mail}" required="true" style="width:180px;"/>                                       
                             <br/>
                             <h:outputLabel> Mot de passe : <span class="requis">*</span></h:outputLabel>
-                            <h:inputSecret id="mdp" value="#{connexion.pw}" required="true" style="width:180px"/>
-
-                            
-
+                            <h:inputSecret id="password" value="#{connexion.pw}" required="true" style="width:180px"/>
                             <br/>
-                            <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" id="msgLogin" />
+                            <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" />
                         </h:panelGrid>  
+                        <h:messages style="color:red;margin:8px;" />
                     </h:form>
                     <h1>Vous n'êtes pas inscrit? </h1>
                     <p:button styleClass="btn" outcome ="inscription.xhtml" value="Inscris toi"/>
