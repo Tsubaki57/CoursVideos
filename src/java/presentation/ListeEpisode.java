@@ -5,8 +5,8 @@
  */
 package presentation;
 
-import boundary.CoursBdy;
-import entity.Cours;
+import boundary.EpisodeBdy;
+import entity.Episode;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -18,32 +18,27 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class ListeCours {
+public class ListeEpisode {
 
     @Inject
-    private CoursBdy cours;
-    private List<Cours> liste;
+    private EpisodeBdy episode;
+    private List<Episode> liste;
 
-    public CoursBdy getCours() {
-        return cours;
+    public EpisodeBdy getEpisode() {
+        return episode;
     }
 
-    public void setCours(CoursBdy cours) {
-        this.cours = cours;
+    public void setEpisode(EpisodeBdy episode) {
+        this.episode = episode;
     }
 
-    public List<Cours> getListe() {
-        liste = cours.findAll();
+    public List<Episode> getListe() {
+        liste = episode.findAll();
         return liste;
     }
 
-    public void setListe(List<Cours> liste) {
+    public void setListe(List<Episode> liste) {
         this.liste = liste;
-    }
-    
-    public String delete(Cours c){
-        cours.delete(c);
-        return "listecours.xhtml?faces-redirect=true";
     }
 
     /**
@@ -53,8 +48,8 @@ public class ListeCours {
      * @param id Id du cours à linker
      * @return URL du cours
      */
-    public String showDetailsCours(int id) {
-        return "listeepisode?idcours=" + id;
-    }
-
+    public String showDetailsEpisode(int id) {
+        return "listeepisode?idepisode=" + id;
+    }    
+    
 }

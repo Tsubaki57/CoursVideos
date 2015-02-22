@@ -43,4 +43,14 @@ public class CoursBdy {
         return (List<Cours>)q.getResultList();
     }
     
+    public Cours find(int id){
+        Query q = em.createQuery("SELECT c FROM Cours c WHERE c.id = :idc")
+                .setParameter("idc", id);
+        return (Cours) q.getResultList().get(1);
+    }
+    
+    public void delete(Cours c){
+        em.remove(em.merge(c));
+    }
+    
 }

@@ -3,75 +3,102 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
     <f:view contentType="text/html">
         <h:head>
-            <title>BLABLABLA</title>
-            <link rel="stylesheet" href="pageAccueil.css"></link>
+            <title>Studia Online</title>
+            <!--<link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>-->
+            <h:outputStylesheet library="css" name="pageAccueil.css"/>
         </h:head>
-        <h:body>    
-            
-            <header>
-                <h1>Vid</h1>
+        <h:body >
+
+            <header id="entete">
+                <h1>STUDIA ONLINE</h1>           
             </header>
-                        
-            <nav id="onglets">
-                <ul id="onglet">
-                    <li><a href="accueil.xhtml">Accueil</a></li>
-                    <li><a href="mesCours.xhtml">Mes cours</a></li>
+
+            <nav class="onglets">
+                <ul class="onglet">
+                    <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
+                    <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
                 </ul>
             </nav>
             <br/> 
-            
-            <section class="connect">
-                <a href="connexion.xhtml">Connexion?</a> 
-                <a href="inscription.xhtml">Inscription?</a>               
-            </section>
-          
-            
-            <section class="texteAccueil">
-                <h2>Bonjour à  tous, et bienvenue sur BlaBlaBla </h2>
 
-                <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
-                Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-                Vous pourrez consulter toutes les vidéos présentent.</p>       
+
+            <div class="connection">
+                <h:form id="Decoform">
+                    <h:commandLink value="#{connexion.label_co} " action="#{connexion.de_connexion()}"/>
+                    <h:link value="Inscription?" outcome="inscription.xhtml"/>        
+                </h:form>
+            </div>
+
+            <div class ='main'>
+                <div class="pres">
+                    <p>Vous trouverez à travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                </div>    
+
+                <div class="cours">
+                    <h2>Cours disponible</h2>
+
+                    <!--  <h:form>  
+                          <p:dataGrid var="c" value="#{listeCours.liste}" columns="2" rows="10"  paginator="true" paginatorPosition="bottom">
+                              <p:column>  
+                                  <p:panel header="#{c.titre}" style="width:100%;height:100%; ">  
+                                      <h:panelGrid columns="1" >  
+                                          <p:graphicImage value="/images/cars/#{car.manufacturer}.jpg"/>  
+  
+                                          <h:outputText  value="#{c.description}" styleClass="textCours" />  
+                                          <h:outputText  value="#{c.prix} euros" styleClass="prixCours" />
+  
+                                          <h:panelGrid columns="2">
+                                              <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
+                                                  <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
+                                              </h:link>                                     
+                                              <h:link outcome="achat.xhtml">
+                                                  <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
+                                              </h:link>
+                                          </h:panelGrid>
+                                      </h:panelGrid>  
+                                  </p:panel>  
+                              </p:column>  
+                          </p:dataGrid> --> 
+
+
+                    <h:form>                       
+                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1" >
+                            <p:fieldset legend="#{c.titre}" styleClass="presCours">
+                                <h:panelGrid >
+                                    <p:graphicImage styleClass="imageCours" value="#{file}" />
+                                    <h:outputLabel value="Description : " styleClass="prixCours"/>
+                                    <h:outputText value="#{c.description}"/>
+                                    <br/>
+                                    <h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
+                                    <h:panelGrid columns="2">
+                                        <h:link outcome="#{listeCours.showDetailsCours(c.id)}">
+                                            <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
+                                        </h:link>   
+                                        
+                                        <h:link outcome="achat.xhtml" styleClass="espace">
+                                            <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
+                                        </h:link>
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </p:dataGrid>
+
+                    </h:form>
+
+                </div>
+            </div>                      
+            <footer class="footer">
                 <hr/>
-                      
-             
-            <ul >
-                 <li>
-                      <a href="">Cours de Pilotage</a>
-                      <ul>
-                          <div class="descriptif">
-                           <h3>Pilotage</h3>
-                           <p>Dans ce cours vous trouverez des vidéos concernant </p>
-                          </div>
-                      </ul>
-                      <div class="descriptif"  >
-                           <h3>Pilotage</h3>
-                           <p>Dans ce cours vous trouverez des vidéos concernant </p>
-                      </div>
-                 </li>
-                 <li>
-                      <a href="">Maquillage</a>
-                      <div class="descriptif">
-                           <h3>News</h3>
-                           <p>Pleins de vidéos sur le maquillage, teint, yeux, lèvres</p>
-                      </div>
-                 </li>
-                <li>
-                      <a href="">Cuisine</a>
-                      <div class="descriptif">
-                           <h3>News</h3>
-                           <p>Pleins de vidéos sur la cuisine</p>
-                      </div>
-                 </li>
-            </ul>
-
-            </section>
-                       
-            <footer><hr/>Fait le 29 janvier 2015,par Loris D. et Lucie W.</footer>
-            
+                Fait le 29 janvier 2015,par Loris D. et Lucie W.
+                <br/>
+                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+            </footer>    
         </h:body>
     </f:view>
 </html>

@@ -43,7 +43,7 @@ public class Utilisateur implements Serializable {
     public Utilisateur(String nom, String prenom, String mail, String mdp, String statut) {
         this.nom = nom;
         this.prenom = prenom;
-        this.mail = mail;
+        this.mail = mail.toLowerCase();
         this.mdp = Sha.hash256(mdp);
         this.statut = statut;
         this.cours = new ArrayList<Cours>();
@@ -79,7 +79,7 @@ public class Utilisateur implements Serializable {
     }
 
     public void setMail(String mail) {
-        this.mail = mail;
+        this.mail = mail.toLowerCase();
     }
 
     public String getMdp() {
@@ -114,4 +114,7 @@ public class Utilisateur implements Serializable {
         this.episodes = episodes;
     }
 
+    public boolean isAdmin(){
+        return this.statut.equals("admin");
+    }
 }

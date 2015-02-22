@@ -24,9 +24,9 @@ public class Episode implements Serializable {
     @Id
     @GeneratedValue
     private int id;
-    private int titre;
-    private String duree;
-    private int lien;
+    private String titre;
+    private int duree;
+    private String lien;
     @ManyToOne
     private Cours cours;
     @ManyToMany(mappedBy = "episodes")
@@ -35,12 +35,10 @@ public class Episode implements Serializable {
     public Episode() {
     }
 
-    public Episode(int id, int titre, String duree, int lien, Cours cours) {
-        this.id = id;
+    public Episode(String titre, int duree, String lien) {
         this.titre = titre;
         this.duree = duree;
-        this.lien = lien;
-        this.cours = cours;
+        this.lien = lien;      
         this.utilisateurs = new ArrayList<Utilisateur>();
     }
 
@@ -52,27 +50,27 @@ public class Episode implements Serializable {
         this.id = id;
     }
 
-    public int getTitre() {
+    public String getTitre() {
         return titre;
     }
 
-    public void setTitre(int titre) {
+    public void setTitre(String titre) {
         this.titre = titre;
     }
 
-    public String getDuree() {
+    public int getDuree() {
         return duree;
     }
 
-    public void setDuree(String duree) {
+    public void setDuree(int duree) {
         this.duree = duree;
     }
 
-    public int getLien() {
+    public String getLien() {
         return lien;
     }
 
-    public void setLien(int lien) {
+    public void setLien(String lien) {
         this.lien = lien;
     }
 

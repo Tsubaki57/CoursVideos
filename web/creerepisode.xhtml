@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
     <f:view contentType="text/html">
         <h:head>
             <title>Studia Online</title>
@@ -32,39 +33,36 @@
                 </h:form>
             </div>
 
-            <div class='main'>
+            <div class ='main'>
                 <div class="pres">
-                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                    <p>Vous trouverez à travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
                         Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
                         Vous pourrez consulter toutes les vidéos présentent.</p>       
-                </div>  
+                </div>
+                
+                
                 <div class="cours">
-                    <h1>Inscriptions</h1>
+                    <h1>Créer un épisode</h1>
+                    <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
-                    <h:form>
-                        <p:dataTable value="#{listeUtilisateurs.liste}" var="u">
-                            <p:column headerText="ID">
-                                <h:outputText value="#{u.id}"/>
-                            </p:column>
-                            <p:column headerText="Nom">
-                                <h:outputText value="#{u.nom}"/>
-                            </p:column>
-                            <p:column headerText="Prénom">
-                                <h:outputText value="#{u.prenom}"/>
-                            </p:column>
-                            <p:column headerText="mail">
-                                <h:outputText value="#{u.mail}"/>
-                            </p:column>
-                            <p:column headerText="mot de passe">
-                                <h:outputText value="#{u.mdp}"/>
-                            </p:column>
-                            <p:column headerText="statut">
-                                <h:outputText value="#{u.statut}"/>
-                            </p:column>
-                        </p:dataTable>
+                    <h:form id="creerep">
+                        <h:panelGrid columns="2">
+                            
+                            <h:outputLabel value="Cours n°"/>
+                            <h:inputText value="#{creerepisode.idec}" readonly="true" label="#{navigation.id}"/>                           
+                            
+                            <h:outputLabel value="Titre de l'épisode"/>
+                            <h:inputText value="#{creerepisode.episode.titre}"/>
+                            <h:outputLabel value="Durée (en minute)"/>
+                            <h:inputText value="#{creerepisode.episode.duree}"/>
+                            <h:outputLabel value="Lien"/>
+                            <h:inputText value="#{creerepisode.episode.lien}" />
+                            <!--<h:inputHidden binding="#{navigation.id}" value="#{creerepisode.idec}" />-->
+                            
+                        </h:panelGrid>
+                        <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode}"/>       
                     </h:form>
-                    <br/>
-                    <p:button styleClass="btn" outcome="inscription.xhtml" value="Ajouter"/>
+
                 </div>
             </div>
             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
@@ -74,3 +72,4 @@
         </h:body>
     </f:view>
 </html>
+

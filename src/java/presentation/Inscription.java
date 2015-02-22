@@ -23,6 +23,7 @@ public class Inscription {
     @Inject
     UtilisateurBdy utilisateurs;
     private Utilisateur utilisateur;
+    
 
     @PostConstruct
     public void onInit() {
@@ -49,5 +50,7 @@ public class Inscription {
         utilisateur = utilisateurs.update(utilisateur);
         return "listeUtilisateurs.xhtml?faces-redirect=true";
     }
+    
+    
 
 }
