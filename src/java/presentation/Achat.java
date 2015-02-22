@@ -76,7 +76,9 @@ public class Achat {
     }
 
     public String doBuyCours(){
-        /*    
+        
+        try{
+        
         Cours c = null;
         for (Cours co : cours.findAll()){
             if (co.getId() == idcours) c = co;
@@ -86,10 +88,17 @@ public class Achat {
         for (Utilisateur ut : utilisateurs.findAll()){
             if (ut.getId() == idutil) u = ut;
         }
+      
+        c.ajouterUtilisateur(u);
+        u.ajouterCours(c);
         
-        u.getCours().add(c);
-        utilisateurs.update(u);
-        */
-        return "mesCours.html?faces-redirect=true";
+        u = utilisateurs.merge(u);
+        c = cours.merge(c);
+        
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return "mesCours.xhtml?faces-redirect=true";
     }
 }

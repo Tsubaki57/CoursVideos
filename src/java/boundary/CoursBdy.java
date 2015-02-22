@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -35,6 +36,12 @@ public class CoursBdy {
     
     public Cours update(Cours c){
         em.persist(c);
+        return c;
+    }
+    
+    public Cours merge(Cours c){
+        em.merge(c);
+        em.flush();
         return c;
     }
     

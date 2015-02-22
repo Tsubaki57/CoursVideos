@@ -109,6 +109,10 @@ public class Cours implements Serializable {
             return prix+"€";
         }
     }
+    
+    public void ajouterUtilisateur(Utilisateur u){
+        this.utilisateurs.add(u);
+    }
 
     @Override
     public String toString() {

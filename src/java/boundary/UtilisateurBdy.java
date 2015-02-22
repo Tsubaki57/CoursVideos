@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -37,13 +38,18 @@ public class UtilisateurBdy {
         em.persist(u);
         return u;
     }
+    
+    public Utilisateur merge(Utilisateur u) {
+        em.merge(u);
+        em.flush();
+        return u;
+    }
 
     public List<Utilisateur> findAll() {
         Query q = em.createQuery("SELECT u FROM Utilisateur u ");
         return (List<Utilisateur>) q.getResultList();
     }
 
-    // TODO a refaire
     public Utilisateur find(long id) {
         Query q = em.createQuery("SELECT u FROM Utilisateur u WHERE u.id = :uid")
                 .setParameter("uid", id);

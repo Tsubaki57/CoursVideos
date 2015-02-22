@@ -65,6 +65,7 @@ public class Connexion implements Serializable {
     }
 
     public Utilisateur getUtilisateur() {
+        if(this.utilisateur != null) this.utilisateur = utilisateurs.find(this.utilisateur.getMail());
         return utilisateur;
     }
 
