@@ -66,12 +66,14 @@ public class AfficheEpisode {
 
     public String getCours() {
         episode = getEpisode();
-        
-        if(episode == null) return "olala gros probleme";
-        
-        if(episode.getCours() != null){
+
+        if (episode == null) {
+            return "olala gros probleme";
+        }
+
+        if (episode.getCours() != null) {
             cours = episode.getCours().getTitre();
-        }else{
+        } else {
             cours = "Inconnu";
         }
         return cours;

@@ -45,7 +45,8 @@ public class UtilisateurBdy {
 
     // TODO a refaire
     public Utilisateur find(long id) {
-        Query q = em.createQuery("SELECT u FROM Utilisateur u");
+        Query q = em.createQuery("SELECT u FROM Utilisateur u WHERE u.id = :uid")
+                .setParameter("uid", id);
         return (Utilisateur) q.getResultList().get(1);
     }
     

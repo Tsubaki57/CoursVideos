@@ -42,24 +42,28 @@
                 </div>
 
                 <div class="cours">
+
+                    <f:metadata>
+                        <f:viewParam name="idc" value="#{achat.idcours}" />
+                        <f:viewParam name="idu" value="#{achat.idutil}" />
+                    </f:metadata>
+
                     <h1> Formulaire d'achat </h1>
                     <h:form>
-                        <h:panelGrid columns="3">
+                        <h:outputText value="#{achat.message(param.idc, param.idu)}" />
+                        <br/>
+                        <h:panelGrid columns="2">
+                            
                             <h:outputText value="Numéro de Carte de Crédit :"/>
-                            <p:inputMask value="" required="true" mask="9999-9999-9999-9999"/>
-                           
-                            <h:outputText value=""/>
+                            <p:inputMask value="AZ" required="true" mask="9999-9999-9999-9999"/>
                             <h:outputText value="Code au dos de votre carte"/>
-                            <p:inputMask value="" required="true" mask="999"/>                           
-                            <h:outputText value=""/>
+                            <p:inputMask value="AE" required="true" mask="999"/>                           
                             <h:outputText value="Code de validation:"/>
-                            <p:inputMask value="" required="true" mask="9999"/>
-
-                            <br/>
-                            <p:commandButton styleClass="btn" value="Acheter" />
-
+                            <p:inputMask value="AR" required="true" mask="9999"/>
 
                         </h:panelGrid>  
+                        <br/>
+                        <p:commandButton styleClass="btn" value="Acheter" action="#{achat.doBuyCours()}"/>
                     </h:form>
                 </div>
             </div>

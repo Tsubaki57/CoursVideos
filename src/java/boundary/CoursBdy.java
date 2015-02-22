@@ -47,7 +47,7 @@ public class CoursBdy {
         Query q = em.createQuery("SELECT c FROM Cours c WHERE c.ID = :idc")
                 .setParameter("idc", id);
         List<Cours> lc = q.getResultList();
-        return (Cours) lc.get(1);
+        return (Cours) lc.get(lc.size());
     }
     
     public void delete(Cours c){
