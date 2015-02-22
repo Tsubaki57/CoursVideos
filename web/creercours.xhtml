@@ -45,13 +45,13 @@
                     <hr/>
                     <h:form  enctype="multipart/form-data">
                         <h:panelGrid columns="2">
-                            <h:outputLabel value="Titre"/>
-                            <h:inputText value="#{creercours.cours.titre}"/>
-                            <h:outputLabel value="Prix (en €)"/>
-                            <h:inputText value="#{creercours.cours.prix}"/>
-                            <h:outputLabel value="Description"/>
-                            <h:inputTextarea value="#{creercours.cours.description}"/>
-                            <h:outputLabel value="Image"/>
+                            <h:outputLabel> Titre: <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{creercours.cours.titre}" required="true"/>
+                           <h:outputLabel> Prix (en €) : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{creercours.cours.prix}" required="true"/>
+                            <h:outputLabel> Description : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputTextarea value="#{creercours.cours.description}" required="true"/>
+                             <h:outputLabel> Image (url uniquement) : <span class="requis">*</span> </h:outputLabel> 
                             <h:inputText value="#{creercours.cours.image}"/>
                            
                         </h:panelGrid>

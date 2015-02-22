@@ -51,6 +51,7 @@ public class Inscription {
         return "listeUtilisateurs.xhtml?faces-redirect=true";
     }
     
+  
     
 
 }

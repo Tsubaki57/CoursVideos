@@ -43,17 +43,14 @@
                     <h1> Page de connexion </h1>
                     <h:form id="connexionForm">
                         <h:panelGrid columns="3">
-                            <h:outputText value="Utilisateur :"/>
-                            <h:inputText value="#{connexion.mail}" required="true" style="width:180px;"/>
-                            <h:outputText value=""/>
-                            <h:outputText value="Mot de passe :"/>
+                            <h:outputLabel> Utilisateur/Email : <span class="requis">*</span> </h:outputLabel>                          
+                            <h:inputText value="#{connexion.mail}" required="true" style="width:180px;"/>  
+                            <br/>
+                            <h:outputLabel> Mot de passe : <span class="requis">*</span></h:outputLabel>
                             <h:inputSecret value="#{connexion.pw}" required="true" style="width:180px"/>
-                            <h:outputText value=""/>
                             
                             <br/>
                             <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" id="msgLogin" />
-
-
                         </h:panelGrid>  
                     </h:form>
                     <h1>Vous n'êtes pas inscrit? </h1>

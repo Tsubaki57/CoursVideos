@@ -133,10 +133,12 @@ public class Connexion implements Serializable {
                 url = "accueil.xhtml?faces-redirect=true";
                 setUtilisateur(u);
                 setLabel_co("Déconnecter " + u.getPrenom() + " " + u.getNom() + " ");
+                
             } else {
                 FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Mot de passe invalide"));
             }
         } else {
+           
             FacesContext.getCurrentInstance().addMessage("connexionForm:msgLogin", new FacesMessage("Cette adresse n'est pas inscrite"));
         }
         return url;

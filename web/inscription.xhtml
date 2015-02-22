@@ -43,15 +43,15 @@
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
                     <h:form>
-                        <h:panelGrid columns="2">
-                            <h:outputLabel value="Nom"/>
-                            <h:inputText value="#{inscription.utilisateur.nom}"/>
-                            <h:outputLabel value="Prenom"/>
-                            <h:inputText value="#{inscription.utilisateur.prenom}"/>
-                            <h:outputLabel value="Mail"/>
-                            <h:inputText value="#{inscription.utilisateur.mail}"/>
-                            <h:outputLabel value="Mot de passe"/>
-                            <h:inputSecret value="#{inscription.utilisateur.mdp}"/>
+                        <h:panelGrid columns="2">                          
+                            <h:outputLabel> Nom : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{inscription.utilisateur.nom}" required="true"/>
+                            <h:outputLabel> Prénom : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{inscription.utilisateur.prenom}" required="true"/>
+                            <h:outputLabel> Email : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{inscription.utilisateur.mail}" required="true"/>
+                            <h:outputLabel> Mot de passe : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputSecret value="#{inscription.utilisateur.mdp}" required="true"/>
                         </h:panelGrid>       
                         <p:commandButton styleClass="btn" value="Ajouter" action="#{inscription.doAddUser()}"/>       
                     </h:form>

@@ -45,13 +45,14 @@
                     <h:form>
                         <h:panelGrid columns="3">
                             <h:outputText value="Numéro de Carte de Crédit :"/>
-                            <h:inputText value="" required="true" style="width:180px;"/>
+                            <p:inputMask value="" required="true" mask="9999-9999-9999-9999"/>
+                           
                             <h:outputText value=""/>
                             <h:outputText value="Code au dos de votre carte"/>
-                            <h:inputSecret value="" required="true" style="width:180px"/>                           
+                            <p:inputMask value="" required="true" mask="999"/>                           
                             <h:outputText value=""/>
                             <h:outputText value="Code de validation:"/>
-                            <h:inputText value="" required="true" style="width:180px;"/>
+                            <p:inputMask value="" required="true" mask="9999"/>
 
                             <br/>
                             <p:commandButton styleClass="btn" value="Acheter" />

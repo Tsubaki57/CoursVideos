@@ -47,7 +47,7 @@
                     <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
                         <p:fieldset legend="#{c.titre}" styleClass="presCours">
                             <h:panelGrid>
-                               <!-- <p:graphicImage styleClass="imageCours" value="#{file}" />-->
+                               <p:graphicImage styleClass="imageCours" value="#{c.image}" />
                                 <h:outputLabel value="Description : " styleClass="prixCours"/>
                                 <h:outputText value="#{c.description}"/>
                                 <br/>

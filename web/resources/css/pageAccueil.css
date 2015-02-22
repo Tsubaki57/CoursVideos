@@ -3,8 +3,6 @@ body {
     //background-image: url(image_fond.jpg);
     background-image: url("#{resource['image/image_fond.jpg']}");
     background-color: #468ccf;  
-    background-repeat:  no-repeat;
-    background-position: center;
     color: black;
     text-align: justify;
     position : relative;
@@ -195,7 +193,7 @@ body {
 }
 
 .imageCours{
-    float:left;
+    
 }
 
 .prixCours{
@@ -204,4 +202,9 @@ body {
 
 .espace{
     margin-left: 20px
+}
+
+
+.requis{
+    color:red
 }
