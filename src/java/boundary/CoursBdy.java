@@ -44,9 +44,10 @@ public class CoursBdy {
     }
     
     public Cours find(int id){
-        Query q = em.createQuery("SELECT c FROM Cours c WHERE c.id = :idc")
+        Query q = em.createQuery("SELECT c FROM Cours c WHERE c.ID = :idc")
                 .setParameter("idc", id);
-        return (Cours) q.getResultList().get(1);
+        List<Cours> lc = q.getResultList();
+        return (Cours) lc.get(1);
     }
     
     public void delete(Cours c){

@@ -43,8 +43,15 @@
                 <div class="cours">
                     <h2><h:outputText value="Episodes disponibles pour le cours : #{c.titre}"/></h2>
 
+                    <f:metadata>
+                        <f:viewParam name="id" value="#{listeEpisode.idec}"/>
+                    </f:metadata>
+                    
                     <h:form>
                         <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="10">
+                            <p:column headerText="Cours" >
+                                <h:outputText value="#{e.cours.id}" />
+                            </p:column>
                             <p:column headerText="Titre" >
                                 <h:outputText value="#{e.titre}" />
                             </p:column>
@@ -57,9 +64,7 @@
                             
                         </p:dataTable>
                     </h:form>
-                    <br/>
-                    <p:button styleClass="btn" outcome="creerepisode.xhtml" value="Ajouter un épisode"/>
-                    <hr/>
+                    
                 </div>
             </div>                      
             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>

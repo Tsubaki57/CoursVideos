@@ -55,7 +55,7 @@
                                 <h:panelGrid columns="3">
                                     <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
                                     <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 
-                                    <p:commandButton styleClass="espace" value="Ajouter un épisode" action="#{navigation.creerEpisode(c.id)}"/>
+                                    <p:commandButton styleClass="espace" value="Ajouter un épisode" action="#{listeCours.createEpisode(c.id)}"/>
                                 </h:panelGrid>                                   
                             </h:panelGrid>
                         </p:fieldset>

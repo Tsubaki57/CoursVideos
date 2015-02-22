@@ -7,7 +7,9 @@ package presentation;
 
 import boundary.EpisodeBdy;
 import entity.Episode;
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,6 +25,12 @@ public class ListeEpisode {
     @Inject
     private EpisodeBdy episode;
     private List<Episode> liste;
+    private int idec;
+
+    @PostConstruct
+    public void onInit() {
+        this.idec = 0;
+    }
 
     public EpisodeBdy getEpisode() {
         return episode;
@@ -34,11 +42,32 @@ public class ListeEpisode {
 
     public List<Episode> getListe() {
         liste = episode.findAll();
-        return liste;
+        List listeok = new ArrayList<Episode>();
+        if (this.idec != 0) {
+            for (Episode e : liste) {
+                if (e.getCours() != null) {
+                    if (e.getCours().getId() == this.idec) {
+                        listeok.add(e);
+                    }
+                }
+            }
+        } else {
+            listeok = liste;
+        }
+
+        return listeok;
     }
 
     public void setListe(List<Episode> liste) {
         this.liste = liste;
+    }
+
+    public int getIdec() {
+        return idec;
+    }
+
+    public void setIdec(int idec) {
+        this.idec = idec;
     }
 
     /**
@@ -50,6 +79,6 @@ public class ListeEpisode {
      */
     public String showDetailsEpisode(int id) {
         return "listeepisode?idepisode=" + id;
-    }    
-    
+    }
+
 }

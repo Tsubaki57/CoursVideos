@@ -8,6 +8,7 @@ package presentation;
 import boundary.CoursBdy;
 import entity.Cours;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -54,7 +55,11 @@ public class ListeCours {
      * @return URL du cours
      */
     public String showDetailsCours(int id) {
-        return "listeepisode?idcours=" + id;
+        return "listeepisode?idcours=" + id + "&faces-redirect=true";
+    }
+    
+    public String createEpisode(int id){
+        return "creerepisode.xhtml?id=" + id + "&faces-redirect=true";
     }
 
 }

@@ -23,8 +23,8 @@
                     <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
                 </ul>
             </nav>
+            
             <br/> 
-
 
             <div class="connection">
                 <h:form id="Decoform">
@@ -33,8 +33,32 @@
                 </h:form>
             </div>
 
+            <div class='main'>
+                <div class="pres">
+                    <p>
+                        Vous trouverez à  travers notre site, divers cours sur différents domaines et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.
+                    </p>       
+                </div>  
+                <div class="cours">
+
+                    <f:metadata>
+                        <f:viewParam name="id" value="#{listeEpisode.idec}"/>
+                    </f:metadata>
+
+                    <h1><h:outputText value="Cours ???"/></h1>
+                    <h2><h:outputText value="Episode ???"/></h2>
+                    <h3><h:outputText value="Durée : xx minutes"/></h3>
+                    <!--<iframe width="420" height="315" src="https://www.youtube.com/embed/cK8uJjOR_Yk" frameborder="0"></iframe>-->
+
+                </div>
+            </div>
+
             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
-                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/></footer>
+                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+            </footer>
 
         </h:body>
+    </f:view>
 </html>

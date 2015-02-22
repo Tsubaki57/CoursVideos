@@ -7,11 +7,11 @@ package presentation;
 
 import boundary.CoursBdy;
 import boundary.EpisodeBdy;
+import entity.Cours;
 import entity.Episode;
-import java.util.Map;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -69,7 +69,10 @@ public class Creerepisode {
 
     public String doAddEpisode() {
         try {
-            episode.setCours(coursb.find(idec));
+            List<Cours> lc = coursb.findAll();
+            for (Cours c : lc){
+                if(c.getId() == this.idec) episode.setCours(c);
+            }
             episode = episodeb.update(episode);
             
         } catch (Exception e) {
