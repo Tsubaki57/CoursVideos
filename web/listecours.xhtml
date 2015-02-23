@@ -42,25 +42,26 @@
                 </div>  
                 <div class="cours">
                     <h1>Cours</h1>
-                    <hr/>
-
                     <h:form>
-                    <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
-                        <p:fieldset legend="#{c.titre}">
-                            <h:panelGrid>
-                               <p:graphicImage value="#{c.image}"  styleClass="imageCours"/>
-                                <h:outputLabel value="Description : " styleClass="gras"/>
-                                <h:outputText value="#{c.description}"/>
-                                <br/>
-                                <h:outputText value="Prix : #{c.prix}" styleClass="gras"/>
-                                <h:panelGrid columns="3">
-                                    <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
-                                    <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 
-                                    <p:commandButton styleClass="espace" value="Ajouter un épisode" action="#{listeCours.createEpisode(c.id)}"/>
-                                </h:panelGrid>                                   
-                            </h:panelGrid>
-                        </p:fieldset>
-                    </p:dataGrid>
+                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
+                            <p:fieldset legend="#{c.titre}">
+                                <h:panelGrid columns="2">
+                                    <p:graphicImage value="#{c.image}"  styleClass="imageCours"/>
+                                    <h:outputLabel  styleClass="desc">
+                                        <div class="gras"> Description : </div>  <br/>
+                                        <h:outputText value="#{c.description}" styleClass="desc"/>                                       
+                                    </h:outputLabel>
+                                    <br/>
+                                    <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
+                                    <h:commandButton styleClass="espace" value="Ajout Episode" action="#{listeCours.createEpisode(c.id)}"/>
+                                    <h:panelGrid columns="3">
+                                        <h:commandButton styleClass="espace" value="Supprimer" action="#{listeCours.delete(c)}"/>
+                                        <h:commandButton styleClass="espace" value="Modifier"/>                                 
+                                        
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </p:dataGrid>
                     </h:form>
 
                     <br/>

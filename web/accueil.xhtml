@@ -56,7 +56,7 @@
                                   
                                     <br/><h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
                                     
-                                    <h:panelGrid columns="3" styleClass="icone">
+                                    <h:panelGrid columns="3">
                                         <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
                                         </h:link>   

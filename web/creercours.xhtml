@@ -45,16 +45,20 @@
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
                     <h:form  enctype="multipart/form-data">
-                        <h:panelGrid columns="2">
+                        <h:panelGrid columns="3">
                             <h:outputLabel> Titre: <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputText value="#{creercours.cours.titre}" required="true"/>
-                           <h:outputLabel> Prix (en €) : <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputText value="#{creercours.cours.prix}" required="true"/>
+                            <h:inputText id="titre" value="#{creercours.cours.titre}" required="true" requiredMessage="Veuillez saisir un titre pour votre cours"/>
+                            <h:message for="titre" style="color: red"/>
+                            <h:outputLabel> Prix (en €) : </h:outputLabel>  
+                            <h:inputText id="px" value="#{creercours.cours.prixCours()}"/>
+                            <h:message for="px" style="color: red"/>
                             <h:outputLabel> Description : <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputTextarea value="#{creercours.cours.description}" required="true"/>
-                             <h:outputLabel> Image (url uniquement) : <span class="requis">*</span> </h:outputLabel> 
-                            <h:inputText value="#{creercours.cours.image}"/>
-                           
+                            <h:inputTextarea id="descrip" value="#{creercours.cours.description}" required="true" requiredMessage="Veuillez entrez une description"/>
+                            <h:message for="descrip" style="color: red"/>
+                            <h:outputLabel> Image (url uniquement) : <span class="requis">*</span> </h:outputLabel> 
+                            <h:inputText id="image" value="#{creercours.cours.image}" required="true" requiredMessage="Veuillez entrer l'url de l'image"/>
+                            <h:message for="image" style="color: red"/>
+
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creercours.doAddCours()}"/>       
                     </h:form>

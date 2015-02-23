@@ -52,15 +52,17 @@
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
                     <h:form id="creerep">
-                        <h:panelGrid columns="2">
-                     
-                            <h:outputLabel value="Titre de l'épisode"/>
-                            <h:inputText value="#{creerepisode.episode.titre}"/>
-                            <h:outputLabel value="Durée (en minute)"/>
-                            <h:inputText value="#{creerepisode.episode.duree}"/>
-                            <h:outputLabel value="Numéro Youtube de la vidéo"/>
-                            <h:inputText value="#{creerepisode.episode.lien}" />
+                        <h:panelGrid columns="3">
 
+                            <h:outputLabel> Titre de l'épisode :  <span class="requis">*</span></h:outputLabel>
+                            <h:inputText id="titreEpis" value="#{creerepisode.episode.titre}" required="true" requiredMessage="Veuillez renseigner le titre de l'épisode" />
+                            <h:message for="titreEpis" style="color :red"/>
+                            <h:outputLabel> Durée (en minute) : <span class="requis">*</span> </h:outputLabel>
+                            <h:inputText id="duree" value="#{creerepisode.episode.duree}" required="true" requiredMessage="Veuillez renseigner la durée"/>
+                            <h:message for="duree" style="color :red"/>
+                            <h:outputLabel> Numéro Youtube de la vidéo : <span class="requis">*</span> </h:outputLabel>
+                            <h:inputText id="num" value="#{creerepisode.episode.lien}" required="true" requiredMessage="Veuillez renseigner le numéro de la numéro YT, situez dans la barre d'adresse après le v=" />
+                            <h:message for="num" style="color :red"/>
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode}"/>       
                     </h:form>

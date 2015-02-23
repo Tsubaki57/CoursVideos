@@ -191,7 +191,7 @@ body {
 }
 
 .espace{
-    margin-left: 20px
+    margin-left: 20px;  
 }
 
 
@@ -204,7 +204,6 @@ body {
 .imageCours{
     float: left;
     width :200px;
-
 }
 
 .desc{
@@ -218,10 +217,4 @@ body {
     padding : 30px;
     text-align : justify;
     font-weight: bold;
-
-}
-
-
-.icone{
-  
 }
