@@ -30,8 +30,10 @@
                 <h:form id="Decoform">
                     <h:commandLink value="#{connexion.label_co}" action="#{connexion.de_connexion()}"/>
                     &nbsp;
-                    <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.isNull() ? 'block' : 'hidden'};" />        
-                </h:form>
+                    <h:link value="Inscription?" 
+                            outcome="inscription.xhtml?faces-redirect=true" 
+                            style="visibility: #{connexion.giveUserID()==0 ? 'block' : 'hidden'};" 
+                            />                  </h:form>
             </div>
 
             <div class ='main'>
@@ -52,6 +54,7 @@
                     <h:form>
                         <h:outputText value="#{achat.message(param.idc, param.idu)}" />
                         <br/>
+
                         <h:panelGrid columns="3">
                             
                             <h:outputLabel> Numéro de Carte de Crédit : <span class="requis">*</span></h:outputLabel>
@@ -63,6 +66,7 @@
                             <h:outputLabel> Code de validation : <span class="requis">*</span></h:outputLabel>
                             <p:inputMask id="codeVal" value="AR" required="true" requiredMessage="Veuillez entrez le code validation" mask="9999"/>
                              <h:message for="codeVal" style="color : red"/>
+
 
                         </h:panelGrid>  
                         <br/>
