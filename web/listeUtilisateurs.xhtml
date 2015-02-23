@@ -59,11 +59,15 @@
                             <p:column headerText="mail">
                                 <h:outputText value="#{u.mail}"/>
                             </p:column>
-                            <p:column headerText="mot de passe">
+                            <p:column headerText="Mot de passe">
                                 <h:outputText value="#{u.mdp}"/>
                             </p:column>
-                            <p:column headerText="statut">
+                            <p:column headerText="Statut">
                                 <h:outputText value="#{u.statut}"/>
+                            </p:column>
+                            <p:column headerText="Action">
+                                <h:commandButton value="Supprimer"
+                                                 action="#{listeUtilisateurs.delete(u)}" />
                             </p:column>
                         </p:dataTable>
                     </h:form>

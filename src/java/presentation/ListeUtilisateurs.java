@@ -42,5 +42,9 @@ public class ListeUtilisateurs {
         this.liste = liste;
     }
     
+    public String delete(Utilisateur u){
+        utilisateurs.delete(u);
+        return "listeutilisateurs.xhtml?faces-redirect=true";
+    }
     
 }

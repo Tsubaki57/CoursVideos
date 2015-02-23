@@ -5,6 +5,7 @@
  */
 package boundary;
 
+import entity.Cours;
 import entity.Utilisateur;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -59,6 +60,26 @@ public class UtilisateurBdy {
         int size = lu.size();
         if (size < 1) return null;
         return lu.get(size-1);
+    }
+    
+    public void delete(Utilisateur u) {
+        
+        // TODO à tester avec un tulisateur
+        for (Cours c : u.getCours()) {
+                
+            List<Cours> lc = u.getCours();
+            lc.remove(c);
+            u.setCours(lc);
+
+            List<Utilisateur> lu = c.getUtilisateurs();
+            lu.remove(u);
+            c.setUtilisateurs(lu);
+            
+            em.merge(c);
+        }
+        
+        u = em.merge(u);
+        em.remove(u);
     }
 
 }
