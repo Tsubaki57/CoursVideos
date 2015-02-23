@@ -54,10 +54,12 @@
                                     <h:graphicImage value="#{c.image}" styleClass="imageCours"/>
                                     <h:outputLabel  styleClass="desc">
                                         <div class="gras"> Description : </div>  <br/>
-                                        <h:outputText value="#{c.description}" styleClass="desc"/>                                       
+                                        <h:outputText value="#{c.description}" styleClass="desc"/> 
+                                        <br/>
                                     </h:outputLabel>         
 
-                                    <br/><h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
+                                    <br/>
+                                    <h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
 
                                     <h:panelGrid columns="3">
                                         <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">

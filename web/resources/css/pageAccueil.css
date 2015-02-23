@@ -210,11 +210,11 @@ body {
     padding-left: 30px;
     float:right;
     text-align: justify;
-    width: 600px;
+   
 }
 
 .prixCours{
-    padding : 30px;
+    padding-left : 30px;
     text-align : justify;
     font-weight: bold;
 }
