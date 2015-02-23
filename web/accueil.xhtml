@@ -45,15 +45,18 @@
                     <h2>Cours disponible</h2>
 
                     <h:form>                       
-                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1" >
-                            <p:fieldset legend="#{c.titre}" styleClass="presCours">
-                                <h:panelGrid >
-                                    <p:graphicImage styleClass="imageCours" value="#{c.image}" />
-                                    <h:outputLabel value="Description : " styleClass="prixCours"/>
-                                    <h:outputText value="#{c.description}"/>
-                                    <br/>
-                                    <h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
-                                    <h:panelGrid columns="2">
+                        <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
+                            <p:fieldset legend="#{c.titre}">
+                                <h:panelGrid columns="2">
+                                    <h:graphicImage value="#{c.image}" styleClass="imageCours"/>
+                                    <h:outputLabel  styleClass="desc">
+                                        <div class="gras"> Description : </div>  <br/>
+                                        <h:outputText value="#{c.description}" styleClass="desc"/>                                       
+                                    </h:outputLabel>         
+                                  
+                                    <br/><h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
+                                    
+                                    <h:panelGrid columns="3" styleClass="icone">
                                         <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
                                         </h:link>   
@@ -61,6 +64,7 @@
                                         <h:link outcome="achat.xhtml?idc=#{c.id}&amp;idu=#{connexion.giveUserID()}" styleClass="espace" style="visibility: #{!connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
                                         </h:link>
+                                       
                                     </h:panelGrid>
                                 </h:panelGrid>
                             </p:fieldset>

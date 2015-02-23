@@ -43,20 +43,24 @@
                 <div class="cours">
                     <h1> Page de connexion </h1>
                     <h:form id="connexionForm">
-                        <h:panelGrid columns="3">
+                        <h:panelGrid columns="4">
                             <h:outputLabel> Utilisateur/Email : <span class="requis">*</span> </h:outputLabel>                          
-                            <h:inputText id="mail" value="#{connexion.mail}" required="true" style="width:180px;"/>                                       
+                            <h:inputText id="mail" value="#{connexion.mail}" required="true" requiredMessage="Veuillez saisir votre email." style="width:180px;"/> 
+                            <h:message for="mail" style="color: red"/>
                             <br/>
                             <h:outputLabel> Mot de passe : <span class="requis">*</span></h:outputLabel>
-                            <h:inputSecret id="password" label="Password" value="#{connexion.pw}" required="true" style="width:180px"/>
-                            
+                            <h:inputSecret id="password" label="Password" value="#{connexion.pw}" required="true" requiredMessage="Veuillez saisir votre mot de passe." style="width:180px"/>
+                            <h:message for="password" style="color: red"/>
                             <br/>
-                            <p:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" />
-                        </h:panelGrid>  
-                        <h:messages style="color:red;margin:8px;" />
+                            <h:commandButton styleClass="btn" action="#{connexion.checkLogin}" value="Connexion" />
+                        </h:panelGrid> 
                     </h:form>
+                        
+                        
+                   
                     <h1>Vous n'êtes pas inscrit? </h1>
-                    <p:button styleClass="btn" outcome ="inscription.xhtml" value="Inscris toi"/>
+                    <h:commandButton styleClass="btn" action="inscription.xhtml" value="Inscris toi"/>
+                    
                 </div>
             </div>
             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>

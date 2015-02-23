@@ -46,13 +46,13 @@
 
                     <h:form>
                     <p:dataGrid var="c" value="#{listeCours.liste}" columns="1">
-                        <p:fieldset legend="#{c.titre}" styleClass="presCours">
+                        <p:fieldset legend="#{c.titre}">
                             <h:panelGrid>
-                               <p:graphicImage styleClass="imageCours" value="#{c.image}" />
-                                <h:outputLabel value="Description : " styleClass="prixCours"/>
+                               <p:graphicImage value="#{c.image}"  styleClass="imageCours"/>
+                                <h:outputLabel value="Description : " styleClass="gras"/>
                                 <h:outputText value="#{c.description}"/>
                                 <br/>
-                                <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
+                                <h:outputText value="Prix : #{c.prix}" styleClass="gras"/>
                                 <h:panelGrid columns="3">
                                     <p:commandButton styleClass="espace" image="ui-icon ui-icon-trash" action="#{listeCours.delete(c)}"/>
                                     <p:commandButton styleClass="espace" image="ui-icon ui-icon-pencil"/>                                 
