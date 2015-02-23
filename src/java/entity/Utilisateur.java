@@ -86,8 +86,9 @@ public class Utilisateur implements Serializable {
         return mdp;
     }
 
-    public void setMdp(String mdp) {
-        this.mdp = Sha.hash256(mdp);
+    public void setMdp(String p) {
+        String pass = Sha.hash256(p);
+        if(!p.equals(pass)) this.mdp = pass;
     }
 
     public String getStatut() {

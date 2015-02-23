@@ -38,43 +38,39 @@
 
             <div class='main'>
                 <div class="pres">
-                    <p>Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                    <p>
+                        Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
                         Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                        Vous pourrez consulter toutes les vidéos présentent.
+                    </p>       
                 </div>  
                 <div class="cours">
-                    <h1>Inscriptions</h1>
+                    <h1>Inscription</h1>
+                    <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
+                    <f:metadata>
+                        <f:viewParam name="id" value="#{modifierUtilisateur.idut}"/>
+                    </f:metadata>
                     <h:form>
-                        <p:dataTable value="#{listeUtilisateurs.liste}" var="u">
-                            <p:column headerText="ID">
-                                <h:outputText value="#{u.id}"/>
-                            </p:column>
-                            <p:column headerText="Nom">
-                                <h:outputText value="#{u.nom}"/>
-                            </p:column>
-                            <p:column headerText="Prénom">
-                                <h:outputText value="#{u.prenom}"/>
-                            </p:column>
-                            <p:column headerText="mail">
-                                <h:outputText value="#{u.mail}"/>
-                            </p:column>
-                            <p:column headerText="Mot de passe">
-                                <h:outputText value="#{u.mdp}"/>
-                            </p:column>
-                            <p:column headerText="Statut">
-                                <h:outputText value="#{u.statut}"/>
-                            </p:column>
-                            <p:column headerText="Action">
-                                <h:commandButton value="Supprimer"
-                                                 action="#{listeUtilisateurs.delete(u)}" />
-                                <h:commandButton value="Editer"
-                                                 action="#{listeUtilisateurs.edit(u)}" />
-                            </p:column>
-                        </p:dataTable>
+                        <h:panelGrid columns="2">                          
+                            <h:outputLabel> Nom : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText label="" value="#{modifierUtilisateur.utilisateur.nom}"
+                                         required="true"/>
+                            <h:outputLabel> Prénom : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierUtilisateur.utilisateur.prenom}" 
+                                         required="true"/>
+                            <h:outputLabel> Email : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierUtilisateur.utilisateur.mail}" 
+                                         required="true"/>
+                            <h:outputLabel> Mot de passe : <span class="requis">* (Laisser tel quel pour ne pas changer)</span> </h:outputLabel>  
+                            <h:inputSecret value="#{modifierUtilisateur.utilisateur.mdp}" 
+                                           required="true"/>
+                        </h:panelGrid>       
+                        <p:commandButton styleClass="btn" 
+                                         value="Ajouter" 
+                                         action="#{modifierUtilisateur.doChangeUser()}"/>       
                     </h:form>
-                    <br/>
-                    <p:button styleClass="btn" outcome="inscription.xhtml" value="Ajouter"/>
+                    <hr/>
                 </div>
             </div>
             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>

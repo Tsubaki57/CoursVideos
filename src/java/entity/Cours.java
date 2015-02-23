@@ -107,7 +107,7 @@ public class Cours implements Serializable {
         if(prix == 0){
             return "Gratuit";
         }else{
-            return prix+"€";
+            return prix+" €";
         }
     }
 

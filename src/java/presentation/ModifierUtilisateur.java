@@ -7,8 +7,7 @@ package presentation;
 
 import boundary.UtilisateurBdy;
 import entity.Utilisateur;
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -19,11 +18,17 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class ListeUtilisateurs {
+public class ModifierUtilisateur {
     
     @Inject
     private UtilisateurBdy utilisateurs;
-    private List<Utilisateur> liste = new ArrayList<>();
+    private Utilisateur utilisateur;
+    private int idut;
+
+    @PostConstruct
+    public void onInit() {
+        this.utilisateur = this.utilisateurs.find(idut);
+    }
 
     public UtilisateurBdy getUtilisateurs() {
         return utilisateurs;
@@ -33,21 +38,24 @@ public class ListeUtilisateurs {
         this.utilisateurs = utilisateurs;
     }
 
-    public List<Utilisateur> getListe() {
-        liste = utilisateurs.findAll();
-        return liste;
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
     }
 
-    public void setListe(List<Utilisateur> liste) {
-        this.liste = liste;
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
+
+    public int getIdut() {
+        return idut;
+    }
+
+    public void setIdut(int idut) {
+        this.idut = idut;
     }
     
-    public String delete(Utilisateur u){
-        utilisateurs.delete(u);
+    public String doChangeUser(){
+        utilisateurs.merge(utilisateur);
         return "listeutilisateurs.xhtml?faces-redirect=true";
-    }
-    
-    public String edit(Utilisateur u){
-        return "modifierutilisateur.xhtml?faces-redirect=true&id="+u.getId();
     }
 }
