@@ -45,4 +45,8 @@ public class EpisodeBdy {
         return (List<Episode>)q.getResultList();
     }
     
+    public void delete(Episode e){
+        em.remove(em.merge(e));
+    }
+    
 }

@@ -43,7 +43,7 @@
                     <h1>Mes cours</h1>
                     <hr/>
                     <h:form>
-                        <p:dataTable value="#{connexion.mylist}" var="c">
+                        <p:dataTable value="#{connexion.utilisateur.cours}" var="c">
                             <p:column headerText="ID">
                                 <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.id}"/>
                             </p:column>

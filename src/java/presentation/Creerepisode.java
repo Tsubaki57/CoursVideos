@@ -70,15 +70,19 @@ public class Creerepisode {
     public String doAddEpisode() {
         try {
             List<Cours> lc = coursb.findAll();
-            for (Cours c : lc){
-                if(c.getId() == this.idec) episode.setCours(c);
+            for (Cours c : lc) {
+                if (c.getId() == this.idec) {
+                    List<Episode> le = c.getEpisodes();
+                    le.add(episode);
+                    c.setEpisodes(le);
+                    episode.setCours(c);
+                }
             }
             episode = episodeb.update(episode);
-            
+
         } catch (Exception e) {
             e.printStackTrace();
-            
         }
-        return "listeepisode.xhtml?faces-redirect=true";
+        return "listecours.xhtml?faces-redirect=true";
     }
 }

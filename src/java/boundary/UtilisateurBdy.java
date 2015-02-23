@@ -8,11 +8,9 @@ package boundary;
 import entity.Utilisateur;
 import java.util.List;
 import javax.ejb.Stateless;
-import javax.enterprise.event.Event;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
 /**
@@ -22,11 +20,8 @@ import javax.persistence.Query;
 @Stateless
 public class UtilisateurBdy {
 
-    @PersistenceContext
+    @PersistenceContext(type = PersistenceContextType.TRANSACTION)
     EntityManager em;
-
-    @Inject
-    Event<Utilisateur> listeners;
 
     public Utilisateur create(String nom, String prenom, String email, String mdp, String status) {
         Utilisateur u = new Utilisateur(nom, prenom, email, mdp, status);

@@ -8,6 +8,7 @@ package entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -28,9 +29,9 @@ public class Cours implements Serializable {
     private String image;
     private String description;
     private double prix;
-    @OneToMany(mappedBy = "cours")
+    @OneToMany(mappedBy = "cours", cascade=CascadeType.ALL)
     private List<Episode> episodes;
-    @ManyToMany(mappedBy = "cours")
+    @ManyToMany(mappedBy = "cours", cascade=CascadeType.MERGE)
     private List<Utilisateur> utilisateurs;
     
    
@@ -108,10 +109,6 @@ public class Cours implements Serializable {
         }else{
             return prix+"€";
         }
-    }
-    
-    public void ajouterUtilisateur(Utilisateur u){
-        this.utilisateurs.add(u);
     }
 
     @Override

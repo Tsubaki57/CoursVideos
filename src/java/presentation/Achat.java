@@ -9,6 +9,7 @@ import boundary.CoursBdy;
 import boundary.UtilisateurBdy;
 import entity.Cours;
 import entity.Utilisateur;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -88,11 +89,15 @@ public class Achat {
         for (Utilisateur ut : utilisateurs.findAll()){
             if (ut.getId() == idutil) u = ut;
         }
-      
-        c.ajouterUtilisateur(u);
-        u.ajouterCours(c);
         
-        u = utilisateurs.merge(u);
+        List<Utilisateur> lu = c.getUtilisateurs();
+        lu.add(u);
+        c.setUtilisateurs(lu);
+        List<Cours> lc = u.getCours();
+        lc.add(c);
+        u.setCours(lc);
+        
+        //u = utilisateurs.merge(u);
         c = cours.merge(c);
         
         }catch(Exception e){
