@@ -117,4 +117,8 @@ public class Utilisateur implements Serializable {
     public boolean isAdmin(){
         return this.statut.equals("admin");
     }
+    
+    public void ajouterCours(Cours c){
+        this.cours.add(c);
+    }
 }

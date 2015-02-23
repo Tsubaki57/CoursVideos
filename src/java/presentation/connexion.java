@@ -65,6 +65,7 @@ public class Connexion implements Serializable {
     }
 
     public Utilisateur getUtilisateur() {
+        if(this.utilisateur != null) this.utilisateur = utilisateurs.find(this.utilisateur.getMail());
         return utilisateur;
     }
 
@@ -158,7 +159,7 @@ public class Connexion implements Serializable {
     public void adminControl() {
         try {
             if (!admin) {
-                FacesContext.getCurrentInstance().getExternalContext().redirect("accueil.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("accueil.xhtml?faces-redirect=true");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -171,6 +172,11 @@ public class Connexion implements Serializable {
             if(utilisateur.getCours().contains(c)) return true;
         }
         return false;
+    }
+    
+    public int giveUserID(){
+        if(utilisateur == null) return 0;
+        return utilisateur.getId();
     }
    
 }

@@ -48,7 +48,7 @@ public class Inscription {
 
     public String doAddUser() {
         utilisateur = utilisateurs.update(utilisateur);
-        return "listeUtilisateurs.xhtml?faces-redirect=true";
+        return "listeutilisateurs.xhtml?faces-redirect=true";
     }
     
   

@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -38,6 +39,12 @@ public class CoursBdy {
         return c;
     }
     
+    public Cours merge(Cours c){
+        em.merge(c);
+        em.flush();
+        return c;
+    }
+    
     public List<Cours> findAll(){
         Query q = em.createQuery("SELECT c FROM Cours c ");
         return (List<Cours>)q.getResultList();
@@ -47,7 +54,7 @@ public class CoursBdy {
         Query q = em.createQuery("SELECT c FROM Cours c WHERE c.ID = :idc")
                 .setParameter("idc", id);
         List<Cours> lc = q.getResultList();
-        return (Cours) lc.get(1);
+        return (Cours) lc.get(lc.size());
     }
     
     public void delete(Cours c){
