@@ -52,18 +52,21 @@
                     <h:form>
                         <h:outputText value="#{achat.message(param.idc, param.idu)}" />
                         <br/>
-                        <h:panelGrid columns="2">
+                        <h:panelGrid columns="3">
                             
-                            <h:outputText value="Numéro de Carte de Crédit :"/>
-                            <p:inputMask value="AZ" required="true" mask="9999-9999-9999-9999"/>
-                            <h:outputText value="Code au dos de votre carte"/>
-                            <p:inputMask value="AE" required="true" mask="999"/>                           
-                            <h:outputText value="Code de validation:"/>
-                            <p:inputMask value="AR" required="true" mask="9999"/>
+                            <h:outputLabel> Numéro de Carte de Crédit : <span class="requis">*</span></h:outputLabel>
+                            <p:inputMask id="numCart" value="AZ" required="true" requiredMessage="Veuillez entrez le numéro de votre carte de crédit" mask="9999-9999-9999-9999"/>
+                            <h:message for="numCart" style="color : red"/>
+                            <h:outputLabel> Code au dos de votre carte :  <span class="requis">*</span></h:outputLabel>
+                            <p:inputMask id="codeCart" value="AE" required="true" requiredMessage="Veuillez entrez le numéro au dos de votre carte" mask="999"/>  
+                            <h:message for="codeCart" style="color : red"/>
+                            <h:outputLabel> Code de validation : <span class="requis">*</span></h:outputLabel>
+                            <p:inputMask id="codeVal" value="AR" required="true" requiredMessage="Veuillez entrez le code validation" mask="9999"/>
+                             <h:message for="codeVal" style="color : red"/>
 
                         </h:panelGrid>  
                         <br/>
-                        <p:commandButton styleClass="btn" value="Acheter" action="#{achat.doBuyCours()}"/>
+                        <h:commandButton styleClass="btn" value="Acheter" action="#{achat.doBuyCours()}"/>
                     </h:form>
                 </div>
             </div>
