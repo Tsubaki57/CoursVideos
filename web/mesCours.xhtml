@@ -46,20 +46,25 @@
                     <h1>Mes cours</h1>
                     <hr/>
                     <h:form>
-                        <p:dataTable value="#{connexion.utilisateur.cours}" var="c">
-                            <p:column headerText="ID">
-                                <h:link outcome="#{listeCours.showDetailsCours(c.id)}" value="#{c.id}"/>
-                            </p:column>
-                            <p:column headerText="Titre">
-                                <h:outputText value="#{c.titre}"/>
-                            </p:column>
-                            <p:column headerText="Description">
-                                <h:outputText value="#{c.description}"/>
-                            </p:column>
-                            <p:column headerText="Prix">
-                                <h:outputText value="#{c.prixCours()}"/>
-                            </p:column>
-                        </p:dataTable>
+                        <p:dataGrid value="#{connexion.utilisateur.cours}" var="c" columns="1">
+                            <p:fieldset legend="#{c.titre}">
+                                <h:panelGrid columns="2">
+
+                                    <p:graphicImage value="#{c.image}"  styleClass="imageCours"/>
+                                    <h:outputLabel  styleClass="desc">
+                                        <div class="gras"> Description : </div>  <br/>
+                                        <h:outputText value="#{c.description}" styleClass="desc"/>                                       
+                                    </h:outputLabel>
+                                    <br/>
+                                    <h:outputText value="Prix : #{c.prix}" styleClass="prixCours"/>
+                                    <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" 
+                                            style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">
+                                        <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
+                                    </h:link>
+
+                                </h:panelGrid>
+                            </p:fieldset>
+                        </p:dataGrid>
                     </h:form>
                 </div>
             </div>    
@@ -68,3 +73,8 @@
         </h:body>
     </f:view>
 </html>
+
+
+
+
+
