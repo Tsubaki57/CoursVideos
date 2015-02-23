@@ -41,7 +41,8 @@
                 <div class="pres">
                     <p>Vous trouverez à travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
                         Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
-                        Vous pourrez consulter toutes les vidéos présentent.</p>       
+                        Vous pourrez consulter toutes les vidéos présentent.
+                    </p>       
                 </div>    
 
                 <div class="cours">
@@ -62,11 +63,13 @@
                                     <h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
 
                                     <h:panelGrid columns="3">
-                                        <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">
+                                        <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" 
+                                                style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
                                         </h:link>   
 
-                                        <h:link outcome="achat.xhtml?idc=#{c.id}&amp;idu=#{connexion.giveUserID()}" styleClass="espace" style="visibility: #{!connexion.coursPaye(c) ? 'block' : 'hidden'}">
+                                        <h:link outcome="achat.xhtml?idc=#{c.id}&amp;idu=#{connexion.giveUserID()}" 
+                                                styleClass="espace" style="visibility: #{!connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
                                         </h:link>
 
@@ -83,7 +86,9 @@
                 <hr/>
                 Fait le 29 janvier 2015,par Loris D. et Lucie W.
                 <br/>
-                <h:link value="Administration" outcome="admin.xhtml" style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+                <h:link value="Administration" 
+                        outcome="admin.xhtml" 
+                        style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
             </footer>    
         </h:body>
     </f:view>
