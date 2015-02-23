@@ -30,7 +30,10 @@
                 <h:form id="Decoform">
                     <h:commandLink value="#{connexion.label_co}" action="#{connexion.de_connexion()}"/>
                     &nbsp;
-                    <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.isNull() ? 'block' : 'hidden'};" />        
+                    <h:link value="Inscription?" 
+                            outcome="inscription.xhtml?faces-redirect=true" 
+                            style="visibility: #{connexion.giveUserID()==0 ? 'block' : 'hidden'};" 
+                            />  
                 </h:form>
             </div>
 
@@ -61,7 +64,7 @@
                             <h:inputText id="duree" value="#{creerepisode.episode.duree}" required="true" requiredMessage="Veuillez renseigner la durée"/>
                             <h:message for="duree" style="color :red"/>
                             <h:outputLabel> Numéro Youtube de la vidéo : <span class="requis">*</span> </h:outputLabel>
-                            <h:inputText id="num" value="#{creerepisode.episode.lien}" required="true" requiredMessage="Veuillez renseigner le numéro de la numéro YT, situez dans la barre d'adresse après le v=" />
+                            <h:inputText id="num" value="#{creerepisode.episode.lien}" required="true" requiredMessage="Veuillez renseigner l'URL de la video Youtube" />
                             <h:message for="num" style="color :red"/>
                         </h:panelGrid>
                         <h:commandButton styleClass="btn" value="Ajouter" action="#{creerepisode.doAddEpisode}"/>       

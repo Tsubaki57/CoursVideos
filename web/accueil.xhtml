@@ -30,7 +30,10 @@
                 <h:form id="Decoform">
                     <h:commandLink value="#{connexion.label_co}" action="#{connexion.de_connexion()}"/>
                     &nbsp;
-                    <h:link value="Inscription?" outcome="inscription.xhtml" style="visibility: #{Connexion.isNull() ? 'block' : 'hidden'};" />        
+                    <h:link value="Inscription?" 
+                            outcome="inscription.xhtml?faces-redirect=true" 
+                            style="visibility: #{connexion.giveUserID()==0 ? 'block' : 'hidden'};" 
+                            />        
                 </h:form>
             </div>
 
@@ -53,9 +56,9 @@
                                         <div class="gras"> Description : </div>  <br/>
                                         <h:outputText value="#{c.description}" styleClass="desc"/>                                       
                                     </h:outputLabel>         
-                                  
+
                                     <br/><h:outputText value="Prix : #{c.prixCours()} " styleClass="prixCours"/>
-                                    
+
                                     <h:panelGrid columns="3">
                                         <h:link outcome="#{listeCours.showDetailsCoursUser(c.id)}" style="visibility: #{connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage styleClass="icon" value="/resources/image/icon-info.png" />                                            
@@ -64,7 +67,7 @@
                                         <h:link outcome="achat.xhtml?idc=#{c.id}&amp;idu=#{connexion.giveUserID()}" styleClass="espace" style="visibility: #{!connexion.coursPaye(c) ? 'block' : 'hidden'}">
                                             <p:graphicImage  styleClass="icon" value="/resources/image/icon-achat.png"/>   
                                         </h:link>
-                                       
+
                                     </h:panelGrid>
                                 </h:panelGrid>
                             </p:fieldset>

@@ -71,7 +71,8 @@ public class Episode implements Serializable {
     }
 
     public void setLien(String lien) {
-        this.lien = lien;
+        String[] split = lien.split("=");
+        this.lien = split[1];
     }
 
     public Cours getCours() {
