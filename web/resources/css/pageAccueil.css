@@ -58,7 +58,7 @@ body {
 
 .icon{
     width:40px;
-    height:40px
+    height:40px;
 }
 
 
@@ -185,19 +185,9 @@ body {
 
 }
 
-
-.presCours{
-    margin-bottom:20px;
-    cellpadding:5;
-   
-}
-
-.imageCours{
-    
-}
-
 .gras{
     font-weight: bold;
+
 }
 
 .espace{
@@ -207,4 +197,31 @@ body {
 
 .requis{
     color:red
+}
+
+
+
+.imageCours{
+    float: left;
+    width :200px;
+
+}
+
+.desc{
+    padding-left: 30px;
+    float:right;
+    text-align: justify;
+    width: 600px;
+}
+
+.prixCours{
+    padding : 30px;
+    text-align : justify;
+    font-weight: bold;
+
+}
+
+
+.icone{
+  
 }
