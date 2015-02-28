@@ -18,7 +18,7 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class ModifierUtilisateur {
+public class ModifierUtilisateur{
     
     @Inject
     private UtilisateurBdy utilisateurs;
@@ -27,7 +27,6 @@ public class ModifierUtilisateur {
 
     @PostConstruct
     public void onInit() {
-        this.utilisateur = this.utilisateurs.find(idut);
     }
 
     public UtilisateurBdy getUtilisateurs() {
@@ -39,6 +38,7 @@ public class ModifierUtilisateur {
     }
 
     public Utilisateur getUtilisateur() {
+        this.utilisateur = this.utilisateurs.find(idut);
         return utilisateur;
     }
 
@@ -51,10 +51,12 @@ public class ModifierUtilisateur {
     }
 
     public void setIdut(int idut) {
+        this.utilisateur = this.utilisateurs.find(idut);
         this.idut = idut;
     }
     
-    public String doChangeUser(){
+    public String doChangeUser(int id){
+        setIdut(idut);
         utilisateurs.merge(utilisateur);
         return "listeutilisateurs.xhtml?faces-redirect=true";
     }

@@ -48,11 +48,11 @@
                     <h2><h:outputText value="Episodes disponibles pour le cours : #{c.titre}"/></h2>
 
                     <f:metadata>
-                        <f:viewParam name="id" value="#{listeEpisode.idec}"/>
+                        <f:viewParam name="id" value="#{listeepisode.idec}"/>
                     </f:metadata>
 
                     <h:form>
-                        <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="10">
+                        <p:dataTable value="#{listeepisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="10">
                             <p:column headerText="Cours" >
                                 <h:outputText value="#{e.cours.id}" />
                             </p:column>

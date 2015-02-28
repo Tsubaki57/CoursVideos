@@ -54,7 +54,7 @@
                     <h:form>
                         <h:panelGrid columns="2">                          
                             <h:outputLabel> Nom : <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputText label="" value="#{modifierUtilisateur.utilisateur.nom}"
+                            <h:inputText value="#{modifierUtilisateur.utilisateur.nom}"
                                          required="true"/>
                             <h:outputLabel> Prénom : <span class="requis">*</span> </h:outputLabel>  
                             <h:inputText value="#{modifierUtilisateur.utilisateur.prenom}" 
@@ -68,7 +68,7 @@
                         </h:panelGrid>       
                         <p:commandButton styleClass="btn" 
                                          value="Ajouter" 
-                                         action="#{modifierUtilisateur.doChangeUser()}"/>       
+                                         action="#{modifierUtilisateur.doChangeUser(param.id)}"/>       
                     </h:form>
                     <hr/>
                 </div>

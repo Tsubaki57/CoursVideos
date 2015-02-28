@@ -49,7 +49,10 @@ public class UtilisateurBdy {
     public Utilisateur find(long id) {
         Query q = em.createQuery("SELECT u FROM Utilisateur u WHERE u.id = :uid")
                 .setParameter("uid", id);
-        return (Utilisateur) q.getResultList().get(1);
+        List<Utilisateur> lu = (List<Utilisateur>) q.getResultList();
+        int size = lu.size();
+        if (size < 1) return null;
+        return lu.get(size-1);
     }
     
     public Utilisateur find(String mail) {
