@@ -50,9 +50,15 @@
                     <f:metadata>
                         <f:viewParam name="id" value="#{listeEpisode.idec}"/>
                     </f:metadata>
-                    
+
                     <h:form>
-                        <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="5">
+                        <p:dataTable value="#{listeEpisode.liste}" 
+                                     var="e" 
+                                     rowStyleClass="lignetab" 
+                                     paginator="true"  
+                                     paginatorPosition="bottom" 
+                                     rows="5"
+                                     >
                             <p:column headerText="Titre" >
                                 <h:outputText value="#{e.titre}" />
                             </p:column>
@@ -60,12 +66,15 @@
                                 <h:outputText value="#{e.duree}"/>
                             </p:column>
                             <p:column headerText="Action">
-                                <h:commandButton styleClass="espace" value="Voir" action="#{listeEpisode.showDetailsEpisode(e.id)}"/>
+                                <h:commandButton styleClass="espace" 
+                                                 value="#{connexion.utilisateur.haveSeen(e) ? 'Revoir' : 'Voir'}" 
+                                                 action="#{listeEpisode.showDetailsEpisode(e.id)}"
+                                                 />
                             </p:column>
-                            
+
                         </p:dataTable>
                     </h:form>
-                    
+
                 </div>
             </div>                      
             <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>

@@ -6,8 +6,10 @@
 package presentation;
 
 import boundary.CoursBdy;
+import boundary.EpisodeBdy;
 import boundary.UtilisateurBdy;
 import entity.Cours;
+import entity.Episode;
 import entity.Utilisateur;
 import java.io.IOException;
 import java.io.Serializable;
@@ -32,6 +34,8 @@ public class Connexion implements Serializable {
     private static final long serialVersionUID = 1L;
     @Inject
     private UtilisateurBdy utilisateurs;
+    @Inject
+    private EpisodeBdy episodes;
     private CoursBdy cours;
     private Utilisateur utilisateur;
     private String mail;
@@ -39,6 +43,7 @@ public class Connexion implements Serializable {
     private String label_co;
     private List<Cours> mylist;
     private boolean admin;
+    private int idseen;
 
     @PostConstruct
     public void onInit() {
@@ -65,7 +70,9 @@ public class Connexion implements Serializable {
     }
 
     public Utilisateur getUtilisateur() {
-        if(this.utilisateur != null) this.utilisateur = utilisateurs.find(this.utilisateur.getMail());
+        if (this.utilisateur != null) {
+            this.utilisateur = utilisateurs.find(this.utilisateur.getMail());
+        }
         return utilisateur;
     }
 
@@ -167,17 +174,50 @@ public class Connexion implements Serializable {
         return "accueil.xhtml";
     }
 
-    public boolean coursPaye(Cours c){
-        if(c.getPrix() == 0) return true;
-        if(utilisateur != null){
-            if(utilisateur.getCours().contains(c)) return true;
+    public boolean coursPaye(Cours c) {
+        if (c.getPrix() == 0) {
+            return true;
+        }
+        if (utilisateur != null) {
+            if (utilisateur.getCours().contains(c)) {
+                return true;
+            }
         }
         return false;
     }
-    
-    public int giveUserID(){
-        if(utilisateur == null) return 0;
+
+    public int giveUserID() {
+        if (utilisateur == null) {
+            return 0;
+        }
         return utilisateur.getId();
     }
-   
+
+    public int getIdseen() {
+        return idseen;
+    }
+
+    public void setIdseen(int idseen) {
+        this.idseen = idseen;
+        beingSeen();
+    }
+
+    public void beingSeen() {
+        if (utilisateur != null) {
+
+            Episode episode = episodes.find(idseen);
+
+            List<Episode> le = utilisateur.getEpisodes();
+            le.add(episode);
+            utilisateur.setEpisodes(le);
+
+            List<Utilisateur> lu = episode.getUtilisateurs();
+            lu.addAll(lu);
+            episode.setUtilisateurs(lu);
+
+            this.utilisateurs.merge(utilisateur);
+            this.episodes.merge(episode);
+        }
+    }
+
 }

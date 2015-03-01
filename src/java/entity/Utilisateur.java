@@ -118,4 +118,8 @@ public class Utilisateur implements Serializable {
     public boolean isAdmin(){
         return this.statut.equals("admin");
     }
+    
+    public boolean haveSeen(Episode e){
+        return this.episodes.contains(e);
+    }
 }

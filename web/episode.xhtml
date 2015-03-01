@@ -47,7 +47,8 @@
                 </div>  
                 <div class="cours">
                     <f:metadata>
-                        <f:viewParam name="id" value="#{afficheEpisode.idep}"/>
+                        <f:viewParam name="id" value="#{afficheEpisode.idep}" />
+                        <f:viewParam name="id" value="#{connexion.idseen}" />
                     </f:metadata>
                     <h:form>
                         <p:dataGrid value="#{afficheEpisode.episode}" columns="1" >

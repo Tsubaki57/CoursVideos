@@ -6,6 +6,7 @@
 package presentation;
 
 import boundary.EpisodeBdy;
+import boundary.UtilisateurBdy;
 import entity.Episode;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -23,6 +24,8 @@ public class AfficheEpisode {
 
     @Inject
     private EpisodeBdy episodes;
+    @Inject
+    private UtilisateurBdy utilisateurs;
     private Episode episode;
     private int idep;
     private String cours;
@@ -82,5 +85,7 @@ public class AfficheEpisode {
     public void setCours(String cours) {
         this.cours = cours;
     }
+
+
 
 }

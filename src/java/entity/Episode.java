@@ -95,4 +95,27 @@ public class Episode implements Serializable {
         this.utilisateurs = utilisateurs;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Episode other = (Episode) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 }
