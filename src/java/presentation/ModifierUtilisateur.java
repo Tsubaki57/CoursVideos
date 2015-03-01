@@ -7,18 +7,19 @@ package presentation;
 
 import boundary.UtilisateurBdy;
 import entity.Utilisateur;
+import java.io.Serializable;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 
 /**
  *
  * @author Loris
  */
 @Named
-@RequestScoped
-public class ModifierUtilisateur{
+@ViewScoped
+public class ModifierUtilisateur implements Serializable{
     
     @Inject
     private UtilisateurBdy utilisateurs;
@@ -38,7 +39,6 @@ public class ModifierUtilisateur{
     }
 
     public Utilisateur getUtilisateur() {
-        this.utilisateur = this.utilisateurs.find(idut);
         return utilisateur;
     }
 
@@ -55,9 +55,8 @@ public class ModifierUtilisateur{
         this.idut = idut;
     }
     
-    public String doChangeUser(int id){
-        setIdut(idut);
-        utilisateurs.merge(utilisateur);
+    public String doChangeUser(){
+        this.utilisateur = utilisateurs.merge(utilisateur);
         return "listeutilisateurs.xhtml?faces-redirect=true";
     }
 }

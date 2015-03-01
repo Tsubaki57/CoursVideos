@@ -156,7 +156,7 @@ public class Connexion implements Serializable {
         return "connexion.xhtml?faces-redirect=true";
     }
 
-    public void adminControl() {
+    public String adminControl() {
         try {
             if (!admin) {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("accueil.xhtml?faces-redirect=true");
@@ -164,6 +164,7 @@ public class Connexion implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return "accueil.xhtml";
     }
 
     public boolean coursPaye(Cours c){

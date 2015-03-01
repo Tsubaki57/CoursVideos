@@ -52,7 +52,7 @@
                     </f:metadata>
 
                     <h:form>
-                        <p:dataTable value="#{listeepisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="10">
+                        <p:dataTable value="#{listeEpisode.liste}" var="e" rowStyleClass="lignetab" paginator="true"  paginatorPosition="bottom" rows="10">
                             <p:column headerText="Cours" >
                                 <h:outputText value="#{e.cours.id}" />
                             </p:column>
@@ -65,7 +65,12 @@
                             <p:column headerText="Lien">
                                 <h:outputText value="#{e.lien}"/>
                             </p:column>
-
+                            <p:column headerText="Action">
+                                <h:commandButton value="Supprimer"
+                                                 action="#{listeEpisode.delete(e)}" />
+                                <h:commandButton value="Editer"
+                                                 action="#{listeEpisode.edit(e)}" />
+                            </p:column>
                         </p:dataTable>
                     </h:form>
 

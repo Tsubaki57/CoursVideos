@@ -80,18 +80,18 @@ public class ListeEpisode {
     public void setCourstitle(String courstitle) {
         this.courstitle = courstitle;
     }
-    
-    
 
-    /**
-     * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans
-     * la DataTable pour voir les détails
-     *
-     * @param id Id du cours à linker
-     * @return URL du cours
-     */
     public String showDetailsEpisode(int id) {
         return "episode?id=" + id +"&faces-redirect=true";
+    }
+    
+    public String delete(Episode e){
+        episode.delete(e);
+        return "listeepisode.xhtml?faces-redirect=true";
+    }
+    
+    public String edit(Episode e){
+        return "modifierepisode.xhtml?faces-redirect=true&id="+e.getId();
     }
 
 }

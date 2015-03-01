@@ -45,6 +45,15 @@ public class EpisodeBdy {
         return (List<Episode>)q.getResultList();
     }
     
+    public Episode find(long id) {
+        Query q = em.createQuery("SELECT e FROM Episode e WHERE e.id = :eid")
+                .setParameter("eid", id);
+        List<Episode> le = (List<Episode>) q.getResultList();
+        int size = le.size();
+        if (size < 1) return null;
+        return le.get(size-1);
+    }
+    
     public void delete(Episode e){
         em.remove(em.merge(e));
     }
