@@ -49,26 +49,23 @@
                     <h:outputLabel value="Veuillez renseigner les champs suivants"/>
                     <hr/>
                     <f:metadata>
-                        <f:viewParam name="id" value="#{modifierUtilisateur.idut}"/>
+                        <f:viewParam name="id" value="#{modifierEpisode.idep}"/>
                     </f:metadata>
                     <h:form>
                         <h:panelGrid columns="2">                          
-                            <h:outputLabel> Nom : <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputText value="#{modifierUtilisateur.utilisateur.nom}"
+                            <h:outputLabel> Titre : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierEpisode.episode.titre}"
                                          required="true"/>
-                            <h:outputLabel> Prénom : <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputText value="#{modifierUtilisateur.utilisateur.prenom}" 
+                            <h:outputLabel> Durée : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierEpisode.episode.duree}" 
                                          required="true"/>
                             <h:outputLabel> Email : <span class="requis">*</span> </h:outputLabel>  
-                            <h:inputText value="#{modifierUtilisateur.utilisateur.mail}" 
+                            <h:inputText value="#{modifierEpisode.episode.lien}" 
                                          required="true"/>
-                            <h:outputLabel> Mot de passe : <span class="requis">* (Laisser tel quel pour ne pas changer)</span> </h:outputLabel>  
-                            <h:inputSecret value="#{modifierUtilisateur.utilisateur.mdp}" 
-                                           />
                         </h:panelGrid>       
                         <h:commandButton styleClass="btn" 
-                                         value="Ajouter" 
-                                         action="#{modifierUtilisateur.doChangeUser()}"/>       
+                                         value="Modifier" 
+                                         action="#{modifierEpisode.doChangeEpisode()}"/>       
                     </h:form>
                     <hr/>
                 </div>

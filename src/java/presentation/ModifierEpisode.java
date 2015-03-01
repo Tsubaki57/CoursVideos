@@ -55,5 +55,9 @@ public class ModifierEpisode implements Serializable{
         this.idep = idep;
     }
     
+    public String doChangeEpisode(){
+        this.episode = this.episodes.merge(this.episode);
+        return "listeepisode.xhtml?faces-redirect=true";
+    }
     
 }

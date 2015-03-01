@@ -38,7 +38,7 @@ public class Episode implements Serializable {
     public Episode(String titre, int duree, String lien) {
         this.titre = titre;
         this.duree = duree;
-        this.lien = lien;      
+        this.lien = lien;
         this.utilisateurs = new ArrayList<Utilisateur>();
     }
 
@@ -72,7 +72,11 @@ public class Episode implements Serializable {
 
     public void setLien(String lien) {
         String[] split = lien.split("=");
-        this.lien = split[1];
+        if (split.length == 1) {
+            this.lien = split[0];
+        } else {
+            this.lien = split[1];
+        }
     }
 
     public Cours getCours() {

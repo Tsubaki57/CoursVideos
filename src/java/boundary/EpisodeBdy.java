@@ -40,6 +40,11 @@ public class EpisodeBdy {
         return e;
     }
     
+    public Episode merge(Episode e){
+        em.merge(e);
+        return e;
+    }
+    
     public List<Episode> findAll(){
         Query q = em.createQuery("SELECT e FROM Episode e ");
         return (List<Episode>)q.getResultList();
