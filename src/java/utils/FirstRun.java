@@ -39,6 +39,8 @@ public class FirstRun {
     
     public String createSomeRows(){
         
+        if(!utilB.findAll().isEmpty()) return "accueil.xhtml";
+        
         Utilisateur u1 = new Utilisateur("Ministrator", "Ad", "admin@admin", "admin", "admin");
         Utilisateur u2 = new Utilisateur("Doe", "John", "jd@mail", "jd", "user");
         
@@ -46,7 +48,9 @@ public class FirstRun {
         u2 = utilB.update(u2);
         
         Cours c1 = new Cours("Cours d'Anglais", "Ceci est un cours d'Anglais trop génial", 50);
+        c1.setImage("http://media.melty.fr/article-1272059-ajust_930/gladys-est-prof-d-anglais-ou-presque.jpg");
         Cours c2 = new Cours("Cours de yoyo", "Un cours de yoyo vraiment inutile, on ne peut pas faire payer ca !", 0);
+        c2.setImage("http://www.clipartbest.com/cliparts/yio/8Rk/yio8RkRiE.png");
         
         c1 = coursB.update(c1);
         c2 = coursB.update(c2);
@@ -54,8 +58,11 @@ public class FirstRun {
         List<Episode> le;
         
         Episode e1 = new Episode("Anglais débutant", 29, "SoR6YO3AE74");
+        e1.setCours(c1);
         Episode e2 = new Episode("Anglais : Age of ultron", 2, "tmeOjFno6Do");
+        e2.setCours(c1);
         Episode e3 = new Episode("Master yoyo", 5, "PEU_BVFgncU");
+        e3.setCours(c2);
         
         le = c1.getEpisodes();
         le.add(e1);
