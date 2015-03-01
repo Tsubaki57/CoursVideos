@@ -47,13 +47,10 @@ public class ListeCours {
         return "listecours.xhtml?faces-redirect=true";
     }
 
-    /**
-     * Action handler - appelé lorsque l'utilisateur sélectionne une ligne dans
-     * la DataTable pour voir les détails
-     *
-     * @param id Id du cours à linker
-     * @return URL du cours
-     */
+    public String edit(Cours c){
+        return "modifiercours.xhtml?faces-redirect=true&id="+c.getId();
+    }
+    
     public String showDetailsCours(int id) {
         return "listeepisode?id=" + id + "&faces-redirect=true";
     }

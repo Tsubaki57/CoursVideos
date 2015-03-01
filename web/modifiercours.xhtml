@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view contentType="text/html">
+        <h:head>
+            <title>Studia Online</title>
+            <!--<link rel="stylesheet" href="resources/default/css/pageAccueil.css" type="text/css"></link>-->
+            <h:outputStylesheet library="css" name="pageAccueil.css"/>
+        </h:head>
+        <h:body >
+
+            <header id="entete">
+                <h1>STUDIA ONLINE</h1>           
+            </header>
+
+            <nav class="onglets">
+                <ul class="onglet">
+                    <li><h:link value="Accueil" outcome="accueil.xhtml"/></li>
+                    <li><h:link value="Mes Cours" outcome="mesCours.xhtml"/></li>
+                </ul>
+            </nav>
+            <br/> 
+
+
+            <div class="connection">
+                <h:form id="Decoform">
+                    <h:commandLink value="#{connexion.label_co}" action="#{connexion.de_connexion()}"/>
+                    &nbsp;
+                    <h:link value="Inscription?" 
+                            outcome="inscription.xhtml?faces-redirect=true" 
+                            style="visibility: #{connexion.giveUserID()==0 ? 'block' : 'hidden'};" 
+                            />  
+                </h:form>
+            </div>
+
+            <div class='main'>
+                <div class="pres">
+                    <p>
+                        Vous trouverez à  travers notre site, divers cours sur différent domaine et vous pourrez ainsi consulter les différentes vidéos vous étant proposé.
+                        Vous trouverez de nombreux thèmes comme le maquillage, la cuisine, les voitures et bien d'autre encore...
+                        Vous pourrez consulter toutes les vidéos présentent.
+                    </p>       
+                </div>  
+                <div class="cours">
+                    <h1>Modifier un cours</h1>
+                    <h:outputLabel value="Veuillez renseigner les champs suivants"/>
+                    <hr/>
+                    <f:metadata>
+                        <f:viewParam name="id" value="#{modifierCours.idec}"/>
+                    </f:metadata>
+                    <h:form>
+                        <h:panelGrid columns="2">                          
+                            <h:outputLabel> Titre : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierCours.cours.titre}"
+                                         required="true"/>
+                            <h:outputLabel> Image : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierCours.cours.image}" 
+                                         required="true"/>
+                            <h:outputLabel> Prix : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputText value="#{modifierCours.cours.prix}" 
+                                         required="true"/>
+                            <h:outputLabel> Description : <span class="requis">*</span> </h:outputLabel>  
+                            <h:inputTextarea value="#{modifierCours.cours.description}" 
+                                         required="true"/>
+                        </h:panelGrid>       
+                        <h:commandButton styleClass="btn" 
+                                         value="Modifier" 
+                                         action="#{modifierCours.doChangeCours()}"/>       
+                    </h:form>
+                    <hr/>
+                </div>
+            </div>
+            <footer class="footer"><hr/>Fait le 29 janvier 2015, par Loris D. et Lucie W.<br/>
+                <h:link value="Administration" 
+                        outcome="admin.xhtml" 
+                        style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+                <h:link value="" 
+                        outcome="#{connexion.adminControl()}" 
+                        style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+            </footer>
+        </h:body>
+    </f:view>
+</html>
