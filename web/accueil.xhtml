@@ -88,7 +88,12 @@
                 <br/>
                 <h:link value="Administration" 
                         outcome="admin.xhtml" 
-                        style="visibility: #{connexion.admin ? 'block' : 'hidden'};"/>
+                        style="visibility: #{connexion.admin ? 'block' : 'hidden'};"
+                        />
+                <h:link value=""
+                        outcome="#{firstRun.createSomeRows()}"
+                        style="visibility: hidden"
+                        />
             </footer>    
         </h:body>
     </f:view>
